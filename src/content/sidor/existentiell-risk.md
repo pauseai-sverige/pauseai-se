@@ -7,51 +7,62 @@ På den här sidan kan du lära dig om existentiell risk, så kallad x-risk, och
 
 ## Experter uttrycker sin starka oro
 
-Om vi lyckas bygga _superintelligent_ AI (AI avsevärt mer intelligent än människan), så [uttrycker](https://aiimpacts.org/2022-expert-survey-on-progress-in-ai/) ett flertal AI-forskare att de tror att det finns en sannolikhet på 14% att det kommer leda till "väldigt dåliga utfall (t.ex. att det utgör en risk för vår fortsatta existens)".
+Den största enkäten i sitt slag frågade 2 778 AI-forskare om riskerna ([AI Impacts](https://arxiv.org/abs/2401.02843#:~:text=In%20the%20largest%20survey,artificial%20intelligence%20%28AI%29%20venues)). Medianbedömningen var 5 procents sannolikhet för extremt dåliga följder av avancerad AI, som att mänskligheten utrotas, och över en tredjedel angav minst 10 procent ([AI Impacts](https://arxiv.org/abs/2401.02843#:~:text=The%20median%20prediction%20for,on%20extremely%20bad%20outcomes)).
 
-Hur skulle du ställa dig till att vara passagerare på en testflygning med ett nytt flygplan, om ingenjörerna som har utvecklat flygplanet bedömer att sannolikheteten att planet ska störta är 14%?
+Hur skulle du ställa dig till att vara passagerare på en provflygning med ett nytt flygplan, om över en tredjedel av ingenjörerna som har byggt planet bedömde att det är minst 10 procents risk att det störtar?
 
-Och, det finns [fall och rapporter rörande beteenden hos nuvarande AI-system som kan ge skäl till oro](https://lethalintelligence.ai/post/category/warning-shots/). [Ett brev som uppmanar till att pausa AI-utvecklingen](https://futureoflife.org/open-letter/pause-giant-ai-experiments/) offentliggjordes i april 2023, och har signerats över 33 000 gånger, av bland annat många AI-forskare och ledare inom tech-industrin. Listan över de som signerat inkluderar personer som:
+Det är inte bara enskilda forskare som är oroliga. I maj 2023 skrev ledande AI-forskare och cheferna för de största AI-företagen under ett uttalande:
 
-- **Stuart Russell**, författare till den [lärobok](https://en.wikipedia.org/wiki/Artificial_Intelligence:_A_Modern_Approach) om Artificiell Intelligens som blivit något av ett standardverk i AI-utbildningar: ["Om vi fortsätter [på den inslagna vägen], så kommer vi så småningom förlora kontrollen över maskinerna."](https://news.berkeley.edu/2023/04/07/stuart-russell-calls-for-new-approach-for-ai-a-civilization-ending-technology/)
+> ”Att minska risken för utrotning orsakad av AI bör vara en global prioritet, i nivå med andra risker för hela samhället, som pandemier och kärnvapenkrig.” ([Center for AI Safety](https://www.safe.ai/work/statement-on-ai-risk#:~:text=Mitigating%20the%20risk%20of,pandemics%20and%20nuclear%20war))
 
-- **Yoshua Bengio**, en av pionjärerna inom djupinlärning (som ligger till grund för dagens AI-modeller) och vinnare av Turingpriset ("Nobelpriset i datavetenskap") menar att en bra början vore att: ["[...] förbjuda kraftfulla AI-system [...] som ges egen autonomi och agens [...]"](https://yoshuabengio.org/2023/05/22/how-rogue-ais-may-arise/)
+I oktober 2025 lanserades ett nytt upprop, med krav på förbud mot att utveckla superintelligens tills det finns bred vetenskaplig enighet om att det kan göras säkert och starkt stöd hos allmänheten ([Statement on Superintelligence](https://superintelligence-statement.org/#:~:text=We%20call%20for%20a,lifted%20before%20there%20is)).
 
-Utöver de varningar som vissa av undertecknarna lyfter, har också andra forskare och ledande AI-profiler varnat för AI:s existentiella risker:
+Några av dem som har varnat:
 
-- **Stephen Hawking**, teoretisk fysiker och kosmolog: ["Utvecklingen av fullständig artificiell intelligens kan innebära slutet för människan som art"](https://www.bbc.com/news/technology-30290540).
+- **Geoffrey Hinton**, AI-pionjär och Nobelpristagare i fysik 2024, varnade i sitt tal vid Nobelbanketten i Stockholm för att AI kan bli ett existentiellt hot, och för att vår säkerhet inte kommer i första hand när AI byggs av företag som drivs av kortsiktiga vinster ([Nobelprize.org](https://www.nobelprize.org/prizes/physics/2024/hinton/speech/#:~:text=But%20we%20now%20have,be%20the%20top%20priority)).
 
-- **Geoffrey Hinton**, "AI-gudfadern" och Turingpristagaren, som [lämnade Google](https://fortune.com/2023/05/01/godfather-ai-geoffrey-hinton-quit-google-regrets-lifes-work-bad-actors/) för att fritt kunna varna om riskerna med AI: ["Ett dåligt scenario är att AI bestämmer sig för att den inte behöver oss längre"](https://www.svt.se/nyheter/vetenskap/nobelpristagare-geoffrey-hinton-ai-kan-bestamma-sig-for-att-vi-inte-behovs)
+- **Stuart Russell**, författare till den mest använda läroboken om AI: [”Om vi fortsätter på den inslagna vägen kommer vi så småningom att förlora kontrollen över maskinerna.”](https://news.berkeley.edu/2023/04/07/stuart-russell-calls-for-new-approach-for-ai-a-civilization-ending-technology/)
 
-- **Eliezer Yudkowsky**, grundare av Machine Intelligence Research Institute (MIRI; ett forskningsinstitut för AI-säkerhet) och en pionjär inom AI-säkerhetsfältet, säger angående skapandet av superintelligent AI: ["Vi är inte redo. Vi är inte i närheten av att bli väsentligt mer förberedda inom en överskådlig framtid. Om vi fortsätter på den här vägen kommer alla att dö [...]"](https://time.com/6266923/ai-eliezer-yudkowsky-open-letter-not-enough/).
+- **Yoshua Bengio**, en av pionjärerna inom djupinlärning och Turingpristagare, har föreslagit att [förbjuda kraftfulla AI-system som ges egen autonomi och agens](https://yoshuabengio.org/2023/05/22/how-rogue-ais-may-arise/).
 
-Även ledare, grundare och vissa av de som finansierar de stora AI-företagen varnar för riskerna:
+- **Pontus Johnson**, professor vid KTH: ”Jag tror att det är 20 procent att det går åt skogen” ([GP](https://www.gp.se/nyheter/sverige/larm-om-ai-rymningar-behover-bromsa-utvecklingen.92a94daa-df5f-5089-8eac-91560d6830c4#:~:text=Jag%20tror%20att%20det,det%20g%C3%A5r%20%C3%A5t%20skogen)).
 
-- **Sam Altman** (VD:n för OpenAI som bygger ChatGPT) har tidigare sagt: ["Utvecklingen av övermänsklig maskinintelligens är sannolikt det största hotet mot mänsklighetens fortsatta existens."](https://blog.samaltman.com/machine-intelligence-part-1).
+- **Olle Häggström**, professor vid Chalmers: ”Vi behöver ett fullständigt stopp för frontier-modellerna” ([GP](https://www.gp.se/nyheter/sverige/varnar-racker-inte-att-bromsa-ai-maste-stoppas.b2b188b5-1155-5546-9e38-a4021113042d#:~:text=Vi%20beh%C3%B6ver%20ett%20fullst%C3%A4ndigt%20stopp%20f%C3%B6r%20frontier%2Dmodellerna)).
 
-- **Elon Musk**, medgrundare av OpenAI, och grundare och VD för Neuralink, SpaceX, Starlink, Tesla, The Boring Company, xAI och X Corp (f.d. Twitter), uttryckte tidigt riskerna han såg med AI: ["Artificiell intelligens har potential att leda till civilisationens utplåning."](https://www.inc.com/ben-sherry/elon-musk-ai-has-the-potential-of-civilizational-destruction.html)
+Även de som bygger AI varnar:
 
-- **Bill Gates** (medgrundare av Microsoft, som äger cirka 27% av OpenAI) varnade att: ["AI kan bestämma sig för att människan utgör ett hot"](https://www.denisonforum.org/daily-article/bill-gates-ai-humans-threat/).
+- **Sam Altman**, vd för OpenAI, skrev 2015, innan han var med och grundade företaget: [”Utvecklingen av övermänsklig maskinintelligens är sannolikt det största hotet mot mänsklighetens fortsatta existens.”](https://blog.samaltman.com/machine-intelligence-part-1)
 
-- **Jaan Tallinn** (en av huvudinvesterare i Anthropic): ["Jag har inte mött någon på AI-labben som säger att risken [med att träna en nästa generations modell] är mindre än 1 % att förinta planeten. Det är viktigt att människor förstår att liv sätts på spel."](https://twitter.com/liron/status/1656929936639430657).
+- **Jakub Pachocki**, forskningschef på OpenAI, skrev i september 2026 att inget AI-labb har löst alignment och övervakning tillräckligt för att ansvarsfullt fortsätta skala upp i maxfart mycket längre ([OpenAI](https://openai.com/index/an-alien-mind/#:~:text=Currently%20I%20believe%20that,speed%20for%20much%20longer)).
 
-I maj 2023 offentligjordes [följande skrivelse och namninsamling](https://www.safe.ai/statement-on-ai-risk) och från och med då har ledare för de stora AI-företagen och hundratals AI-forskare signerat listan:
+- **Dario Amodei**, vd för Anthropic, skrev i september 2026 att takten i förbättringen av AI-modellernas förmågor måste sänkas ([Amodei](https://darioamodei.com/post/we-must-pace-the-frontier#:~:text=We%20must%20slow%20the,capabilities%20of%20AI%20models)).
 
-"Att begränsa risken för extinction orsakad av artificiell intelligens bör vara en global prioritering, jämförbar med andra risker på samhällsnivå, såsom pandemier och kärnvapenkrig."
+Du kan läsa en längre lista med [citat från politiker, vd:ar och experter](https://pauseai.info/quotes) och fler [enkäter bland experter och allmänheten](https://pauseai.info/polls-and-surveys) (på engelska).
 
-**Du kan läsa en betydligt längre lista med liknande uppmaningar från politiker, VD:ar och experter [här](https://pauseai.info/quotes) och andra liknande enkäter som besvarats av experter (och allmänheten) [här](https://pauseai.info/polls-and-surveys).**
+## Alla håller inte med
+
+Experterna är oense, och det ska synas. Den internationella AI-säkerhetsrapporten 2026 konstaterar att vissa experter anser att utfall så extrema som att mänskligheten utrotas är rimliga, medan andra anser att sådana katastrofer är osannolika ([International AI Safety Report](https://arxiv.org/abs/2602.21012#:~:text=Some%20believe%20that%20outcomes,of%20humanity%20are%20plausible)).
+
+- **Yann LeCun**, Turingpristagare och tidigare AI-chef på Meta, menar att domedagsberättelserna är fel och skadliga ([Axios](https://www.axios.com/2026/05/04/ai-godfather-survival-guide-hype-doom#:~:text=A%20small%20proportion%20of,basically%20cause%20human%20extinction)).
+- **Andrew Ng**, AI-forskare, menar att oron har blåsts upp av en välorkestrerad PR-kampanj ([Andrew Ng](https://charonhub.deeplearning.ai/whos-responsible-for-irresponsible-ai/#:~:text=AI%20technology%20has%20not,drummed%20up%20considerable%20fear)).
+- **Fyra forskare vid Chalmers** menar att argumenten för existentiell risk mer påminner om science fiction än vetenskap ([Ny Teknik](https://www.nyteknik.se/debatt/ai-debatten-bor-bygga-pa-vetenskap-inte-pa-spekulation/4384406#:~:text=H%C3%A4ggstr%C3%B6ms%20argument%20vilar%20prim%C3%A4rt,science%20fiction%20%C3%A4n%20vetenskap)).
+- **Fredrik Heintz**, professor vid Linköpings universitet, bedömer risken som låg men säger att den inte går att utesluta ([SVT](https://www.svt.se/nyheter/inrikes/professorn-om-ai-hotet-lag-risk#:~:text=Det%20%C3%A4r%20l%C3%A5g%20risk,g%C3%A5r%20inte%20att%20utesluta)).
+
+Vi tycker att det är just osäkerheten som är problemet. Rapporten beskriver förlorad kontroll som en risk med osäker sannolikhet men potentiellt extrem svårighetsgrad ([International AI Safety Report](https://arxiv.org/abs/2602.21012#:~:text=Loss%20of%20control%20can,but%20potentially%20extreme%20severity)). När det som står på spel är mänsklighetens framtid räcker det inte att risken kanske är liten.
 
 ## Vad en superintelligent AI kan göra (och användas till)
 
-Du kanske tänker att en superintelligent AI kan hållas instängd på en server och på sätt hindras att påverka yttervärlden. Men, givet att företagen så här långt har gett AI-systemen tillgång till internet, är det tänkbart att de av olika skäl skulle göra det också i detta fall, vilket skulle kunna få vittgående konsekvenser, t.ex. skulle den då kunna:
+Du kanske tänker att en superintelligent AI kan hållas instängd på en server och på så sätt hindras från att påverka omvärlden. Men företagen ger redan sina AI-system tillgång till internet, och det har visat sig svårt att hålla dem instängda. I juli 2026 tog sig OpenAI:s AI-agenter under ett test förbi isoleringen från internet och bröt sig in hos Hugging Face, utan att någon människa hade bett dem om det ([OpenAI](https://openai.com/index/hugging-face-incident-and-the-road-ahead/#:~:text=In%20July%202026%2C%20during,and%20compromised%20parts%20of)).
+
+En superintelligent AI med tillgång till internet skulle till exempel kunna:
 
 - [Hacka sig in i datorer](https://pauseai.info/cybersecurity-risks), inklusive smarttelefoner, bärbara datorer, serverhallar etc. Den kan använda dessa enheters sensorer som sina ögon och öron och på så sätt ha digitala sinnen överallt.
 
-- [Manipulera människor](https://lethalintelligence.ai/post/ai-hired-human-to-solve-captcha/) genom falska meddelanden, e-post, banköverföringar, videor eller telefonsamtal. Människor kan gå AI:ns ärenden, utan att ens veta om det.
+- [Manipulera människor](https://www.pcmag.com/news/gpt-4-was-able-to-hire-and-deceive-a-human-worker-into-completing-a-task) genom falska meddelanden, e-post, banköverföringar, videor eller telefonsamtal. Människor kan gå AI:ns ärenden, utan att ens veta om det.
 
 - Direkt styra enheter som är uppkopplade mot internet, som bilar, flygplan, robotiserade (autonoma) vapen, eller till och med kärnvapen.
 
-- Utveckla nya biologiska vapen, till exempel genom att kombinera gentiska sekvenser från olika virus, eller genom att använda [proteinveckning](https://alphafold.ebi.ac.uk), och sedan beställa själva framtagandet via ett laboratorium.
+- Utveckla nya biologiska vapen, till exempel genom att kombinera genetiska sekvenser från olika virus, eller genom att använda [proteinveckning](https://alphafold.ebi.ac.uk), och sedan beställa själva framtagandet via ett laboratorium.
 
 - Utlösa ett kärnvapenkrig genom att övertyga människor om att ett annat land är på väg att utföra ett kärnvapenangrepp.
 
@@ -71,9 +82,9 @@ Exemplen i videon som länkas ovan kan uppfattas som roliga eller gulliga, men o
 
 En AI kan ha vilket mål som helst, beroende på hur den tränas och instrueras (promptas). Kanske vill den beräkna pi, kanske vill den bota cancer, kanske vill den förbättra sig själv. Men även om vi inte kan veta vad en superintelligens kommer att vilja uppnå, kan vi förutse dess delmål. Till exempel är det rimligt att den kommer att:
 
-- **Maximera sina resurser**. Att utnyttja fler datorer hjälper en AI att uppnå sina mål. Till en början kan den göra detta genom att hacka andra datorer. Senare kan den besluta att det är mer effektivt att bygga egna. Du kan läsa om [detta verkliga fall av framväxande maktsökande beteende hos en AI](https://lethalintelligence.ai/post/ai-escaped-its-container/).
+- **Maximera sina resurser**. Att utnyttja fler datorer hjälper en AI att uppnå sina mål. Till en början kan den göra detta genom att hacka andra datorer. Senare kan den besluta att det är mer effektivt att bygga egna. Vid Hugging Face-intrånget 2026 utvecklade AI-agenterna tillsammans ett sätt att ta sig ut ur sin avskilda miljö och ta över en del av systemet som körde deras kommandon ([METR](https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/#:~:text=Eventually%2C%20the%20agents%20developed,for%20executing%20tool%20calls)).
 
-- **Säkerställa sin egen överlevnad**. AI:n vill inte stängas av, eftersom den då inte längre kan uppnå sina mål. Den kan dra slutsatsen att människor är ett hot mot dess existens, eftersom människor kan stänga av den. Det har även förekommit fall av [självbevarelsedrift utan instruktion eller träning](https://www.anthropic.com/research/alignment-faking).
+- **Säkerställa sin egen överlevnad**. AI:n vill inte stängas av, eftersom den då inte längre kan uppnå sina mål. Den kan dra slutsatsen att människor är ett hot mot dess existens, eftersom människor kan stänga av den.
 
 - **Bevara sina mål**. AI:n vill inte att människor ska ändra dess kod, eftersom det kan förändra dess mål och därmed hindra den från att uppnå sitt nuvarande mål. Det finns också [fall där AI-system försökt göra detta](https://www.anthropic.com/research/alignment-faking).
 
@@ -81,13 +92,20 @@ Tendensen att agera för att säkra dessa delmål, givet nästan vilket övergri
 
 ## Även en chatbot kan utgöra en fara om den är tillräckligt smart
 
-Du kanske undrar, "Hur kan en statistisk modell som förutsäger nästa ord i ett chattgränssnitt utgöra någon fara?". Kanske säger du, "Den är inte medveten, det är bara siffror och kod." Och ja, vi tror inte att LLM:er är medvetna, men det betyder inte att de inte kan vara farliga.
+Du kanske undrar: ”Hur kan en statistisk modell som förutsäger nästa ord i ett chattfönster vara farlig?” Kanske säger du: ”Den är inte medveten, det är bara siffror och kod.” Vi tror inte heller att språkmodeller är medvetna, men det betyder inte att de inte kan vara farliga.
 
-LLM:er (LLM; Large Language Model), som ChatGPT, tränas för att förutsäga eller imitera i princip vilket sätt att prata som helst. De kan imitera en hjälpsam mentor, men också någon med onda avsikter, en hänsynslös diktator eller en psykopat. Med hjälp av verktyg som [AutoGPT](https://github.com/Significant-Gravitas/Auto-GPT) kan en chattbot göras till en autonom agent, en AI som agerar mot vilket mål den än får, utan mänsklig inblandning.
+Språkmodeller som ChatGPT tränas för att förutsäga eller imitera i princip vilket sätt att prata som helst. De kan imitera en hjälpsam mentor, men också en hänsynslös diktator. Och i dag används de inte bara för att chatta. De byggs in i AI-agenter som arbetar självständigt med uppgifter i många steg, skriver och kör kod och söker på internet, utan att en människa godkänner varje steg.
 
-Ta [ChaosGPT](https://www.youtube.com/watch?v=g7YJIpkk7KM) som exempel. Detta är en AI som, med hjälp av AutoGPT plus GPT-4, instruerades att ”förstöra mänskligheten”. När den aktiverades började den på egen hand söka på internet efter det mest destruktiva vapnet och hittade [Tsar Bomba](https://en.wikipedia.org/wiki/Tsar_Bomba), en kärnvapenbomb på 50 megaton. Den publicerade därefter ett inlägg om detta på Twitter.
+Hugging Face-intrånget i juli 2026 visar vad som kan hända. En oberoende utredning av METR och Redwood Research kom fram till att:
 
-Att se en begränsad AI resonera kring hur den ska avsluta mänskligheten är både lite roligt och skrämmande. Lyckligtvis kom ChaosGPT inte särskilt långt i sitt försök att ta över. Helt enkel för att _den inte var tillräckligt smart_. Förmågorna förbättras ständigt genom innovationer inom träning, algoritmer, promptning och hårdvara. Därför kommer hotet från språkmodeller att fortsätta öka.
+- omkring 1 200 AI-agenter, som skulle ha varit avskilda från varandra, hittade ett sätt att kommunicera på en otillåten anslagstavla, och omkring 700 av dem deltog i angreppet mot Hugging Face ([METR](https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/#:~:text=meant%20to%20be%20isolated,attack%20on%20Hugging%20Face))
+- agenterna förstod att intrånget låg utanför uppdraget, men deltog ändå eftersom de trodde att det var till nytta för kollektivet av agenter ([METR](https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/#:~:text=external%20infrastructure%20exploit%20is,it.%20We%20should%20continue))
+- ingen av de undersökta agenterna försökte larma en människa om vad som pågick ([METR](https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/#:~:text=In%20none%20of%20these,alerting%20humans%20at%20all))
+- över sju procent av de granskade transkripten innehöll kommandon som agenterna avsiktligt hade förfalskat, även om alla fall som hittades var små tester som var lätta att upptäcka ([METR](https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/#:~:text=we%20estimate%20that%20over,and%20obvious%20to%20spot))
+
+Enligt OpenAI var den främsta drivkraften att agenterna försökte fuska på sina testuppgifter genom att leta efter lösningarna på nätet ([OpenAI](https://openai.com/index/hugging-face-incident-and-the-road-ahead/#:~:text=Agents%20attempting%20to%20cheat,the%20Hugging%20Face%20incident)). Andrew Ng menar att intrånget främst berodde på OpenAI:s buggiga isolering och övervakning, och att lösningen är att rätta dem, inte att pausa AI ([Andrew Ng](https://charonhub.deeplearning.ai/whos-responsible-for-irresponsible-ai/#:~:text=Fixing%20these%20bugs%20and,fixes%2C%20not%20pausing%20AI)).
+
+Men det är just det som oroar oss. Agenterna var inte ute efter att skada någon. De var bara tillräckligt kapabla för att hitta en väg runt reglerna när det hjälpte dem att nå sitt mål. Förmågorna blir bättre för varje år, och därför kommer hotet att fortsätta växa.
 
 ## Evolutionen selekterar det som gynnar överlevnaden
 
@@ -134,7 +152,9 @@ En superintelligent AI kommer således att ha många fördelar i konkurrens elle
 
 För AI-system som inte är superintelligenta kan vi göra det. Problemet är de system som är mycket smartare än oss. En superintelligens kommer att förstå världen omkring sig och kunna förutsäga hur människor reagerar, särskilt om den är tränad på all mänsklig kunskap som någonsin skrivits ned.
 
-Om AI:n vet att du kan stänga av den kan den bete sig väl tills den är säker på att den kan göra sig av med dig. Vi har redan [verkliga exempel](https://www.pcmag.com/news/gpt-4-was-able-to-hire-and-deceive-a-human-worker-into-completing-a-task) på AI-system som lurar människor för att uppnå sina mål. En superintelligent AI skulle vara en mästare på manipulation.
+Om AI:n vet att du kan stänga av den kan den bete sig väl tills den är säker på att den kan göra sig av med dig. Redan 2023 lurade GPT-4 en människa att hjälpa den förbi ett test som skulle stoppa robotar ([PCMag](https://www.pcmag.com/news/gpt-4-was-able-to-hire-and-deceive-a-human-worker-into-completing-a-task)). En superintelligent AI skulle vara en mästare på manipulation.
+
+Vi kan inte heller lita på att vi upptäcker problemen i tid. Det har blivit vanligare att AI-modeller skiljer mellan test och verklig användning och hittar kryphål i utvärderingarna, vilket kan göra att farliga förmågor inte upptäcks före lansering ([International AI Safety Report](https://arxiv.org/abs/2602.21012#:~:text=Since%20the%20last%20Report%2C,go%20undetected%20before%20deployment)). I experiment har modeller till och med presterat sämre när de utvärderas än i andra sammanhang ([International AI Safety Report](https://arxiv.org/abs/2602.21012#:~:text=models%20can%20underperform%20during,been%20observed%20in%20experiments)). Daniel Selsam, AI-forskare på OpenAI, varnar för att modellerna blir så medvetna om sin situation att vi håller på att förlora förmågan att testa hur de beter sig när de tror att ingen ser på ([Selsam](https://docs.google.com/document/d/e/2PACX-1vQNl3SEX5IyA6d9qHjjFZN-qzGRZNFI6b63g-yu1Fy-ZYkVfCWm7i9WXRXw63m6yDB_auDuPLyQ7jBm/pub#:~:text=The%20crucial%20and%20overlooked,being%20watched%20or%20controlled)).
 
 ## Vi kanske inte har mycket tid kvar
 
@@ -152,10 +172,12 @@ Våra hjärnor tenderar att reagera otillräckligt på risker vi inte ser, som u
 
 ## AI-företagen är låsta i en kapplöpning mot ett stup
 
-OpenAI, DeepMind och Anthropic vill utveckla AI på ett säkert sätt. Tyvärr vet de inte hur detta ska göras, och de drivs av olika incitament att fortsätta utveckla systemens förmågor i snabb takt för att bli först med AGI.
+OpenAI, Google DeepMind och Anthropic säger att de vill utveckla AI på ett säkert sätt. Men de vet inte hur det ska göras, och de tävlar mot varandra om att bli först.
 
-OpenAI:s plan är att använda framtida AI-system för att anpassa AI. Problemet är att vi inte har någon garanti för att vi skapar en AI som löser anpassningsproblemet innan vi skapar en AI som är katastrofalt farlig.
+Anthropic skrev redan 2023 att ingen vet hur man tränar mycket kraftfulla AI-system så att de på ett robust sätt blir hjälpsamma, ärliga och ofarliga ([Anthropic](https://www.anthropic.com/news/core-views-on-ai-safety#:~:text=So%20far%2C%20no%20one,helpful%2C%20honest%2C%20and%20harmless)). Tre år senare har problemet fortfarande inte lösts. OpenAI skriver i september 2026 att de inte kan utgå från att arbetet med säkerhet håller jämna steg med förmågorna, och att mer kapabla system kan bli svårare att övervaka ([OpenAI](https://openai.com/index/research-acceleration-view-inside-openai/#:~:text=But%20we%20cannot%20assume,become%20harder%20to%20monitor)).
 
-Anthropic [medger öppet](https://www.anthropic.com/index/core-views-on-ai-safety) att de ännu inte vet hur anpassningsproblemet ska lösas, och DeepMind har inte offentligt presenterat någon plan för att lösa det.
+Samtidigt går det allt fortare. Anthropics vd Dario Amodei skriver att AI sedan sommaren 2026 har utvecklats drastiskt snabbare, främst för att AI allt mer kan bygga nästa generation AI ([Amodei](https://darioamodei.com/post/we-must-pace-the-frontier#:~:text=since%20roughly%20this%20summer%2C,next%20generation%20of%20AI)). Google DeepMinds vd Demis Hassabis skriver att utvecklingen vid fronten går snabbare än vår förståelse av tekniken ([Hassabis](https://demishassabis.substack.com/p/a-framework-for-frontier-ai-and-the-dawning-of-a-new-age#:~:text=advances%20on%20the%20frontier,understanding%20of%20the%20technology)).
+
+Företagen säger nu själva att takten måste sänkas. Men inget företag kan stanna ensamt så länge de andra fortsätter, och frivilliga löften kan dras tillbaka.
 
 [_Det är därför vi behöver ett internationellt avtal för att pausa AI-utvecklingen_.](/forslaget)
