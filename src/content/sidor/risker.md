@@ -1,6 +1,8 @@
 ---
 title: Risker med artificiell intelligens
 description: AI hotar vår demokrati, vår teknologi och vår art.
+fallbara: h3
+sidokolumn: Faror som växer snabbt
 ---
 AI är en kraftfull teknik som i allt större utsträckning förändrar vår värld.
 Den har en fantastisk potential, men också allvarliga risker, inklusive [existentiell katastrof](/existentiell-risk).
@@ -8,6 +10,19 @@ Den har en fantastisk potential, men också allvarliga risker, inklusive [existe
 Den internationella AI-säkerhetsrapporten 2026 är en bra genomgång av riskerna. Den skrevs med vägledning från över 100 oberoende experter, bland dem personer nominerade av fler än 30 länder och av EU, OECD och FN ([International AI Safety Report](https://arxiv.org/abs/2602.21012#:~:text=It%20was%20written%20with,EU%2C%20OECD%2C%20and%20UN)). Många av exemplen nedan kommer därifrån.
 
 ## Faror vi redan ser
+
+### Cyberangrepp
+
+Nästan allt vi gör i dag är beroende av datorer, från att betala i affären till att prata med våra närmaste.
+
+AI-system kan analysera och skriva programvara, och därmed hitta och utnyttja säkerhetshål.
+I den amerikanska tävlingen DARPA AI Cyber Challenge hittade ett AI-system på egen hand 77 procent av de säkerhetshål som arrangörerna hade lagt in i verklig programvara ([International AI Safety Report](https://arxiv.org/abs/2602.21012#:~:text=One%20AI%20system%20autonomously,as%20other%2C%20unintentional%20vulnerabilities)).
+Kriminella grupper och statskopplade angripare använder redan AI i sina operationer ([International AI Safety Report](https://arxiv.org/abs/2602.21012#:~:text=Criminal%20groups%20and%20state%2Dassociated,AI%20in%20their%20operations)). En rysk aktör använde AI-agenter som på egen hand byggde om skadlig kod tills säkerhetsprogram inte längre upptäckte den ([Anthropic](https://www.anthropic.com/threat-intelligence-report-september-2026#:~:text=agents%20would%20then%20set,evade%20the%20existing%20detections)).
+
+Anthropics vd Dario Amodei oroar sig för att en svärm av AI-agenter inom 6–12 månader skulle kunna ta över hela internet med ett bestående botnät ([Amodei](https://darioamodei.com/post/we-must-pace-the-frontier#:~:text=it%E2%80%99s%20my%20worry%20that,internet%20with%20a%20persistent)).
+AI kan också hjälpa försvaret, och det är oklart vilken sida som får mest nytta av den. Regeringen gav i juli 2026 Försvarets radioanstalt (FRA) i uppdrag att samordna arbetet mot AI-drivna cyberhot ([Regeringen](https://www.regeringen.se/regeringens-politik/sveriges-ai-strategi/#:~:text=vara%20nationell%20kontaktpunkt%20f%C3%B6r,f%C3%B6r%20artificiell%20intelligens%20%28AI)).
+
+[Läs mer om AI och cybersäkerhetsrisker](https://pauseai.info/cybersecurity-risks) (på engelska).
 
 ### Falska nyheter, påverkan och hot mot demokratin
 
@@ -103,19 +118,6 @@ Ett företags spärrar räcker inte. Anthropic rapporterade 2026 att en plattfor
 AI kan också användas för att designa nya farliga ämnen. En modell kallad MegaSyn [föreslog 40 000 giftiga molekyler, bland dem kända kemiska stridsmedel, på mindre än sex timmar](https://www.nature.com/articles/s42256-022-00465-9).
 
 Den grundläggande faran är att AI kraftigt sänker kostnaden för att ta fram och använda biologiska vapen.
-
-### Cyberangrepp
-
-Nästan allt vi gör i dag är beroende av datorer, från att betala i affären till att prata med våra närmaste.
-
-AI-system kan analysera och skriva programvara, och därmed hitta och utnyttja säkerhetshål.
-I den amerikanska tävlingen DARPA AI Cyber Challenge hittade ett AI-system på egen hand 77 procent av de säkerhetshål som arrangörerna hade lagt in i verklig programvara ([International AI Safety Report](https://arxiv.org/abs/2602.21012#:~:text=One%20AI%20system%20autonomously,as%20other%2C%20unintentional%20vulnerabilities)).
-Kriminella grupper och statskopplade angripare använder redan AI i sina operationer ([International AI Safety Report](https://arxiv.org/abs/2602.21012#:~:text=Criminal%20groups%20and%20state%2Dassociated,AI%20in%20their%20operations)). En rysk aktör använde AI-agenter som på egen hand byggde om skadlig kod tills säkerhetsprogram inte längre upptäckte den ([Anthropic](https://www.anthropic.com/threat-intelligence-report-september-2026#:~:text=agents%20would%20then%20set,evade%20the%20existing%20detections)).
-
-Anthropics vd Dario Amodei oroar sig för att en svärm av AI-agenter inom 6–12 månader skulle kunna ta över hela internet med ett bestående botnät ([Amodei](https://darioamodei.com/post/we-must-pace-the-frontier#:~:text=it%E2%80%99s%20my%20worry%20that,internet%20with%20a%20persistent)).
-AI kan också hjälpa försvaret, och det är oklart vilken sida som får mest nytta av den. Regeringen gav i juli 2026 Försvarets radioanstalt (FRA) i uppdrag att samordna arbetet mot AI-drivna cyberhot ([Regeringen](https://www.regeringen.se/regeringens-politik/sveriges-ai-strategi/#:~:text=vara%20nationell%20kontaktpunkt%20f%C3%B6r,f%C3%B6r%20artificiell%20intelligens%20%28AI)).
-
-[Läs mer om AI och cybersäkerhetsrisker](https://pauseai.info/cybersecurity-risks) (på engelska).
 
 ### Förlorad kontroll och existentiell risk
 

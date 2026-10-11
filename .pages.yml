@@ -233,6 +233,16 @@ content:
         label: Knapp, länk
         description: Vart knappen leder. En adress på sajten (till exempel /engagera-dig) eller en hel adress med https://.
         type: string
+      - name: fallbara
+        label: Fällbara rubriker
+        description: Valfri. Rubriker på den här nivån visas hopfällda, och läsaren klickar för att läsa texten under. Lämna tomt för att visa all text.
+        type: select
+        options:
+          values: [h2, h3]
+      - name: sidokolumn
+        label: Sidokolumn
+        description: Valfri. Skriv rubriken (nivå 2) på ett avsnitt som ska visas i en egen kolumn till höger. Avsnitten före det hamnar i vänster kolumn. Punkter i sidokolumnen som börjar med fetstil visas hopfällda.
+        type: string
       - name: body
         label: Text
         description: Sidans innehåll. Använd knapparna eller skriv / för rubriker, listor, länkar och bilder.

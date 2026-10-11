@@ -17,9 +17,19 @@ const knappHref = knapp_lank?.startsWith('/') ? url(knapp_lank) : knapp_lank
 ---
 
 <Base title={sida.data.title} description={sida.data.description}>
-	<article class="container prose">
+	<article class:list={[sida.data.sidokolumn ? 'container-wide' : 'container', 'prose']}>
 		<h1>{sida.data.title}</h1>
 		{knapp_text && knappHref && <p><a class="button" href={knappHref}>{knapp_text}</a></p>}
 		<Content />
 	</article>
+	{
+		sida.data.fallbara && (
+			<script is:inline>
+				// Öppna det hopfällda avsnittet som en länk med #rubrik pekar på.
+				const open = () => document.getElementById(decodeURIComponent(location.hash.slice(1)))?.closest('details')?.setAttribute('open', '')
+				open()
+				addEventListener('hashchange', open)
+			</script>
+		)
+	}
 </Base>
