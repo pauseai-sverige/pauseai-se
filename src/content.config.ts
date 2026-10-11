@@ -36,7 +36,8 @@ const sidor = defineCollection({
 		knapp_lank: z.string().optional(),
 		// Läses av src/upplagg.mjs när Markdown byggs.
 		fallbara: z.enum(['h2', 'h3']).optional(),
-		sidokolumn: z.string().optional()
+		sidokolumn: z.string().optional(),
+		oppen: z.string().optional()
 	})
 })
 

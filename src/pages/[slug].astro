@@ -25,10 +25,43 @@ const knappHref = knapp_lank?.startsWith('/') ? url(knapp_lank) : knapp_lank
 	{
 		sida.data.fallbara && (
 			<script is:inline>
-				// Öppna det hopfällda avsnittet som en länk med #rubrik pekar på.
-				const open = () => document.getElementById(decodeURIComponent(location.hash.slice(1)))?.closest('details')?.setAttribute('open', '')
-				open()
-				addEventListener('hashchange', open)
+				{
+					const all = () => [...document.querySelectorAll('.prose details')]
+
+					// Öppna det hopfällda avsnittet som en länk med #rubrik pekar på.
+					const openHash = () =>
+						document.getElementById(decodeURIComponent(location.hash.slice(1)))?.closest('details')?.setAttribute('open', '')
+					openHash()
+					addEventListener('hashchange', openHash)
+
+					// Knapp som fäller ut eller ihop allt, före första fällbara avsnittet.
+					const first = document.querySelector('.prose .kolumner, .prose .fallbar')
+					if (first) {
+						const button = document.createElement('button')
+						button.type = 'button'
+						button.className = 'button secondary visa-allt'
+						const update = () => {
+							const allOpen = all().every((d) => d.open)
+							button.textContent = allOpen ? 'Fäll ihop allt' : 'Visa allt'
+							button.setAttribute('aria-pressed', String(allOpen))
+						}
+						button.addEventListener('click', () => {
+							const open = !all().every((d) => d.open)
+							all().forEach((d) => (d.open = open))
+						})
+						document.addEventListener('toggle', update, true)
+						update()
+						first.before(button)
+					}
+
+					// Skriv ut allt, och fäll sedan ihop det som var hopfällt.
+					let closed = []
+					addEventListener('beforeprint', () => {
+						closed = all().filter((d) => !d.open)
+						closed.forEach((d) => (d.open = true))
+					})
+					addEventListener('afterprint', () => closed.forEach((d) => (d.open = false)))
+				}
 			</script>
 		)
 	}

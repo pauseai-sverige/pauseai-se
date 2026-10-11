@@ -6,6 +6,7 @@
 //
 // - fallbara: 'h2' eller 'h3'. Varje rubrik på den nivån blir en <details> där
 //   bara rubriken syns tills läsaren klickar på den.
+// - oppen: rubriken på ett fällbart avsnitt som ska vara utfällt från början.
 // - sidokolumn: rubriken på ett avsnitt på nivå 2. Text före första h2 visas
 //   överst, avsnitten från första h2 fram till sidokolumnen hamnar i vänster
 //   kolumn och sidokolumnen i höger. Det som kommer efter visas under, utan
@@ -27,7 +28,7 @@ const text = (node) =>
 const el = (tagName, className, children) => ({ type: 'element', tagName, properties: className.length ? { className } : {}, children })
 
 /** Gör varje rubrik på nivå `level` till en <details> med texten fram till nästa rubrik på samma eller högre nivå. */
-function fold(/** @type {Node[]} */ nodes, /** @type {number} */ level) {
+function fold(/** @type {Node[]} */ nodes, /** @type {number} */ level, /** @type {string} */ open) {
 	/** @type {Node[]} */
 	const out = []
 	for (let i = 0; i < nodes.length; i++) {
@@ -37,7 +38,9 @@ function fold(/** @type {Node[]} */ nodes, /** @type {number} */ level) {
 		}
 		let end = i + 1
 		while (end < nodes.length && !((headingLevel(nodes[end]) ?? 99) <= level)) end++
-		out.push(el('details', ['fallbar'], [el('summary', [], [nodes[i]]), el('div', [], nodes.slice(i + 1, end))]))
+		const details = el('details', ['fallbar'], [el('summary', [], [nodes[i]]), el('div', [], nodes.slice(i + 1, end))])
+		if (open && text(nodes[i]).trim().toLowerCase() === open) details.properties.open = true
+		out.push(details)
 		i = end - 1
 	}
 	return out
@@ -73,10 +76,10 @@ const foldListItems = (node) => {
 
 /** @type {import('satteri').HastPluginEntry} */
 export const upplagg = (factory) => {
-	const { fallbara, sidokolumn } = /** @type {any} */ (factory.data).astro?.frontmatter ?? {}
+	const { fallbara, sidokolumn, oppen } = /** @type {any} */ (factory.data).astro?.frontmatter ?? {}
 	if (!fallbara && !sidokolumn) return null
 	const level = fallbara ? Number(String(fallbara).slice(1)) : 0
-	const maybeFold = (/** @type {Node[]} */ nodes) => (level ? fold(nodes, level) : nodes)
+	const maybeFold = (/** @type {Node[]} */ nodes) => (level ? fold(nodes, level, String(oppen ?? '').trim().toLowerCase()) : nodes)
 
 	return {
 		name: 'upplagg',

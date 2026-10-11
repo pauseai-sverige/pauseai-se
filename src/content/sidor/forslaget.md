@@ -3,6 +3,7 @@ title: Vårt förslag
 description: En tillfällig, global paus i träningen av de mest kraftfulla generella AI-systemen, tills vi vet hur de kan byggas säkert och hållas under demokratisk kontroll.
 fallbara: h2
 sidokolumn: Vad kan Sverige göra?
+oppen: Varför nu?
 ---
 
 **Pausa träningen av de mest kraftfulla generella AI-systemen**, tills vi vet hur de kan byggas säkert och hållas under demokratisk kontroll.
