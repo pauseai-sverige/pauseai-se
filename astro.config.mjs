@@ -1,6 +1,7 @@
 // @ts-check
 import { defineConfig } from 'astro/config'
 import { satteri } from '@astrojs/markdown-satteri'
+import { upplagg } from './src/upplagg.mjs'
 
 // Förhandsvisningen ligger under /pauseai-se/ på GitHub Pages. När pauseai.se
 // pekar hit: sätt site till 'https://pauseai.se' och ta bort base.
@@ -25,6 +26,6 @@ export default defineConfig({
 	base,
 	trailingSlash: 'ignore',
 	markdown: {
-		processor: satteri({ mdastPlugins: [baseLinks] })
+		processor: satteri({ mdastPlugins: [baseLinks], hastPlugins: [upplagg] })
 	}
 })

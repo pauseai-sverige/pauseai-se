@@ -44,6 +44,7 @@ npm run preview  # visar det byggda resultatet
 | `.github/workflows/` | Automatiken, se tabellen i README. |
 | `.github/ISSUE_TEMPLATE/` | Formuläret "Föreslå ett evenemang". |
 | `astro.config.mjs` | Sajtens adress (`site`, `base`) och tillägget som lägger `base` på länkar i Markdown. |
+| `src/upplagg.mjs` | Fällbara rubriker och sidokolumn på sidor, styrt av fälten `fallbara`, `sidokolumn` och `oppen`. Används på Förslaget och Risker. |
 
 ## Fallgropar
 
