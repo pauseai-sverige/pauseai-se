@@ -73,7 +73,7 @@ Aktiviteterna är strukturerade utifrån den tid de tar att utföra.
 
 ### Om du kan skriva webbmaterial
 
-- [Förbättra denna webbplats](https://github.com/kanintespela/pauseai-se): skriv ett ärende eller hör av dig i WhatsApp-gruppen.
+- [Förbättra denna webbplats](https://github.com/pauseai-sverige/pauseai-se): skriv ett ärende eller hör av dig i WhatsApp-gruppen.
 
 ### Om du arbetar inom AI
 

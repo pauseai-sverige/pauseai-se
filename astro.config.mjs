@@ -4,7 +4,7 @@ import { satteri } from '@astrojs/markdown-satteri'
 
 // Förhandsvisningen ligger under /pauseai-se/ på GitHub Pages. När pauseai.se
 // pekar hit: sätt site till 'https://pauseai.se' och ta bort base.
-const site = 'https://kanintespela.github.io'
+const site = 'https://pauseai-sverige.github.io'
 const base = '/pauseai-se'
 
 /** Lägger till base framför interna länkar och bilder i Markdown (t.ex. /faq). */

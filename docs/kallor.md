@@ -14,7 +14,7 @@ Det här gäller för dig som skriver eller ändrar texter om AI-risker, försla
 
 ## Belagt
 
-[Belagt](https://kanintespela.github.io/belagt/) är ett öppet arkiv med påståenden om AI-utvecklingen, på svenska. Varje post har:
+[Belagt](https://pauseai-sverige.github.io/belagt/) är ett öppet arkiv med påståenden om AI-utvecklingen, på svenska. Varje post har:
 
 - ett påstående
 - vem som står bakom det och när
@@ -22,22 +22,22 @@ Det här gäller för dig som skriver eller ändrar texter om AI-risker, försla
 - förbehåll
 - ett datum då posten bör ses över (*bäst före*)
 
-Arkivet är neutralt och innehåller också motröster. Det drivs i ett eget repo, [kanintespela/belagt](https://github.com/kanintespela/belagt).
+Arkivet är neutralt och innehåller också motröster. Det drivs i ett eget repo, [pauseai-sverige/belagt](https://github.com/pauseai-sverige/belagt).
 
 Sajten länkar **inte** till Belagt, utan direkt till primärkällorna. Belagt är verktyget vi hämtar och kontrollerar källorna med.
 
 ### Så använder du en post
 
-1. Sök i [Belagt](https://kanintespela.github.io/belagt/) på ett namn, ett ämne eller en siffra.
+1. Sök i [Belagt](https://pauseai-sverige.github.io/belagt/) på ett namn, ett ämne eller en siffra.
 2. Läs påståendet och förbehållen. Skriv inte mer i texten än vad posten belägger.
-3. Klicka på källänken i posten. Den öppnar primärkällan med citatet markerat. Kopiera adressen därifrån, alltså posten `citatlänk` i [belagt.json](https://kanintespela.github.io/belagt/belagt.json), och använd den som länk i texten.
+3. Klicka på källänken i posten. Den öppnar primärkällan med citatet markerat. Kopiera adressen därifrån, alltså posten `citatlänk` i [belagt.json](https://pauseai-sverige.github.io/belagt/belagt.json), och använd den som länk i texten.
 4. I `.astro`-filer, till exempel startsidan, skriver du dessutom en kommentar med postens id, `// Belagt SVR-04`. I Markdown går det inte, eftersom Pages CMS tar bort kommentarer. Där räcker det att länken är postens `citatlänk`.
 
 Länken eller kommentaren gör att arbetsflödet *Kontrollera källor* hittar posten.
 
 ### Saknas påståendet i Belagt?
 
-Föreslå det som ett [ärende i Belagt](https://github.com/kanintespela/belagt/issues/new/choose). Du kan också använda en källa direkt på sajten om den följer reglerna ovan, men den kontrolleras då inte automatiskt.
+Föreslå det som ett [ärende i Belagt](https://github.com/pauseai-sverige/belagt/issues/new/choose). Du kan också använda en källa direkt på sajten om den följer reglerna ovan, men den kontrolleras då inte automatiskt.
 
 ### När källkontrollen öppnar ett ärende
 

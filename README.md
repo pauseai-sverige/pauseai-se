@@ -2,9 +2,10 @@
 
 Källkoden och texterna till PauseAI Sveriges hemsida. Sajten byggs med [Astro](https://astro.build), redigeras i [Pages CMS](https://app.pagescms.org) och ligger gratis på GitHub Pages.
 
-- **Sajten:** [https://kanintespela.github.io/pauseai-se/](https://pauseai-sverige.github.io/pauseai-se/) (blir pauseai.se när domänen kopplas om)
+
+- **Sajten:** https://pauseai-sverige.github.io/pauseai-se/ (blir pauseai.se när domänen kopplas om)
 - **Kontakt:** [sweden@pauseai.info](mailto:sweden@pauseai.info), eller skriv i WhatsApp-gruppen
-- **Ansvar:** webbgruppen i PauseAI Sverige. Repot ägs i dag av Christian ([@kanintespela](https://github.com/kanintespela)) och ska flyttas till en organisation på GitHub.
+- **Ansvar:** webbgruppen i PauseAI Sverige. Repot ligger i organisationen [pauseai-sverige](https://github.com/pauseai-sverige) på GitHub.
 
 Vilken dokumentation du behöver beror på vad du ska göra:
 
@@ -22,14 +23,14 @@ Du behöver inte kunna koda, men du behöver ett gratis konto på [github.com](h
 
 1. Be någon i webbgruppen att lägga till dig som medarbetare i repot.
 2. Gå till [app.pagescms.org](https://app.pagescms.org) och logga in med GitHub.
-3. Välj **kanintespela/pauseai-se**.
+3. Välj **pauseai-sverige/pauseai-se**.
 4. Välj **Blogg**, **Evenemang**, **Det vi har gjort**, **Berättelser** eller **Sidor** i menyn och klicka på **Add an entry** för att skapa något nytt, eller på en befintlig post för att ändra den.
 5. Fyll i fälten. Varje fält har en hjälptext.
 6. Klicka **Save**. Ändringen syns på sajten efter ett par minuter.
 
 Bra att veta:
 
-- **Sidan kan visa en gammal version i upp till 10 minuter.** Ladda om med Ctrl+Shift+R (Cmd+Shift+R på Mac). Under fliken [Actions](https://github.com/kanintespela/pauseai-se/actions) ser du när publiceringen är klar.
+- **Sidan kan visa en gammal version i upp till 10 minuter.** Ladda om med Ctrl+Shift+R (Cmd+Shift+R på Mac). Under fliken [Actions](https://github.com/pauseai-sverige/pauseai-se/actions) ser du när publiceringen är klar.
 - **Använd rubriknivå 2 och 3** i texten. Sidans titel är redan rubrik 1.
 - **Skriv inte HTML i textfältet.** Redigeraren tar bort det när du sparar. Behöver en sida en knapp finns fälten "Knapp, text" och "Knapp, länk".
 - **Bilder** sparas i `public/bilder/`. Använd bara bilder vi har rätt att använda, och fråga alltid personer som syns.
@@ -41,7 +42,7 @@ Bra att veta:
 
 ### Utan Pages CMS
 
-Den som har ett GitHub-konto men inte är medarbetare kan [föreslå ett evenemang i ett formulär](https://github.com/kanintespela/pauseai-se/issues/new?template=evenemang.yml). Förslaget blir en PR som någon i webbgruppen godkänner.
+Den som har ett GitHub-konto men inte är medarbetare kan [föreslå ett evenemang i ett formulär](https://github.com/pauseai-sverige/pauseai-se/issues/new?template=evenemang.yml). Förslaget blir en PR som någon i webbgruppen godkänner.
 
 Har du inget GitHub-konto? Skicka evenemanget i WhatsApp-gruppen eller till [sweden@pauseai.info](mailto:sweden@pauseai.info), så lägger någon upp det.
 
@@ -64,7 +65,7 @@ Vill du få ärendena som mejl? Klicka **Watch → Custom** uppe till höger i r
 
 ## Ge feedback
 
-Skriv i WhatsApp-gruppen eller [skapa ett ärende](https://github.com/kanintespela/pauseai-se/issues/new) här på GitHub.
+Skriv i WhatsApp-gruppen eller [skapa ett ärende](https://github.com/pauseai-sverige/pauseai-se/issues/new) här på GitHub.
 
 ## Licens
 
