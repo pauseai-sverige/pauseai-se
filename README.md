@@ -2,7 +2,7 @@
 
 Källkoden och texterna till PauseAI Sveriges hemsida. Sajten byggs med [Astro](https://astro.build), redigeras i [Pages CMS](https://app.pagescms.org) och ligger gratis på GitHub Pages.
 
-- **Sajten:** https://kanintespela.github.io/pauseai-se/ (blir pauseai.se när domänen kopplas om)
+- **Sajten:** [https://kanintespela.github.io/pauseai-se/](https://pauseai-sverige.github.io/pauseai-se/) (blir pauseai.se när domänen kopplas om)
 - **Kontakt:** [sweden@pauseai.info](mailto:sweden@pauseai.info), eller skriv i WhatsApp-gruppen
 - **Ansvar:** webbgruppen i PauseAI Sverige. Repot ägs i dag av Christian ([@kanintespela](https://github.com/kanintespela)) och ska flyttas till en organisation på GitHub.
 
