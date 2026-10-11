@@ -8,7 +8,7 @@
 import fs from 'node:fs'
 import { addDays, stockholmDay, walk } from './lib.mjs'
 
-const response = await fetch('https://kanintespela.github.io/belagt/belagt.json')
+const response = await fetch('https://pauseai-sverige.github.io/belagt/belagt.json')
 if (!response.ok) throw new Error(`Kunde inte hämta Belagt: ${response.status}`)
 const { påståenden } = await response.json()
 
@@ -37,7 +37,7 @@ const problems = [...used.values()]
 console.log(`Sajten använder ${used.size} påståenden från Belagt, ${problems.length} behöver ses över.`)
 if (problems.length) {
 	const rows = problems.map(
-		(p) => `| [${p.id}](https://kanintespela.github.io/belagt/#${p.id}) | ${p.why} | \`${p.file}\` | ${p.påstående.replace(/\|/g, '/')} |`
+		(p) => `| [${p.id}](https://pauseai-sverige.github.io/belagt/#${p.id}) | ${p.why} | \`${p.file}\` | ${p.påstående.replace(/\|/g, '/')} |`
 	)
 	fs.writeFileSync(
 		'kallor.md',
