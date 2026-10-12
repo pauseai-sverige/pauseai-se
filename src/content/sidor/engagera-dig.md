@@ -1,96 +1,87 @@
 ---
 title: Vad kan jag göra?
-description: Sätt att hjälpa till att pausa utvecklingen av AGI.
+description: Sätt att hjälpa till att pausa utvecklingen av de mest kraftfulla AI-systemen.
 ---
 
-PauseAI arbetar för en internationell paus i utvecklingen av de mest avancerade AI-systemen tills vi har tillräckliga säkerhetsgarantier. Nedan beskrivs hur du kan bidra.
+Det är lätt att tro att någon annan har läget under kontroll. Men just nu finns det ingen som ser till att det här går bra. Därför behöver vanliga människor engagera sig, och det du gör spelar större roll än du tror.
 
-Aktiviteterna är strukturerade utifrån den tid de tar att utföra.
+Här är sätt att hjälpa till, efter hur mycket tid du har.
 
-**Dina handlingar spelar större roll än du tror.**
+## 5–15 minuter
 
-## 5-15 minuter
+- **Skriv under** PauseAI:s [upprop](https://pauseai.info/statement) och andra upprop och namninsamlingar:
+  - [Ta riskerna med AI på allvar!](https://www.mittskifte.org/petitions/ta-riskerna-med-ai-pa-allvar) (på svenska)
+  - [Förbjud superintelligens](https://chng.it/Djjfj2Gmpk)
+  - [Statement on Superintelligence](https://superintelligence-statement.org/)
+  - [Internationellt AI-fördrag](https://aitreaty.org)
+  - [Kräv ansvarsfull AI](https://www.change.org/p/artificial-intelligence-time-is-running-out-for-responsible-ai-development-91f0a02c-130a-46e1-9e55-70d6b274f4df)
+- **Mejla en politiker** med vår färdiga [kampanj i Activoice](https://beta.app.activoice.org/campaigns/uppmana-vara-politker-att-ta-ai-riskerna-pa-allvar). Ett personligt mejl väger tyngre än man tror.
+- **Följ PauseAI** på [Discord](https://discord.gg/2XXWXvErfA), [X](https://x.com/PauseAI), [Facebook](https://www.facebook.com/PauseAI), [LinkedIn](https://www.linkedin.com/company/pauseai/) och [TikTok](https://www.tiktok.com/@pauseai). Lägg gärna till PauseAI under ideellt engagemang på LinkedIn.
+- **Få en liten uppgift i veckan** via [Microcommit](https://microcommit.io/onboarding?org=135fcd8d-8116-44af-b885-14df992f9a8c). Varje uppgift tar 5–10 minuter.
+- **[Donera](/donera)** eller köp något i PauseAI:s [butik](https://pauseai-shop.fourthwall.com/).
 
-- **Följ** våra sociala mediekanaler och håll dig uppdaterad:
-  - [Discord](https://discord.gg/2XXWXvErfA)
-  - [X (Twitter)](https://x.com/PauseAI)
-  - [Facebook](https://www.facebook.com/PauseAI)
-  - [LinkedIn](https://www.linkedin.com/company/pauseai/)
-    - Att lägga till "PauseAI" på ditt CV och sätta på "Notifiera nätverk" är ett enkelt sätt att låta folk veta om dina ansträngningar.
-  - [**TikTok**](https://www.tiktok.com/@pauseai)
-- **Skriv under namninsamlingar**:
-  - [**Ta riskerna med ai på allvar!**](https://www.mittskifte.org/petitions/ta-riskerna-med-ai-pa-allvar?just_launched=true)
-  - [**Statement on Superintelligence**](https://superintelligence-statement.org/)
-  - [**Internationellt AI-fördrag**](https://aitreaty.org)
-  - [**Förbjud superintelligens**](https://chng.it/Djjfj2Gmpk)
-  - [**Kräv ansvarsfull AI**](https://www.change.org/p/artificial-intelligence-time-is-running-out-for-responsible-ai-development-91f0a02c-130a-46e1-9e55-70d6b274f4df)
-  - [**Skicka ett e-postmeddelande till en politiker**](https://beta.app.activoice.org/campaigns/uppmana-vara-politker-att-ta-ai-riskerna-pa-allvar): e-postmeddelanden är kraftfullare än man kan tro.
-  - [**Registrera dig på Microcommit**](https://microcommit.io/): Via Microcommit får du korta, konkreta uppgifter varje vecka för att minska katastrofala AI-risker (5-10 minuter per uppgift).
-  - **Dela** om AI-risker på sociala medier. Denna webbplats kan vara en bra start.
-  - [**Donera**](/donera) till PauseAI eller köp lite merchandise i vår [butik](https://pauseai-shop.fourthwall.com/).
+## En timme
 
-## 30-60 minuter
+- **[Gå med i PauseAI Sverige](/engagera-dig)** genom formuläret ovan, så hör vi av oss.
+- **Prata med någon** i din närhet om AI-risker: en vän, en kollega eller någon i familjen. Vår [FAQ](/faq) har svar på de vanligaste invändningarna.
+- **Dela** något om AI-risker i dina kanaler. Den här sajten kan vara en bra start.
+- **Läs på** om [riskerna](/risker) och [vårt förslag](/forslaget), eller om du läser engelska, PauseAI:s [kunskapsbank](https://pauseai.info/learn).
 
-- **[Gå med i PauseAI](/engagera-dig)**
-- **Gå med i vår [Discord-server](https://discord.gg/2XXWXvErfA)**, där vår gemenskap är mest aktiv. Vi har en **#projects**-kanal där människor arbetar med kampanjer, videor, bilder, appar och mer.
-- **[Lär dig mer](https://pauseai.info/learn)** om AI-säkerhet och de risker vi står inför.
-  - Kortare [sammanfattning](https://herestosurvivingai.substack.com/p/i-thought-ai-extinction-was-sci-fi) om hur och varför AI kan utrota mänskligheten.
+## Några timmar eller mer
 
-## 1+ timmar
+- **Kom på ett [evenemang](/evenemang)** eller en [protest](/protester), eller hjälp till att ordna en. PauseAI har en guide för att [organisera en protest](https://pauseai.info/organizing-a-protest) (på engelska), och vi hjälper gärna till.
+- **Dela ut flygblad.** Läs PauseAI:s [tips om flygblad](https://pauseai.info/flyering) (på engelska) och hör av dig, så får du material på svenska.
+- **Skriv en debattartikel** eller ett [blogginlägg hos oss](/blogg#skriv).
+- **Ring eller träffa en riksdagsledamot** eller en kommun- eller regionpolitiker. Ha några punkter framför dig så att du håller dig till ämnet. PauseAI:s [lobbytips](https://pauseai.info/lobby-tips) (på engelska) är en bra start.
+- **Gå med i ett av PauseAI:s internationella [team](https://pauseai.info/join)** och arbeta med volontärer från andra länder.
 
-- [**Protestera**](/protester): gå med i [en av protesterna](/protester) eller [organisera en själv](https://pauseai.info/organizing-a-protest).
-- [**Lobbying**](https://pauseai.info/lobby-tips): övertyga din regering att arbeta för en paus och förbereda sig för [toppmötet](https://pauseai.info/summit).
-- **Gå med i ett av våra [team](https://pauseai.info/join)** och samarbeta med andra motiverade volontärer.
-- **[Träffa](https://pauseai.info/communities)** andra människor i en PauseAI-gemenskap nära dig. Om det inte finns någon gemenskap nära dig, överväg att starta en.
-- **Prata** med vänner, bekanta, arbetskollegor om detta. Svara på deras frågor och få dem att agera.
-- [**Flygblad**](https://pauseai.info/flyering): skriv ut, dela och sätt upp flygblad.
-  - Att ha några tryckta ensidiga flygblad till hands, eller lätt tillgängliga att visa och dela från din telefon, kan vara en snabb och användbar resurs för vanliga frågor, samtalspunkter, expertcitat och åsikter, online-resurser, etc.
-- **Skapa** [artiklar](https://pauseai.info/learn#articles), [videor](https://pauseai.info/learn#videos) eller [memer](https://twitter.com/AISafetyMemes). Samarbeta med andra på [Discord-servern](https://discord.gg/2XXWXvErfA) (i #projects-kanalen).
-- **Överväg en karriär inom AI-Säkerhet**
-  - [Karriärstöd och coachning för effektiv altruism](https://www.effektivaltruism.org/karriarstod-och-coachning/)
-  - [Research-backed guide to a fulfilling career that does good - 80,000 Hours](https://80000hours.org/career-guide/)
-  - Kontakta oss gärna så berättar vi mer.
+## Om du …
 
-## Om du ...
+### … är student
 
-### Om du är övertygande
+- **Starta en grupp** eller ordna en föreläsning om AI-risker på ditt universitet eller din högskola. Vi hjälper gärna till med talare och material.
+- **Dela ut flygblad** eller stå i ett bord på studentmässor och liknande.
+- **Skriv din uppsats** om AI-säkerhet eller AI-styrning.
 
-- **Övertyga en person i din regering att förbereda sig för [toppmötet](https://pauseai.info/summit) och arbeta mot en global paus**. Detta är det viktigaste du kan göra. Se [lobbytips](https://pauseai.info/lobby-tips) och [E-postbyggaren](https://pauseai.info/email-builder).
-- **Övertyga journalister** att skriva om AI-säkerhet. Hänvisa dem till [utbildningsmaterial](https://pauseai.info/learn).
-- **Övertyga influencers** att prata och göra videor om AI-säkerhet.
-- **Be ledningen** på din nuvarande organisation att ta en institutionell ställning i denna fråga.
+### … är med i ett fackförbund
 
-### Om du är politiker eller arbetar inom regeringen
+- **Ta upp frågan** på ett möte. AI påverkar många yrken, och facket har både medlemmar och kanaler till politiken.
+- **Föreslå en motion** om att förbundet ska verka för hårdare regler för de mest kraftfulla AI-systemen.
 
-- **Förbered dig för [AI-säkerhetstoppmötet](https://pauseai.info/summit)**. Bilda koalitioner med andra länder. Lär dig om [problemet](https://pauseai.info/learn) och [lösningarna](/forslaget).
-- **Bjud in (eller kalla) experter till partimöten**
-- **Etablera en kommitté** för att undersöka [riskerna med AI](/risker).
+### … arbetar på en högskola eller ett universitet
 
-### Om du kan (internationell) lag
+- **Skriv debattartiklar** och ställ upp i media.
+- **Handled studenter** som vill arbeta med frågan.
+- **Ordna ett seminarium** eller en paneldebatt om AI-risker.
 
-- **Hjälp till att utarbeta policy**. [Utkastexempel](https://web.archive.org/web/20231025174441/https://www.campaignforaisafety.org/celebrating-the-winners-law-student-moratorium-treaty-competition/). ([några](https://futureoflife.org/wp-content/uploads/2023/04/FLI_Policymaking_In_The_Pause.pdf) [ramverk](https://www.openphilanthropy.org/research/12-tentative-ideas-for-us-ai-policy/))
-- **Gör inlagor till statliga förfrågningar om kommentarer** om AI-policy ([exempel](https://ntia.gov/issues/artificial-intelligence/request-for-comments)).
+### … är politiker eller arbetar med politik
 
-### Om du kan skriva webbmaterial
+- **Lär dig mer** om [riskerna](/risker) och [vad Sverige kan göra](/forslaget).
+- **Bjud in experter** till partimöten och utskott.
+- **Driv frågan** om ett internationellt avtal i riksdagen, i EU och i FN.
 
-- [Förbättra denna webbplats](https://github.com/pauseai-sverige/pauseai-se): skriv ett ärende eller hör av dig i WhatsApp-gruppen.
+### … arbetar med AI
 
-### Om du arbetar inom AI
+- **Bidra inte till kapplöpningen.** Om du har en idé som gör AI-system mycket kraftfullare, fundera på om den behöver spridas.
+- **Prata med ledningen och kollegorna** om riskerna, och ordna gärna ett seminarium på jobbet.
+- **Skriv under** [uttalandet om AI-risk](https://www.safe.ai/statement-on-ai-risk) och [Statement on Superintelligence](https://superintelligence-statement.org/).
 
-- **Arbeta inte mot superintelligens**. Om du har en cool idé om hur vi kan göra AI-system 10x snabbare, vänligen bygg inte det / sprid det / prata om det. Vi behöver bromsa AI-utvecklingen, inte påskynda den.
-- **Prata med din ledning och dina kollegor** om riskerna. Få dem att ta en institutionell ställning i denna fråga.
-- **Håll ett seminarium** om AI-säkerhet på din arbetsplats. Kolla in [videorna](https://pauseai.info/learn#videos) för inspiration.
-- **Skriv under** [Uttalandet om AI-risk](https://www.safe.ai/statement-on-ai-risk),[Statement on Superintelligence](https://superintelligence-statement.org/)
+### … arbetar med AI-säkerhet
 
-### Om du arbetar med AI-säkerhet
+Fundera på om du kan göra mer nytta genom att också tala offentligt om riskerna och om behovet av en paus. Din röst väger tungt.
 
-Om du precis har börjat inom AI-justering, om du inte är extremt skicklig och/eller har haft betydande nya insikter om problemet, **överväg att byta till att förespråka Pausen**. Utan Pausen på plats först, finns det helt enkelt inte tid att starta en karriär inom Justering till den punkt där du gör användbara bidrag.
+### … vill bygga webb eller skriva
 
-Om du redan är etablerad inom Justering, överväg mer [offentlig kommunikation](https://twitter.com/TrustlessState/status/1651538022360285187), och lägg till ditt namn på uppropet för Pausen och regleringen av AI-industrin.
+- [Förbättra den här sajten](https://github.com/pauseai-sverige/pauseai-se): skriv ett ärende eller hör av dig i WhatsApp-gruppen.
 
-## Tips för att vara effektiv
+### … funderar på en karriär inom AI-säkerhet
 
-- **Var djärv i din offentliga kommunikation om faran**. Använd inte svävande språk eller förbehåll som standard; nämn dem när du blir ifrågasatt, eller i fotnoter, men låt det inte låta som om du inte är så bekymrad om du är det.
-- **Var mindre noggrann i ditt arbete**. [80/20](https://en.wikipedia.org/wiki/Pareto_principle) mer. Gör inte det klassiska nördiga grejen och spendera månader på att våndas och iterera på ditt Google-dokument över ändlösa omgångar av feedback. Få ut ditt projekt i världen och iterera när du går. Tiden är av yttersta vikt.
+- [Karriärstöd från Effektiv altruism Sverige](https://www.effektivaltruism.org/karriarstod-och-coachning/)
+- [80 000 Hours karriärguide](https://80000hours.org/career-guide/) (på engelska)
 
-Tänk på detta: allt vårt andra arbete kan bara vara ekvivalent med att flytta däckstolar på Titanic. Vi behöver springa till bryggan, greppa ratten och styra bort från isberget. Vi kanske inte har mycket tid, men vi kan försöka. Vi kan göra detta!
+## Tips för att göra skillnad
+
+- **Säg som det är.** Om du är orolig, säg det. Många organisationer tonar ner hur oroliga de är för att verka trovärdiga, men om alla gör så är det ingen kvar som säger sanningen. Var samtidigt noga med att inte påstå mer än vad du kan belägga.
+- **Visa vad du känner.** När du visar att du är orolig eller arg ger du andra lov att känna samma sak.
+- **Hellre gjort än perfekt.** Få ut ditt projekt i världen och förbättra det efter hand. Tiden är knapp.
+- **Ge hopp.** Det går att stoppa en farlig teknik. Världen har gjort det förut, till exempel med CFC-gaserna som skadade ozonlagret.

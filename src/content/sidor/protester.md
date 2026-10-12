@@ -1,27 +1,31 @@
 ---
 title: PauseAI Protester
-description: När och var vi kommer att protestera.
+description: Kommande och tidigare protester.
 ---
 
 ## Kommande
-**Se våra [evenemang](/evenemang) för kommande protester.**
-- [Gå med i PauseAI](/engagera-dig) för att få uppdateringar om kommande protester.
 
-## Tidigare protester
+Se våra [evenemang](/evenemang) för kommande protester, och [gå med i PauseAI Sverige](/engagera-dig) så får du veta när nästa protest blir av.
+
+## Våra protester i Sverige
+
+Våra egna protester och andra insatser finns under [Det vi har gjort](/vad-vi-har-gjort).
+
+## PauseAI:s protester i världen
 
 ### 2025
 
-- [30th of June, London](https://pauseai.info/deepmind-protest-2025)
-- [7th - 11th of February, 15+ cities](https://pauseai.info/2025-february)
+- [30 juni, London](https://pauseai.info/deepmind-protest-2025)
+- [7–11 februari, över 15 städer, bland dem Stockholm](https://pauseai.info/2025-february)
 
 ### 2024
 
-- [21st of November, 10+ cities](https://pauseai.info/2024-november)
-- [22nd of September, NYC](https://www.eventbrite.com/e/pauseai-nyc-summit-of-the-future-protest-tickets-905766862067)
-- [30th of July, Washington, DC](https://www.facebook.com/events/2528518090675538) (World Pause Coalition)
-- [23rd of July, San Francisco, London, Paris](https://x.com/PauseAI/status/1816550279095238711)
-- [13th of May, San Francisco, London, Stockholm, Berlin, Den Haag, Rome, Paris...](https://pauseai.info/2024-may)
-- [12th of February, OpenAI, SF](https://pauseai.info/2024-february)
+- [21 november, över 10 städer](https://pauseai.info/2024-november)
+- [22 september, New York](https://www.eventbrite.com/e/pauseai-nyc-summit-of-the-future-protest-tickets-905766862067)
+- [30 juli, Washington, DC](https://www.facebook.com/events/2528518090675538) (World Pause Coalition)
+- [23 juli, San Francisco, London, Paris](https://x.com/PauseAI/status/1816550279095238711)
+- [13 maj, San Francisco, London, Stockholm, Berlin, Haag, Rom, Paris med flera](https://pauseai.info/2024-may)
+- [12 februari, OpenAI, San Francisco](https://pauseai.info/2024-february)
 
 ### 2023
 
@@ -34,7 +38,7 @@ description: När och var vi kommer att protestera.
 - [29 juni, London](https://pauseai.info/2023-june-london-office-for-ai)
 - [16 juni, Melbourne, Australien](https://pauseai.info/2023-june-melbourne)
 - [8 juni, Parliament Square, London](https://pauseai.info/2023-june-london)
-- [3 juni, NYC, FN-byggnaden](https://pauseai.info/nyc-un-vigil)
+- [3 juni, FN-byggnaden, New York](https://pauseai.info/nyc-un-vigil)
 - [24 maj, London, UCL](https://twitter.com/GFuterman/status/1660648998863028230?s=20) (inte officiellt PauseAI)
 - [23 maj, Microsoft, Bryssel](https://pauseai.info/brussels-microsoft-protest)
 - [20 maj, OpenAI, San Francisco](https://pauseai.info/openai-protest)
@@ -42,10 +46,8 @@ description: När och var vi kommer att protestera.
 
 ## Organisera en protest
 
-Ta ansvar för en protest och organisera den själv!
-Vi är här för att hjälpa till.
-Läs mer om [att organisera en protest](https://pauseai.info/organizing-a-protest).
+Vill du ordna en protest där du bor? Vi hjälper gärna till. Läs PauseAI:s guide om [att organisera en protest](https://pauseai.info/organizing-a-protest) (på engelska) och hör av dig till [sweden@pauseai.info](mailto:sweden@pauseai.info).
 
 ## Uppförandekod
 
-[Läs vår uppförandekod för protester](https://pauseai.info/protesters-code-of-conduct)
+Våra protester är alltid fredliga och lagliga. Alla som deltar följer PauseAI:s [uppförandekod för protester](https://pauseai.info/protesters-code-of-conduct) (på engelska).
