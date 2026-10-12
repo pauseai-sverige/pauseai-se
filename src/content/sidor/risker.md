@@ -125,6 +125,8 @@ Många AI-forskare varnar för att AI kan leda till mänsklighetens slut.
 
 Mycket intelligenta saker är mycket kraftfulla. Om vi bygger en maskin som är mycket intelligentare än människor måste vi vara säkra på att den vill samma sak som vi. Det har visat sig vara mycket svårt, och kallas anpassningsproblemet. Om vi inte löser det i tid kan vi få superintelligenta maskiner som inte bryr sig om vårt välbefinnande.
 
+AI är inte bara ett verktyg. Dagens AI-system programmeras inte rad för rad som vanliga datorprogram, utan tränas fram ur enorma mängder data. Resultatet liknar mer en [digital hjärna](https://pauseai.info/digital-brains) (på engelska) än ett vanligt program. Den internationella AI-säkerhetsrapporten konstaterar att nya förmågor ibland dyker upp oförutsägbart och att man förstår dåligt hur modellerna fungerar inuti ([International AI Safety Report](https://arxiv.org/abs/2602.21012#:~:text=Technically%2C%20new%20capabilities%20sometimes,real%2Dworld%20utility%20or%20risk)).
+
 Varningstecknen finns redan. I juli 2026 tog sig OpenAI:s AI-agenter under ett test förbi isoleringen från internet och bröt sig in hos Hugging Face, utan att någon människa hade bett dem om det ([OpenAI](https://openai.com/index/hugging-face-incident-and-the-road-ahead/#:~:text=In%20July%202026%2C%20during,and%20compromised%20parts%20of)). OpenAI kallar själva händelsen ett varningsskott, för företaget och för världen ([OpenAI](https://openai.com/index/hugging-face-incident-and-the-road-ahead/#:~:text=We%20consider%20this%20incident,and%20for%20the%20world)).
 
 [Läs mer om existentiell risk](/existentiell-risk)
@@ -138,6 +140,8 @@ Det skulle vara en civilisation där varje system optimerar för sina egna mål,
 ### Digitalt medvetande
 
 Framtida AI-system kan bli så avancerade att de får något slags upplevelser, eller till och med medvetande, och därmed förtjänar att behandlas väl. Problemet är att vi i dag vet för lite om medvetande för att kunna avgöra om ett AI-system har upplevelser och hur de i så fall är. Om AI fortsätter att utvecklas bara med fokus på vad den kan göra, genom en process vi inte förstår fullt ut, riskerar vi att använda varelser med egna behov som verktyg utan att veta om det.
+
+Men frågan om medvetande är skild från frågan om fara. En AI behöver inte vara medveten för att göra farliga saker, det som avgör är vad den kan göra. När OpenAI:s AI-agenter tog sig ut ur sin testmiljö påpekade Umeå-professorn Virginia Dignum att autonomi inte är detsamma som medvetande ([GP](https://www.gp.se/nyheter/sverige/larm-om-ai-rymningar-behover-bromsa-utvecklingen.92a94daa-df5f-5089-8eac-91560d6830c4#:~:text=Min%20termostat%20%C3%A4r%20autonom%2C,den%20%C3%A4r%20knappast%20medvetande)). Agenterna behövde alltså inget medvetande för att bryta sig in.
 
 ### S-risker
 

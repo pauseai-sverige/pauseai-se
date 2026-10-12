@@ -29,7 +29,7 @@ Vi vill pausa träningen av de mest kraftfulla generella AI-systemen tills vi ve
 
 Nej, vi tror inte att [dagens AI-modeller](https://pauseai.info/sota) är en existentiell risk.
 Det bedömer också den internationella AI-säkerhetsrapporten 2026: dagens system saknar de förmågor som krävs för att människor ska förlora kontrollen över dem, men de blir bättre inom områden som spelar roll, till exempel att arbeta självständigt ([International AI Safety Report](https://arxiv.org/abs/2602.21012#:~:text=Current%20systems%20lack%20the,such%20as%20autonomous%20operation)).
-Men om vi fortsätter att bygga allt mer kraftfulla AI-system kommer vi till slut att nå en punkt där ett av dem blir en [existentiell risk](/existentiell-risk).
+Men om vi fortsätter att bygga allt mer kraftfulla AI-system riskerar vi att till slut nå en punkt där ett av dem blir en [existentiell risk](/existentiell-risk). Ingen kan säga säkert när, eller om, det händer. Men risken är tillräckligt stor för att vi ska vara försiktiga. Det kallas försiktighetsprincipen: när följderna kan bli katastrofala och oåterkalleliga ska osäkerhet vara ett skäl att agera, inte att vänta.
 
 ## Kan en paus slå tillbaka och göra saker värre?
 
