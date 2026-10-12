@@ -3,7 +3,7 @@
 Källkoden och texterna till PauseAI Sveriges hemsida. Sajten byggs med [Astro](https://astro.build), redigeras i [Pages CMS](https://app.pagescms.org) och ligger gratis på GitHub Pages.
 
 
-- **Sajten:** https://pauseai-sverige.github.io/pauseai-se/ (blir pauseai.se när domänen kopplas om)
+- **Sajten:** https://pauseai.se
 - **Kontakt:** [sweden@pauseai.info](mailto:sweden@pauseai.info), eller skriv i WhatsApp-gruppen
 - **Ansvar:** webbgruppen i PauseAI Sverige. Repot ligger i organisationen [pauseai-sverige](https://github.com/pauseai-sverige) på GitHub.
 
