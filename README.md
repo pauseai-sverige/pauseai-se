@@ -14,6 +14,7 @@ Vilken dokumentation du behöver beror på vad du ska göra:
 | lägga upp ett blogginlägg eller ett evenemang | [Lägga upp innehåll](#lägga-upp-innehåll) nedan |
 | skriva eller ändra texter om AI-risker och förslaget | [docs/kallor.md](docs/kallor.md): källor, Belagt och ton |
 | ändra kod, design eller automatik | [CONTRIBUTING.md](CONTRIBUTING.md) |
+| veta vem som har åtkomst, hur ändringar granskas och hur man får eller lämnar åtkomst | [docs/GOVERNANCE.md](docs/GOVERNANCE.md) |
 
 ## Lägga upp innehåll
 
