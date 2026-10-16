@@ -36,6 +36,7 @@ Bra att veta:
 - **Skriv inte HTML i textfältet.** Redigeraren tar bort det när du sparar. Behöver en sida en knapp finns fälten "Knapp, text" och "Knapp, länk".
 - **Bilder** sparas i `public/bilder/`. Använd bara bilder vi har rätt att använda, och fråga alltid personer som syns.
 - **Evenemang som har varit** flyttas av sig själva till Tidigare natten efter.
+- **Evenemang i vår [kalender på Luma](https://luma.com/PauseAI-Sweden)** kommer med på sajten av sig själva, senast natten efter att de lagts upp där. Lägg inte in dem här också. Vill du skriva mer om ett Luma-evenemang än det som syns på sajten: lägg upp det här och klistra in Luma-länken under *Länk*, så visas bara din version.
 - **Blogg** är för texter från volontärer: debatt, analys och rapporter från det vi gör. Fyll i *Författare* med namnet personen vill synas med, eller lämna tomt för "PauseAI Sverige". Lägg gärna till en bild, eftersom bloggen visar den som omslag. Texter om AI-risker följer [docs/kallor.md](docs/kallor.md).
 - **Det vi har gjort** är listan över våra protester, politikermöten, debattartiklar och liknande. Lägg upp något efter varje insats, gärna med en siffra ("ca 30 deltagare"), bilder och länkar till pressbevakning. Skriv bara siffror vi kan stå för.
 - **Berättelser** är medlemmars egna ord om varför de engagerar sig. Publicera aldrig en berättelse innan personen har godkänt både texten och hur namnet visas, och ta bort den direkt om personen ber om det. Kryssa i *Visa under Möt oss* för kontaktpersoner som vill synas på startsidan.

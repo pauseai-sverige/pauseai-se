@@ -37,6 +37,7 @@ npm run preview  # visar det byggda resultatet
 | `src/pages/` | Sidmallar. `[slug].astro` visar sidorna, `index.astro` är startsidan, `*.ics.ts` är kalenderfilerna. |
 | `src/layouts/Base.astro` | Ramen runt varje sida: `<head>`, meny och sidfot. |
 | `src/components/` | Meny, sidfot, logga, evenemangslista och anmälningsformuläret från Global. |
+| `src/luma.ts` | Hämtar kommande evenemang från kalendern på Luma när sajten byggs. De som redan finns i `evenemang/` med samma Luma-länk hoppas över. Svarar inte Luma byggs sajten ändå. |
 | `src/lib.ts` | Hjälpfunktioner: länkar med `base`, datumformat, menyn, `isUpcoming`, WhatsApp-länkar och kalenderfiler. |
 | `src/styles/global.css` | Färger, typsnitt och gemensam stil. |
 | `public/` | Filer som publiceras som de är, till exempel favicon och uppladdade bilder. |
