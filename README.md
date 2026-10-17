@@ -14,7 +14,8 @@ Vilken dokumentation du behöver beror på vad du ska göra:
 | lägga upp ett blogginlägg eller ett evenemang | [Lägga upp innehåll](#lägga-upp-innehåll) nedan |
 | skriva eller ändra texter om AI-risker och förslaget | [docs/kallor.md](docs/kallor.md): källor, Belagt och ton |
 | ändra kod, design eller automatik | [CONTRIBUTING.md](CONTRIBUTING.md) |
-| veta vem som har åtkomst, hur ändringar granskas och hur man får eller lämnar åtkomst | [docs/GOVERNANCE.md](docs/GOVERNANCE.md) |
+| skriva en text utan att ha åtkomst | Skicka den till en redaktör, se [docs/GOVERNANCE.md](docs/GOVERNANCE.md) |
+| veta vem som gör vad och vilka regler som gäller | [docs/GOVERNANCE.md](docs/GOVERNANCE.md) |
 
 ## Lägga upp innehåll
 
@@ -22,7 +23,7 @@ Du behöver inte kunna koda, men du behöver ett gratis konto på [github.com](h
 
 ### I Pages CMS
 
-1. Be någon i webbgruppen att lägga till dig som medarbetare i repot.
+1. Be en ägare att lägga till dig som redaktör, se [docs/GOVERNANCE.md](docs/GOVERNANCE.md#få-åtkomst).
 2. Gå till [app.pagescms.org](https://app.pagescms.org) och logga in med GitHub.
 3. Välj **pauseai-sverige/pauseai-se**.
 4. Välj **Blogg**, **Evenemang**, **Det vi har gjort**, **Berättelser** eller **Sidor** i menyn och klicka på **Add an entry** för att skapa något nytt, eller på en befintlig post för att ändra den.
