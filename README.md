@@ -14,6 +14,8 @@ Vilken dokumentation du behöver beror på vad du ska göra:
 | lägga upp ett blogginlägg eller ett evenemang | [Lägga upp innehåll](#lägga-upp-innehåll) nedan |
 | skriva eller ändra texter om AI-risker och förslaget | [docs/kallor.md](docs/kallor.md): källor, Belagt och ton |
 | ändra kod, design eller automatik | [CONTRIBUTING.md](CONTRIBUTING.md) |
+| skriva en text utan att ha åtkomst | Skicka den till en redaktör, se [docs/GOVERNANCE.md](docs/GOVERNANCE.md) |
+| veta vem som gör vad och vilka regler som gäller | [docs/GOVERNANCE.md](docs/GOVERNANCE.md) |
 
 ## Lägga upp innehåll
 
@@ -21,7 +23,7 @@ Du behöver inte kunna koda, men du behöver ett gratis konto på [github.com](h
 
 ### I Pages CMS
 
-1. Be någon i webbgruppen att lägga till dig som medarbetare i repot.
+1. Be en ägare att lägga till dig som redaktör, se [docs/GOVERNANCE.md](docs/GOVERNANCE.md#få-åtkomst).
 2. Gå till [app.pagescms.org](https://app.pagescms.org) och logga in med GitHub.
 3. Välj **pauseai-sverige/pauseai-se**.
 4. Välj **Blogg**, **Evenemang**, **Det vi har gjort**, **Berättelser** eller **Sidor** i menyn och klicka på **Add an entry** för att skapa något nytt, eller på en befintlig post för att ändra den.
@@ -35,6 +37,7 @@ Bra att veta:
 - **Skriv inte HTML i textfältet.** Redigeraren tar bort det när du sparar. Behöver en sida en knapp finns fälten "Knapp, text" och "Knapp, länk".
 - **Bilder** sparas i `public/bilder/`. Använd bara bilder vi har rätt att använda, och fråga alltid personer som syns.
 - **Evenemang som har varit** flyttas av sig själva till Tidigare natten efter.
+- **Evenemang i vår [kalender på Luma](https://luma.com/PauseAI-Sweden)** kommer med på sajten av sig själva, senast natten efter att de lagts upp där. Lägg inte in dem här också. Vill du skriva mer om ett Luma-evenemang än det som syns på sajten: lägg upp det här och klistra in Luma-länken under *Länk*, så visas bara din version.
 - **Blogg** är för texter från volontärer: debatt, analys och rapporter från det vi gör. Fyll i *Författare* med namnet personen vill synas med, eller lämna tomt för "PauseAI Sverige". Lägg gärna till en bild, eftersom bloggen visar den som omslag. Texter om AI-risker följer [docs/kallor.md](docs/kallor.md).
 - **Det vi har gjort** är listan över våra protester, politikermöten, debattartiklar och liknande. Lägg upp något efter varje insats, gärna med en siffra ("ca 30 deltagare"), bilder och länkar till pressbevakning. Skriv bara siffror vi kan stå för.
 - **Berättelser** är medlemmars egna ord om varför de engagerar sig. Publicera aldrig en berättelse innan personen har godkänt både texten och hur namnet visas, och ta bort den direkt om personen ber om det. Kryssa i *Visa under Möt oss* för kontaktpersoner som vill synas på startsidan.

@@ -1,6 +1,7 @@
 import { defineCollection } from 'astro:content'
 import { glob } from 'astro/loaders'
 import { z } from 'astro/zod'
+import { withLuma } from './luma'
 
 // Fälten här måste matcha .pages.yml, som styr formulären i Pages CMS.
 
@@ -52,8 +53,9 @@ const blogg = defineCollection({
 	})
 })
 
+// Våra egna evenemang (Markdown-filerna) och de kommande i kalendern på Luma, se src/luma.ts.
 const evenemang = defineCollection({
-	loader: glob({ pattern: '**/*.md', base: './src/content/evenemang' }),
+	loader: withLuma(glob({ pattern: '**/*.md', base: './src/content/evenemang' })),
 	schema: z.object({
 		title: z.string(),
 		date: eventDate,
