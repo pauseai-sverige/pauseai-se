@@ -21,7 +21,7 @@ Kräver Node.js 24 (se `.nvmrc`).
 
 ```sh
 npm ci           # installerar exakt de versioner som står i package-lock.json
-npm run dev      # förhandsvisning på http://localhost:4321/pauseai-se/
+npm run dev      # förhandsvisning på http://localhost:4321/
 npm run check    # letar efter fel i koden och innehållet
 npm run build    # bygger sajten till dist/
 npm run preview  # visar det byggda resultatet
@@ -45,11 +45,13 @@ npm run preview  # visar det byggda resultatet
 | `.github/workflows/` | Automatiken, se tabellen i README. |
 | `.github/ISSUE_TEMPLATE/` | Formuläret "Föreslå ett evenemang". |
 | `astro.config.mjs` | Sajtens adress (`site`, `base`) och tillägget som lägger `base` på länkar i Markdown. |
+| `src/gamla-adresser.mjs` | Omdirigeringar från den gamla sajtens adresser, till svenska sidor eller till pauseai.info. |
+| `public/CNAME` | Domänen, `pauseai.se`, för GitHub Pages. |
 | `src/upplagg.mjs` | Fällbara rubriker och sidokolumn på sidor, styrt av fälten `fallbara`, `sidokolumn` och `oppen`. Används på Förslaget och Risker. |
 
 ## Fallgropar
 
-- **Interna länkar ska börja med `/`.** Sajten ligger under `/pauseai-se/` tills domänen kopplas om. I Markdown läggs `base` till automatiskt (`/donera` blir `/pauseai-se/donera`). I `.astro`-filer används `url('/donera')` från `src/lib.ts`. Skriv aldrig `/pauseai-se/` för hand.
+- **Interna länkar ska börja med `/`.** I `.astro`-filer används `url('/donera')` från `src/lib.ts`, och i Markdown läggs `base` till automatiskt. Då fungerar länkarna även om sajten någon gång förhandsvisas under en undermapp (`base` i `astro.config.mjs`).
 - **Tider är svensk tid.** Pages CMS sparar tider utan tidszon, och `content.config.ts` tolkar dem som Europe/Stockholm. Visa datum med `formatDate` och `formatDateTime`, aldrig `toLocaleString()`.
 - **Ett evenemang räknas som kommande hela dagen det äger rum** (`isUpcoming`), så att det inte försvinner från listan mitt under evenemanget. Sajten byggs om varje natt så att listan hålls aktuell.
 - **HTML i Markdown överlever inte Pages CMS.** Redigeraren gör om HTML till vanlig text eller tar bort det, även kommentarer. Behövs något mer än text, lägg det som ett fält i `content.config.ts` och `.pages.yml`, som knappen på sidorna (`knapp_text`, `knapp_lank`).
@@ -80,12 +82,11 @@ Kör ett arbetsflöde för hand: **Actions → välj arbetsflödet i vänsterkol
 | Ett evenemang syns inte | Kontrollera att datumet är rätt och i framtiden, och att PR:en från formuläret är sammanslagen. |
 | Pages CMS hittar inte repot | Du måste vara medarbetare i repot, och Pages CMS måste ha åtkomst (GitHub → Settings → Applications). |
 
-## När pauseai.se ska peka hit
+## Domänen pauseai.se
 
-1. Sätt `site` till `'https://pauseai.se'` och `base` till `''` i `astro.config.mjs`.
-2. Lägg till filen `public/CNAME` med texten `pauseai.se`.
-3. Lägg in omdirigeringar från gamla sökvägar (`/join`, `/proposal`, `/risks`, `/xrisk`, `/faq`, `/donate`, `/action`, `/events`, `/protests`).
-4. Be PauseAI Global, som äger domänen, att peka den till GitHub Pages.
-5. Slå på **Enforce HTTPS** under Settings → Pages.
+Sajten ligger på pauseai.se. DNS sköts av Emil Svenberg i Netlify, och PauseAI Global har fått frågan om vem som ska äga domänen på sikt.
 
-Skripten läser adressen från `astro.config.mjs`, så de behöver inte ändras.
+- `site` i `astro.config.mjs` och `public/CNAME` anger domänen. Skripten läser adressen från `astro.config.mjs`.
+- DNS-posterna för GitHub Pages: A `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`; AAAA `2606:50c0:8000::153`, `2606:50c0:8001::153`, `2606:50c0:8002::153`, `2606:50c0:8003::153`; CNAME för `www` till `pauseai-sverige.github.io`.
+- Under Settings → Pages ska *Custom domain* vara `pauseai.se` och **Enforce HTTPS** vara påslaget.
+- Den gamla sajtens adresser omdirigeras via `src/gamla-adresser.mjs`. Ta inte bort dem, eftersom gamla länkar finns kvar på nätet.
