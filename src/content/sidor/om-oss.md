@@ -30,6 +30,8 @@ Alla som är aktiva i PauseAI följer [uppförandekoden](https://pauseai.info/co
 
 Mejla oss på [sweden@pauseai.info](mailto:sweden@pauseai.info). Det gäller även journalister som vill ha en kommentar eller en intervju.
 
+Följ oss på Instagram: [@pauseai_sverige](https://www.instagram.com/pauseai_sverige).
+
 ## Gå med
 
 Vill du hjälpa till? [Anmäl dig här](/engagera-dig) så hör vi av oss.

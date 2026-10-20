@@ -9,7 +9,7 @@ PauseAI Sverige är en grupp volontärer som oroar sig för [riskerna med AI](/r
 
 Vi vill att Sverige verkar för ett internationellt avtal som [pausar utvecklingen av de mest kraftfulla AI-systemen](/forslaget). Vi informerar allmänheten, pratar med politiker och journalister och ordnar träffar och protester.
 
-Du når PauseAI Sverige på [sweden@pauseai.info](mailto:sweden@pauseai.info). Den svenska gruppen samordnar sig främst i en WhatsApp-grupp, och du kommer med genom att [anmäla dig](/engagera-dig). Den internationella rörelsen finns på [Discord](https://discord.gg/2XXWXvErfA), [X](https://x.com/PauseAI), [Substack](https://substack.com/@pauseai), [Facebook](https://www.facebook.com/PauseAI), [TikTok](https://www.tiktok.com/@pauseai), [LinkedIn](https://www.linkedin.com/company/pauseai/), [YouTube](https://www.youtube.com/@PauseAI) och [Instagram](https://www.instagram.com/pause_ai).
+Du når PauseAI Sverige på [sweden@pauseai.info](mailto:sweden@pauseai.info). Den svenska gruppen samordnar sig främst i en WhatsApp-grupp, och du kommer med genom att [anmäla dig](/engagera-dig). Vi finns också på [Instagram](https://www.instagram.com/pauseai_sverige). Den internationella rörelsen finns på [Discord](https://discord.gg/2XXWXvErfA), [X](https://x.com/PauseAI), [Substack](https://substack.com/@pauseai), [Facebook](https://www.facebook.com/PauseAI), [TikTok](https://www.tiktok.com/@pauseai), [LinkedIn](https://www.linkedin.com/company/pauseai/), [YouTube](https://www.youtube.com/@PauseAI) och [Instagram](https://www.instagram.com/pause_ai).
 
 ## Är ni bara rädda för förändringar och ny teknik?
 
