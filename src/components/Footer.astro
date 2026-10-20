@@ -12,7 +12,16 @@ import { url } from '../lib'
 				hur de kan göras säkra.
 			</p>
 			<p>Kontakt: <a href="mailto:sweden@pauseai.info">sweden@pauseai.info</a></p>
-			<p>Instagram: <a href="https://www.instagram.com/pauseai_sverige">@pauseai_sverige</a></p>
+			<p>
+				<a class="social" href="https://www.instagram.com/pauseai_sverige">
+					<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2">
+						<rect x="3" y="3" width="18" height="18" rx="5" />
+						<circle cx="12" cy="12" r="4" />
+						<circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+					</svg>
+					<span>Instagram: @pauseai_sverige</span>
+				</a>
+			</p>
 			<p><a class="button" href={url('/engagera-dig')}>Gå med</a></p>
 		</section>
 		<section>
@@ -89,6 +98,14 @@ import { url } from '../lib'
 	}
 	li {
 		padding: 0.15rem 0;
+	}
+	.social {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.4rem;
+	}
+	.social svg {
+		flex-shrink: 0;
 	}
 	.fineprint {
 		margin-top: 2rem;
