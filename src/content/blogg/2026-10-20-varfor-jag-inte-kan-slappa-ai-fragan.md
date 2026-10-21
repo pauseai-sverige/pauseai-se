@@ -5,6 +5,8 @@ author: Christian Broselid
 description: "Från entusiasm till oro: varför jag som gymnasielärare engagerar
   mig i PauseAI Sverige, och vad du kan göra"
 ---
+Jag är en av volontärerna i PauseAI Sverige och har lagt en del tid under hösten på att bygga vår nya hemsida. Det här är mitt första inlägg på bloggen, och jag vill börja med att berätta varför jag engagerar mig.
+
 När jag först kom i kontakt med generativ AI i december 2022, kort efter att den första versionen av ChatGPT lanserats, var jag entusiastisk. Jag såg omedelbart den enorma potentialen. Men i takt med att tekniken utvecklats i en rasande fart, och jag börjat förstå hur den påverkar oss som individer och samhälle, har fascinationen allt mer blandats med oro. Det var när jag läste Hannes Alfvéns bok *Sagan om den stora datamaskinen* från 1966 (läs den om du inte gjort det!) som det blev tydligt för mig att vi måste ta kontroll över utvecklingen. Lite otippat kanske.
 
 Det är många saker som gör att jag inte kan släppa vart vi är på väg. I mitt jobb som gymnasielärare ser jag hur ungdomarna anammar generativ AI. Hur AI-verktyg påverkar vårt lärande, ung som gammal, är det ingen som vet. Tekniken har rört sig enormt mycket snabbare än vår kunskap om vad till exempel den kognitiva avlastningen innebär i längden. Jag tror att all teknikutveckling förändrar vad det innebär att vara människa, men det är som att vi inte riktigt reflekterar över det. Generativ AI:s intåg i våra liv tror jag förändrar oss i grunden. Allt är inte dåligt med förändringen, men vi måste få en chans att prata om det.
@@ -42,3 +44,4 @@ Jag hoppas att vi kommer att växa snabbt, för jag vet att vi som är engagerad
 
 
 
+&nbsp;
