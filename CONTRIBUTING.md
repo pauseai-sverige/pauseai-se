@@ -84,9 +84,10 @@ Kör ett arbetsflöde för hand: **Actions → välj arbetsflödet i vänsterkol
 
 ## Domänen pauseai.se
 
-Sajten ligger på pauseai.se. DNS sköts av Emil Svenberg i Netlify, och PauseAI Global har fått frågan om vem som ska äga domänen på sikt.
+Sajten ligger på pauseai.se. DNS sköts av Emil Svenberg hos Strato (namnservrarna `docks09.rzone.de` och `shades04.rzone.de`), och PauseAI Global har fått frågan om vem som ska äga domänen på sikt.
 
 - `site` i `astro.config.mjs` och `public/CNAME` anger domänen. Skripten läser adressen från `astro.config.mjs`.
 - DNS-posterna för GitHub Pages: A `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`; AAAA `2606:50c0:8000::153`, `2606:50c0:8001::153`, `2606:50c0:8002::153`, `2606:50c0:8003::153`; CNAME för `www` till `pauseai-sverige.github.io`.
+- Läget i oktober 2026: bara A-posten `185.199.108.153` finns, AAAA-posterna saknas och `www` pekar på `pauseai.se` i stället för `pauseai-sverige.github.io`. Sajten fungerar, men de andra posterna bör läggas till hos Strato.
 - Under Settings → Pages ska *Custom domain* vara `pauseai.se` och **Enforce HTTPS** vara påslaget.
 - Den gamla sajtens adresser omdirigeras via `src/gamla-adresser.mjs`. Ta inte bort dem, eftersom gamla länkar finns kvar på nätet.
