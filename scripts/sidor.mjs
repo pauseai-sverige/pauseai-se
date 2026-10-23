@@ -13,6 +13,7 @@ const paths = [
 	'/blogg',
 	'/evenemang',
 	'/vad-vi-har-gjort',
+	'/mejla',
 	'/berattelser',
 	...ids('src/content/sidor').map((id) => `/${id}`),
 	...ids('src/content/blogg').map((id) => `/blogg/${id}`),

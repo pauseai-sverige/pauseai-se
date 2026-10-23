@@ -13,7 +13,7 @@ Här är sätt att hjälpa till, efter hur mycket tid du har.
   - [Statement on Superintelligence](https://superintelligence-statement.org/)
   - [Internationellt AI-fördrag](https://aitreaty.org)
   - [Kräv ansvarsfull AI](https://www.change.org/p/artificial-intelligence-time-is-running-out-for-responsible-ai-development-91f0a02c-130a-46e1-9e55-70d6b274f4df)
-- **Mejla en politiker** med vår färdiga [kampanj i Activoice](https://beta.app.activoice.org/campaigns/uppmana-vara-politker-att-ta-ai-riskerna-pa-allvar). Ett personligt mejl väger tyngre än man tror.
+- **[Mejla en riksdagsledamot](/mejla)** med vårt verktyg, som hjälper dig skriva ett personligt mejl med källor. Ett personligt mejl väger tyngre än man tror. Det finns också en färdig [kampanj i Activoice](https://beta.app.activoice.org/campaigns/uppmana-vara-politker-att-ta-ai-riskerna-pa-allvar).
 - **Följ PauseAI Sverige** på [Instagram](https://www.instagram.com/pauseai_sverige).
 - **Följ PauseAI** på [Discord](https://discord.gg/2XXWXvErfA), [X](https://x.com/PauseAI), [Facebook](https://www.facebook.com/PauseAI), [LinkedIn](https://www.linkedin.com/company/pauseai/) och [TikTok](https://www.tiktok.com/@pauseai). Lägg gärna till PauseAI under ideellt engagemang på LinkedIn.
 - **Få en liten uppgift i veckan** via [Microcommit](https://microcommit.io/onboarding?org=135fcd8d-8116-44af-b885-14df992f9a8c). Varje uppgift tar 5–10 minuter.
