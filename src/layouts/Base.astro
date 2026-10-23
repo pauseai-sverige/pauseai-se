@@ -7,11 +7,19 @@ import { url } from '../lib'
 interface Props {
 	title?: string
 	description?: string
+	/** false on pages without an address of their own, like the 404 page. */
+	canonical?: boolean
 }
 
 const siteName = 'PauseAI Sverige'
-const { title, description = 'Vi vill pausa utvecklingen av de mest kraftfulla AI-systemen tills vi vet hur de kan göras säkra.' } = Astro.props
+const {
+	title,
+	description = 'Vi vill pausa utvecklingen av de mest kraftfulla AI-systemen tills vi vet hur de kan göras säkra.',
+	canonical = true
+} = Astro.props
 const fullTitle = title ? `${title} | ${siteName}` : siteName
+// Without a query string, so that shared links with ?fbclid=… count as the same page.
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href
 ---
 
 <!doctype html>
@@ -24,6 +32,7 @@ const fullTitle = title ? `${title} | ${siteName}` : siteName
 		<meta property="og:title" content={fullTitle} />
 		<meta property="og:description" content={description} />
 		<meta property="og:locale" content="sv_SE" />
+		{canonical && <link rel="canonical" href={canonicalUrl} />}
 		<link rel="icon" type="image/png" href={url('/favicon.png')} />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
