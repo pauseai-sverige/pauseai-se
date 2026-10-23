@@ -41,7 +41,7 @@ En ägare beslutar och berättar det i WhatsApp-gruppen.
 
 ## När någon slutar
 
-En ägare tar bort personen från teamet och organisationen, byter ut nycklar som personen har haft tillgång till och noterar det i loggen nedan.
+En ägare tar bort personen från teamet, organisationen och GoatCounter, byter ut nycklar som personen har haft tillgång till och noterar det i loggen nedan.
 
 ## Om något går fel
 
@@ -51,6 +51,7 @@ En ägare tar bort personen från teamet och organisationen, byter ut nycklar so
 ## För ägarna: inställningar på GitHub
 
 - [ ] Två ägare i organisationen.
+- [ ] Två ägare har åtkomst till besöksstatistiken på GoatCounter, med var sin e-postadress.
 - [ ] Tvåstegsverifiering krävs i organisationen.
 - [ ] Teamen `kod` och `redaktorer` finns och har Write. Ingen annan har direkt åtkomst.
 - [ ] Ruleset för `main` som blockerar force push och radering.
