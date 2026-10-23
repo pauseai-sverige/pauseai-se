@@ -66,6 +66,10 @@ Det här sköter sig självt med GitHub Actions (`.github/workflows/`):
 
 Vill du få ärendena som mejl? Klicka **Watch → Custom** uppe till höger i repot och bocka i **Issues** och **Pull requests**.
 
+## Besöksstatistik
+
+Vi räknar besök med [GoatCounter](https://www.goatcounter.com), utan kakor och utan att spara personuppgifter. Statistiken finns på [pauseai-se.goatcounter.com](https://pauseai-se.goatcounter.com). Fråga en ägare om du behöver åtkomst. Siffrorna är något för låga, eftersom annonsblockerare stoppar en del räkningar.
+
 ## Ge feedback
 
 Skriv i WhatsApp-gruppen eller [skapa ett ärende](https://github.com/pauseai-sverige/pauseai-se/issues/new) här på GitHub.
