@@ -99,6 +99,7 @@ from Chris Beams' [How to Write a Git Commit Message](https://chris.beams.io/pos
 - **No commits that cancel each other out** within a PR. Amend, fixup or rebase before pushing.
 - **No binaries** except images editors upload to `public/bilder/`. Prefer SVG over PNG/JPG for icons.
   Videos go on YouTube and are embedded from `https://www.youtube-nocookie.com/embed/<id>`, never committed.
+  The start page film (`public/video/pausa-ai.mp4`) is the one exception.
 - **Subject line:** English, imperative, capitalised, about 50 characters, no period. Says *why*.
   Test: "If applied, this commit will …" followed by the subject.
   Good: `Keep footer at the bottom on short pages`. Bad: `Fixed footer`, `Update Footer.astro`.
