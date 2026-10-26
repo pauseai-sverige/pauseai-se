@@ -94,17 +94,30 @@ const quotes = [
 
 <Base>
 	<section class="hero">
-		<div class="container-wide">
-			<h1>Låt inte AI-bolag spela rysk roulette med vår framtid</h1>
-			<p class="lead">
-				PauseAI Sverige vill att Sverige verkar för ett internationellt stopp för de mest kraftfulla AI-systemen,
-				tills vi vet hur de kan göras säkra.
-			</p>
-			<p class="actions">
-				<a class="button" href="#ga-med">Gå med</a>
-				<a class="button secondary" href="#evenemang">Kommande evenemang ↓</a>
-				<a class="button secondary" href={url('/vad-vi-har-gjort')}>Det vi har gjort →</a>
-			</p>
+		<div class="container-wide hero-grid">
+			<div>
+				<h1>Låt inte AI-bolag spela rysk roulette med vår framtid</h1>
+				<p class="lead">
+					PauseAI Sverige vill att Sverige verkar för ett internationellt stopp för de mest kraftfulla AI-systemen,
+					tills vi vet hur de kan göras säkra.
+				</p>
+				<p class="actions">
+					<a class="button" href="#ga-med">Gå med</a>
+					<a class="button secondary" href="#evenemang">Kommande evenemang ↓</a>
+					<a class="button secondary" href={url('/vad-vi-har-gjort')}>Det vi har gjort →</a>
+					<a class="button secondary se-filmen" href="#film">▶ Se filmen (2:34)</a>
+				</p>
+			</div>
+			<video
+				id="film"
+				class="hero-video"
+				src={url('/video/pausa-ai.mp4')}
+				poster={url('/video/pausa-ai.jpg')}
+				controls
+				playsinline
+				preload="none"
+				aria-label="Film: vad pausen gäller, varför den behövs och vad du kan göra"
+			></video>
 		</div>
 	</section>
 
@@ -264,6 +277,35 @@ const quotes = [
 		padding: 4rem 0 3rem;
 		background: linear-gradient(135deg, var(--brand-subtle), var(--bg) 70%);
 		border-bottom: 1px solid var(--border);
+	}
+	.hero-grid {
+		display: grid;
+		grid-template-columns: 1fr auto;
+		gap: 2rem 3rem;
+		align-items: center;
+	}
+	/* Portrait phone video; beside the text on wide screens, below it on narrow ones. */
+	.hero-video {
+		width: 18rem;
+		aspect-ratio: 9 / 16;
+		background: #000;
+	}
+	/* Only needed on narrow screens, where the video sits below the fold. */
+	.se-filmen {
+		display: none;
+	}
+	@media (max-width: 50rem) {
+		.hero-grid {
+			grid-template-columns: 1fr;
+		}
+		.hero-video {
+			justify-self: center;
+			scroll-margin-top: 1rem;
+			width: min(100%, 20rem);
+		}
+		.se-filmen {
+			display: inline-block;
+		}
 	}
 	.hero h1 {
 		max-width: 16ch;
