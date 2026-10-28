@@ -9,7 +9,7 @@ Här är sätt att hjälpa till, efter hur mycket tid du har.
 
 ## 5–15 minuter
 
-- **Skriv under** PauseAI:s [upprop](https://pauseai.info/statement) och andra upprop och namninsamlingar:
+- **[Skriv under](/upprop)** PauseAI:s upprop och andra upprop och namninsamlingar:
   - [Statement on Superintelligence](https://superintelligence-statement.org/)
   - [Internationellt AI-fördrag](https://aitreaty.org)
   - [Kräv ansvarsfull AI](https://www.change.org/p/artificial-intelligence-time-is-running-out-for-responsible-ai-development-91f0a02c-130a-46e1-9e55-70d6b274f4df)

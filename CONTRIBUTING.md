@@ -37,6 +37,7 @@ npm run preview  # visar det byggda resultatet
 | `src/pages/` | Sidmallar. `[slug].astro` visar sidorna, `index.astro` är startsidan, `*.ics.ts` är kalenderfilerna. |
 | `src/layouts/Base.astro` | Ramen runt varje sida: `<head>`, meny och sidfot. Här finns också besöksräknaren från GoatCounter. |
 | `src/components/` | Meny, sidfot, logga, evenemangslista och anmälningsformuläret från Global. |
+| `src/upprop.ts` | Räknar underskrifterna från Sverige på PauseAI Globals upprop när sajten byggs, för sidan Skriv under uppropet. Svarar inte Global byggs sajten ändå, utan siffran. |
 | `src/luma.ts` | Hämtar kommande evenemang från kalendern på Luma när sajten byggs. De som redan finns i `evenemang/` med samma Luma-länk hoppas över. Svarar inte Luma byggs sajten ändå. |
 | `src/lib.ts` | Hjälpfunktioner: länkar med `base`, datumformat, menyn, `isUpcoming`, WhatsApp-länkar och kalenderfiler. |
 | `src/styles/global.css` | Färger, typsnitt och gemensam stil. |
@@ -58,6 +59,7 @@ npm run preview  # visar det byggda resultatet
 - **Fält ändras på två ställen.** Ett nytt fält i `content.config.ts` behöver också läggas till i `.pages.yml`, annars syns det inte i Pages CMS.
 - **Bloggen hette Nyheter tidigare.** `src/pages/nyheter/` skickar `/nyheter` och `/nyheter/…` vidare till `/blogg`. Ta inte bort omdirigeringarna, eftersom gamla länkar kan finnas i delade inlägg.
 - **Sidan Engagera dig har en egen mall** (`src/pages/engagera-dig.astro`) för att visa anmälningsformuläret, och hoppas därför över i `[slug].astro`.
+- **Sidan Skriv under uppropet har också en egen mall** (`src/pages/upprop.astro`). Uppropets text, formuläret och avsnittet om personuppgifter ligger i mallen så att de inte ändras av misstag i Pages CMS; bara inledningen redigeras där. Underskrifterna samlas in och sparas av PauseAI Global. Vi lagrar inga och visar bara antalet, inte namnen.
 - **Startsidan hämtar de tre senaste insatserna och berättelserna själv.** Avsnitten Det vi har gjort, Därför engagerar vi oss och Möt oss syns bara när det finns något att visa. Möt oss visar berättelser där *Visa under Möt oss* är ikryssat.
 - **Startsidans händelser och citat skrivs in för hand** i `src/pages/index.astro`. Varje post har en kommentar `// Belagt ID` så att källkontrollen hittar den. Se [docs/kallor.md](docs/kallor.md).
 
