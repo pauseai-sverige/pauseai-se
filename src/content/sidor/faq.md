@@ -50,7 +50,7 @@ I augusti 2026 pausade OpenAI själva delar av träningen av sina senaste modell
 
 PauseAI Sverige är en grupp volontärer utan egen förening, så vi tar inte emot pengar själva. Allt vi gör i Sverige görs på fritiden.
 
-Donationer går till PauseAI Global, en [registrerad ideell stiftelse](https://pauseai.info/legal) i Nederländerna som stöttar nationella grupper som vår. Där står också hur stiftelsen finansieras och hur pengarna används. Vill du att gåvan ska märkas som svensk, skriv PauseAI Sweden som referens vid en banköverföring. Läs mer på vår sida om att [donera](/donera).
+Donationer går till PauseAI Global, en [registrerad ideell stiftelse](https://pauseai.info/legal) i Nederländerna som stöttar nationella grupper som vår. Där står också hur stiftelsen finansieras och hur pengarna används. Vill du att gåvan ska märkas som svensk, skriv **PauseAI Sweden** som referens vid en banköverföring. Läs mer på vår sida om att [donera](/donera).
 
 ## Vad är era planer?
 
