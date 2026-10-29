@@ -1,13 +1,22 @@
 ---
 title: Donera till PauseAI
 description: Med ditt ekonomiska stöd kan vi få en större påverkan.
-knapp_text: Donera via PauseAI Global
-knapp_lank: https://pauseai.info/donate
 ---
 
-PauseAI Sverige är en grupp volontärer utan egen förening, så vi kan inte ta emot pengar själva. Donationer går i stället till PauseAI Global, en registrerad ideell stiftelse i Nederländerna (Stichting PauseAI), som stöttar nationella grupper som vår.
+PauseAI Sverige är en grupp volontärer utan egen förening, så vi kan inte ta emot pengar själva. Tills vi har bildat en förening går gåvor i stället till PauseAI Global, en registrerad ideell stiftelse i Nederländerna (Stichting PauseAI), som stöttar nationella grupper som vår.
 
-På Globals donationssida finns alla sätt att ge, till exempel kort, banköverföring och återkommande gåvor. Där står också aktuella uppgifter om hur pengarna används.
+## Så donerar du så att gåvan märks som svensk
+
+Gör en banköverföring och skriv **PauseAI Sweden** som referens. Det kostar inget, och referensen visar att din gåva är till stöd för PauseAI Sverige.
+
+- Mottagare: Stichting PauseAI
+- IBAN: NL08 INGB 0120 1251 61
+- BIC: INGBNL2A
+- Referens: PauseAI Sweden
+
+## Donera på andra sätt
+
+Du kan också donera med kort, PayPal eller bunq på [PauseAI Globals donationssida](https://pauseai.info/donate). Där finns inget fält för referens, så gåvan märks inte som stöd till PauseAI Sverige. Banköverföring är enligt PauseAI Global troligen det billigaste sättet att ge.
 
 ## Vad pengarna går till
 
