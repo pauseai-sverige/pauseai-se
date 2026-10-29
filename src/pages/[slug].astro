@@ -6,7 +6,7 @@ import { url } from '../lib'
 export async function getStaticPaths() {
 	const sidor = await getCollection('sidor')
 	// Sidor som har en egen .astro-fil hoppas över här.
-	return sidor.filter((sida) => sida.id !== 'engagera-dig').map((sida) => ({ params: { slug: sida.id }, props: { sida } }))
+	return sidor.filter((sida) => !['engagera-dig', 'upprop'].includes(sida.id)).map((sida) => ({ params: { slug: sida.id }, props: { sida } }))
 }
 
 const { sida } = Astro.props

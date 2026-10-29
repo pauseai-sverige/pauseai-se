@@ -1,0 +1,102 @@
+---
+// The statement page. Signatures are collected by PauseAI Global's form (Tally) and stored by
+// Stichting PauseAI, so Global is responsible for the personal data and we store nothing.
+// Global's guide for national groups asks us to collect signatures to this statement.
+// A list of our own would need a legal entity to be responsible for it, which we do not have.
+import { getEntry, render } from 'astro:content'
+import Base from '../layouts/Base.astro'
+import { fetchSwedishSignatures } from '../upprop'
+
+const sida = await getEntry('sidor', 'upprop')
+if (!sida) throw new Error('Saknar src/content/sidor/upprop.md')
+const { Content } = await render(sida)
+
+const antal = await fetchSwedishSignatures()
+
+// Global's form for the statement, the same one pauseai.info/statement embeds.
+const form = 'https://tally.so/embed/315xdg?alignLeft=1&hideTitle=1&dynamicHeight=1'
+const formLink = 'https://tally.so/r/315xdg'
+---
+
+<Base title={sida.data.title} description={sida.data.description}>
+	<article class="container prose">
+		<h1>{sida.data.title}</h1>
+
+		<!-- Our translation of the statement. The English original is the one people sign. -->
+		<blockquote class="upprop">
+			Vi uppmanar världens regeringar att skriva under ett internationellt fördrag om en paus i träningen av de mest
+			kraftfulla generella AI-systemen, tills vi vet hur de kan byggas säkert och hållas under demokratisk kontroll.
+		</blockquote>
+
+		{
+			antal !== null && antal > 0 && (
+				<p class="antal">
+					<strong>{antal.toLocaleString('sv-SE')}</strong> personer i Sverige har skrivit under.
+				</p>
+			)
+		}
+
+		<Content />
+
+		<div class="formular">
+			<iframe data-tally-src={form} title="Skriv under uppropet" height="600" loading="lazy"></iframe>
+			<p class="muted fallback">
+				Syns inte formuläret? <a href={formLink}>Öppna det i ett eget fönster</a>.
+			</p>
+		</div>
+
+		<h2 id="dina-uppgifter">Dina uppgifter</h2>
+		<p>
+			Formuläret och listan över underskrifter sköts av PauseAI Global (Stichting PauseAI i Nederländerna), som är
+			ansvarig för dina personuppgifter. PauseAI Sverige sparar ingenting. Formuläret är på engelska och frågar efter
+			namn, e-post och land. Du får ett mejl där du bekräftar din adress.
+		</p>
+		<ul>
+			<li>
+				<strong>Ditt namn och land visas offentligt</strong> på <a href="https://pauseai.info/statement"
+					>pauseai.info/statement</a
+				>, tillsammans med det du skriver om dig själv. Kryssa i <em>I want to be anonymous</em> om du inte vill synas
+				med namn. Du räknas ändå.
+			</li>
+			<li>Din e-postadress visas aldrig.</li>
+			<li>
+				Vill du ta tillbaka din underskrift, skriv till PauseAI Global på adressen i integritetspolicyn nedan. Du kan
+				också skriva till <a href="mailto:sweden@pauseai.info">sweden@pauseai.info</a>, så hjälper vi dig.
+			</li>
+		</ul>
+		<p>Läs mer i PauseAI:s <a href="https://pauseai.info/privacy">integritetspolicy</a> (på engelska).</p>
+	</article>
+</Base>
+
+<!-- Tally's own script loads the form and adjusts its height as it changes. -->
+<script is:inline async src="https://tally.so/widgets/embed.js"></script>
+
+<style>
+	.upprop {
+		font-size: 1.3rem;
+		font-weight: 500;
+	}
+	.antal {
+		font-size: 1.2rem;
+	}
+	.formular {
+		margin: 2rem 0;
+		padding: 0.5rem;
+		background: #fff;
+		border: 1px solid var(--border);
+		border-radius: 6px;
+	}
+	iframe {
+		display: block;
+		width: 100%;
+		border: 0;
+	}
+	.fallback {
+		margin: 0.5rem;
+		font-size: 0.9rem;
+		color: #555;
+	}
+	.fallback a {
+		color: hsl(32, 100%, 35%);
+	}
+</style>
