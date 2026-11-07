@@ -1,0 +1,82 @@
+---
+// Consent banner for third-party embeds (YouTube). The site itself sets no cookies;
+// the banner only matters where an embed would. The choice is stored in localStorage
+// and exposed on <html data-kakor="ja|nej"> plus a `kakor` event, so embeds can
+// load only after consent.
+import { url } from '../lib'
+---
+
+<div class="kakor" id="kakor" hidden role="region" aria-label="Kakor">
+	<p>
+		Sidan innehåller videor från YouTube. När de spelas upp kan Google sätta kakor och se din
+		IP-adress. Själva sajten använder inga kakor. <a href={url('/om-oss')}>Läs mer</a>.
+	</p>
+	<p class="val">
+		<button class="button" type="button" data-val="ja">Tillåt videor</button>
+		<button class="button secondary" type="button" data-val="nej">Nej tack</button>
+	</p>
+</div>
+
+<script>
+	const KEY = 'kakor'
+	const banner = document.getElementById('kakor')!
+	const stored = (() => {
+		try {
+			return localStorage.getItem(KEY)
+		} catch {
+			return null
+		}
+	})()
+
+	function apply(val: string) {
+		document.documentElement.dataset.kakor = val
+		document.dispatchEvent(new CustomEvent('kakor', { detail: val }))
+	}
+
+	if (stored === 'ja' || stored === 'nej') {
+		apply(stored)
+	} else {
+		banner.hidden = false
+	}
+
+	banner.addEventListener('click', (event) => {
+		const val = (event.target as HTMLElement).closest<HTMLElement>('[data-val]')?.dataset.val
+		if (!val) return
+		try {
+			localStorage.setItem(KEY, val)
+		} catch {}
+		apply(val)
+		banner.hidden = true
+	})
+</script>
+
+<style>
+	.kakor {
+		position: fixed;
+		inset: auto var(--gutter) var(--gutter);
+		max-width: 40rem;
+		margin-inline: auto;
+		padding: 1.5rem 1.75rem;
+		background: var(--bg-alt);
+		border: 1px solid var(--border);
+		border-radius: 6px;
+		box-shadow: 0 4px 16px rgb(0 0 0 / 0.15);
+		font-size: 0.95rem;
+		z-index: 10;
+	}
+	.kakor p {
+		margin: 0;
+	}
+	.val {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 0.5rem;
+		margin-top: 1rem;
+	}
+	.val .button {
+		font-size: 1.1rem;
+		border: 0;
+		cursor: pointer;
+	}
+</style>
