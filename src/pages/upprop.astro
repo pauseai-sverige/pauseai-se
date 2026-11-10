@@ -1,5 +1,5 @@
 ---
-// The statement page. Signatures are collected by PauseAI Global's form (Tally) and stored by
+// The statement page. Signatures are collected by PauseAI Global's form and stored by
 // Stichting PauseAI, so Global is responsible for the personal data and we store nothing.
 // Global's guide for national groups asks us to collect signatures to this statement.
 // A list of our own would need a legal entity to be responsible for it, which we do not have.
@@ -13,9 +13,8 @@ const { Content } = await render(sida)
 
 const antal = await fetchSwedishSignatures()
 
-// Global's form for the statement, the same one pauseai.info/statement embeds.
-const form = 'https://tally.so/embed/315xdg?alignLeft=1&hideTitle=1&dynamicHeight=1'
-const formLink = 'https://tally.so/r/315xdg'
+// Global's form for the statement, the same one pauseai.info/statement shows.
+const form = 'https://pauseai.info/embed/statement-form'
 ---
 
 <Base title={sida.data.title} description={sida.data.description}>
@@ -39,9 +38,14 @@ const formLink = 'https://tally.so/r/315xdg'
 		<Content />
 
 		<div class="formular">
-			<iframe data-tally-src={form} title="Skriv under uppropet" height="600" loading="lazy"></iframe>
+			<iframe
+				src={form}
+				title="Skriv under uppropet"
+				height="600"
+				loading="lazy"
+				referrerpolicy="no-referrer-when-downgrade"></iframe>
 			<p class="muted fallback">
-				Syns inte formuläret? <a href={formLink}>Öppna det i ett eget fönster</a>.
+				Syns inte formuläret? <a href={form}>Öppna det i ett eget fönster</a>.
 			</p>
 		</div>
 
@@ -68,8 +72,15 @@ const formLink = 'https://tally.so/r/315xdg'
 	</article>
 </Base>
 
-<!-- Tally's own script loads the form and adjusts its height as it changes. -->
-<script is:inline async src="https://tally.so/widgets/embed.js"></script>
+<script>
+	// Formuläret rapporterar sin höjd när den ändras; utan detta klipps det av.
+	const iframe = document.querySelector<HTMLIFrameElement>('.formular iframe')
+	window.addEventListener('message', (event) => {
+		if (event.origin !== 'https://pauseai.info' || event.source !== iframe?.contentWindow) return
+		const h = event.data?.height
+		if (iframe && typeof h === 'number' && Number.isFinite(h) && h > 0) iframe.height = String(h)
+	})
+</script>
 
 <style>
 	.upprop {
