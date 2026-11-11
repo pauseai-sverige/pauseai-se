@@ -1,0 +1,122 @@
+# Här lagras data för mediehusen i mejlbyggaren för tips, implementerad i tipsa-media.astro
+
+# Nationella generella mediehus
+
+- id: svt
+  namn: SVT Nyheter
+  land: SE
+  sprak: sv
+  skala: nationell
+  webbsida: https://www.svt.se/
+  tipsEmail: tipsaoss@svt.se
+  senastVerifierad: 2026-11-11
+
+- id: sr
+  namn: Sveriges Radio
+  land: SE
+  sprak: sv
+  skala: nationell
+  webbsida: https://www.sverigesradio.se/
+  tipsEmail: ekotgranskar@sverigesradio.se
+  senastVerifierad: 2026-11-11
+
+- id: tv4
+  namn: TV4 Nyheterna
+  land: SE
+  sprak: sv
+  skala: nationell
+  webbsida: https://www.tv4.se
+  tipsEmail: nyheterna@tv4.se
+  senastVerifierad: 2026-11-11
+
+- id: dn
+  namn: Dagens Nyheter
+  land: SE
+  sprak: sv
+  skala: nationell
+  webbsida: https://www.dn.se/
+  tipsEmail: www@dn.se
+  senastVerifierad: 2026-11-11
+
+- id: svd
+  namn: Svenska Dagbladet
+  land: SE
+  sprak: sv
+  skala: nationell
+  webbsida: https://www.svd.se/
+  tipsEmail: webbredaktion@svd.se
+  senastVerifierad: 2026-11-11
+
+- id: aftonbladet
+  namn: Aftonbladet
+  land: SE
+  sprak: sv
+  skala: nationell
+  webbsida: https://www.aftonbladet.se
+  tipsEmail: tipsa@aftonbladet.se
+  senastVerifierad: 2026-11-11
+
+- id: tt
+  namn: TT
+  land: SE
+  sprak: sv
+  skala: nationell
+  webbsida: 
+  tipsEmail: 
+  senastVerifierad: 2026-11-11
+
+# Nationella nischade mediehus
+
+# - id: di
+#   namn: Dagens Industri
+#   land: SE
+#   sprak: sv
+#   skala: nationell
+#   webbsida: 
+#   tipsEmail: 
+#   senastVerifierad: 2026-11-11
+
+# - id: ny_teknik
+#   namn: Ny Teknik
+#   land: SE
+#   sprak: sv
+#   skala: nationell
+#   webbsida: 
+#   tipsEmail: 
+#   senastVerifierad: 2026-11-11
+
+# - id: computer_sweden
+#   namn: Computer Sweden
+#   land: SE
+#   sprak: sv
+#   skala: nationell
+#   webbsida: 
+#   tipsEmail: 
+#   senastVerifierad: 2026-11-11
+
+# - id: breakit
+#   namn: Breakit
+#   land: SE
+#   sprak: sv
+#   skala: nationell
+#   webbsida: 
+#   tipsEmail: 
+#   senastVerifierad: 2026-11-11
+
+# - id: techworld
+#   namn: Techworld
+#   land: SE
+#   sprak: sv
+#   skala: nationell
+#   webbsida: 
+#   tipsEmail: 
+#   senastVerifierad: 2026-11-11
+
+# - id: realtid
+#   namn: Realtid
+#   land: SE
+#   sprak: sv
+#   skala: nationell
+#   webbsida: 
+#   tipsEmail: 
+#   senastVerifierad: 2026-11-11

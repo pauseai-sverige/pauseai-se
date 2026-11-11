@@ -1,5 +1,5 @@
 import { defineCollection } from 'astro:content'
-import { glob } from 'astro/loaders'
+import { glob, file } from 'astro/loaders'
 import { z } from 'astro/zod'
 import { withLuma } from './luma'
 
@@ -120,4 +120,18 @@ const berattelser = defineCollection({
 	})
 })
 
-export const collections = { sidor, blogg, evenemang, insatser, laget, lyft, berattelser }
+// Mediehus som stöds av mejlbyggaren för att tipsa media
+const medieHus = defineCollection({
+  loader: file('src/data/medie_hus.yml'),
+  schema: z.object({
+	namn: z.string(),
+	land: z.string().length(2),
+	sprak: z.string().default('en'),
+	skala: z.enum(['nationell', 'regional', 'internationell']),
+	webbsida: z.url().nullish(),
+	tipsEmail: z.email().nullish(),
+	senastVerifierad: z.coerce.date().optional(),
+  }),
+});
+
+export const collections = { sidor, blogg, evenemang, insatser, laget, lyft, berattelser, medieHus }
