@@ -49,6 +49,19 @@ export const menu = [
 const dayFormat = new Intl.DateTimeFormat('sv-SE', { dateStyle: 'short', timeZone: 'Europe/Stockholm' })
 export const isUpcoming = (date: Date, now = new Date()) => dayFormat.format(date) >= dayFormat.format(now)
 
+/**
+ * Groups events with the same title into series, e.g. the recurring member meeting.
+ * Keeps the input order: each series sits where its first event was.
+ */
+export function groupSeries<T extends { data: { title: string } }>(events: T[]): T[][] {
+	const series = new Map<string, T[]>()
+	for (const event of events) {
+		const key = event.data.title.trim().toLowerCase()
+		series.set(key, [...(series.get(key) ?? []), event])
+	}
+	return [...series.values()]
+}
+
 interface CalendarEvent {
 	id: string
 	title: string

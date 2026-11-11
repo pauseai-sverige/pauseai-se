@@ -1,21 +1,47 @@
 ---
 import type { CollectionEntry } from 'astro:content'
-import { formatDateTime, url } from '../lib'
+import { formatDateTime, groupSeries, isUpcoming, url } from '../lib'
 
 interface Props {
 	events: CollectionEntry<'evenemang'>[]
+	/** Show recurring events (same title) as one row with the later dates folded away. */
+	series?: boolean
+	/** Maximum number of rows, counted after grouping. */
+	limit?: number
 }
-const { events } = Astro.props
+const { events, series = false, limit } = Astro.props
+const rows = (series ? groupSeries(events) : events.map((event) => [event])).slice(0, limit)
 ---
 
 <ul class="events">
 	{
-		events.map((event) => (
+		rows.map(([event, ...more]) => (
 			<li>
 				<time datetime={event.data.date.toISOString()}>{formatDateTime(event.data.date)}</time>
 				<h3><a href={url(`/evenemang/${event.id}`)}>{event.data.title}</a></h3>
 				<p class="muted">{event.data.location}</p>
 				{event.data.description && <p>{event.data.description}</p>}
+				{event.data.link && isUpcoming(event.data.date) && (
+					<p>
+						<a class="button" href={event.data.link}>
+							Anmäl dig
+						</a>
+					</p>
+				)}
+				{more.length > 0 && (
+					<details>
+						<summary>{more.length === 1 ? 'Ett tillfälle till' : `${more.length} tillfällen till`}</summary>
+						<ul class="dates">
+							{more.map((later) => (
+								<li>
+									<a href={url(`/evenemang/${later.id}`)}>
+										<time datetime={later.data.date.toISOString()}>{formatDateTime(later.data.date)}</time>
+									</a>
+								</li>
+							))}
+						</ul>
+					</details>
+				)}
 			</li>
 		))
 	}
@@ -27,11 +53,11 @@ const { events } = Astro.props
 		padding: 0;
 		margin: 0;
 	}
-	li {
+	.events > li {
 		padding: 1rem 0;
 		border-bottom: 1px solid var(--border);
 	}
-	time {
+	.events > li > time {
 		font-weight: 700;
 		color: var(--brand-dark);
 	}
@@ -48,5 +74,29 @@ const { events } = Astro.props
 	}
 	p {
 		margin: 0.2rem 0 0;
+	}
+	p:has(> .button) {
+		margin-top: 0.6rem;
+	}
+	.button {
+		padding: 0.4rem 0.9rem;
+		font-size: 1rem;
+	}
+	details {
+		margin-top: 0.5rem;
+	}
+	summary {
+		font-weight: 700;
+		color: var(--brand-dark);
+	}
+	summary::after {
+		content: ' ▾';
+	}
+	details[open] > summary::after {
+		content: ' ▴';
+	}
+	.dates {
+		margin: 0.4rem 0 0;
+		padding-left: 1.25rem;
 	}
 </style>

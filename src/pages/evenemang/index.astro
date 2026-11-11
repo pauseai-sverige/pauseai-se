@@ -32,7 +32,7 @@ const webcalUrl = calendarUrl.replace(/^https?:/, 'webcal:')
 		<h2>Kommande</h2>
 		{
 			upcoming.length > 0 ? (
-				<EventList events={upcoming} />
+				<EventList events={upcoming} series />
 			) : (
 				<p>
 					Inga planerade evenemang just nu. <a href={url('/engagera-dig')}>Gå med</a> så får du veta när något händer,

@@ -38,7 +38,7 @@ npm run preview  # visar det byggda resultatet
 | `src/layouts/Base.astro` | Ramen runt varje sida: `<head>`, meny och sidfot. Här finns också besöksräknaren från GoatCounter. |
 | `src/components/` | Meny, sidfot, logga, evenemangslista och anmälningsformuläret från Global. |
 | `src/upprop.ts` | Räknar underskrifterna från Sverige på PauseAI Globals upprop när sajten byggs, för sidan Skriv under uppropet. Svarar inte Global byggs sajten ändå, utan siffran. |
-| `src/luma.ts` | Hämtar kommande evenemang från kalendern på Luma när sajten byggs. De som redan finns i `evenemang/` med samma Luma-länk hoppas över. Svarar inte Luma byggs sajten ändå. |
+| `src/luma.ts` | Hämtar kommande evenemang från kalendern på Luma när sajten byggs, och beskrivningen från varje evenemangs sida (schema.org-datan i sidan, eftersom kalenderflödet saknar den). De som redan finns i `evenemang/` med samma Luma-länk hoppas över. Svarar inte Luma byggs sajten ändå, utan beskrivningar om bara sidorna fallerar. |
 | `src/lib.ts` | Hjälpfunktioner: länkar med `base`, datumformat, menyn, `isUpcoming`, WhatsApp-länkar och kalenderfiler. |
 | `src/styles/global.css` | Färger, typsnitt och gemensam stil. |
 | `public/` | Filer som publiceras som de är, till exempel favicon och uppladdade bilder. |
