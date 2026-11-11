@@ -1,0 +1,123 @@
+---
+import type { CollectionEntry } from 'astro:content'
+import { formatMonth } from '../lib'
+
+interface Props {
+	/** Notiser, nyast först. */
+	notiser: CollectionEntry<'laget'>[]
+}
+const { notiser } = Astro.props
+---
+
+<div class="rad" data-laget>
+	<ol class="spar" tabindex="0" aria-label="Notiser, nyast först">
+		{
+			notiser.map((n) => (
+				<li>
+					<strong>
+						<time datetime={n.data.date.toISOString().slice(0, 10)}>{formatMonth(n.data.date)}</time>
+					</strong>
+					<span>
+						{n.data.text} <a href={n.data.source}>Källa</a>
+					</span>
+				</li>
+			))
+		}
+	</ol>
+	<div class="knappar" hidden>
+		<button type="button" data-riktning="-1" aria-label="Nyare notiser">← Nyare</button>
+		<button type="button" data-riktning="1" aria-label="Äldre notiser">Äldre →</button>
+	</div>
+</div>
+
+<script>
+	// Utan JavaScript går raden att skrolla i sidled; med JavaScript får den också knappar.
+	for (const rad of document.querySelectorAll<HTMLElement>('[data-laget]')) {
+		const spar = rad.querySelector<HTMLElement>('.spar')
+		const knappar = rad.querySelector<HTMLElement>('.knappar')
+		const [nyare, aldre] = Array.from(rad.querySelectorAll<HTMLButtonElement>('.knappar button'))
+		if (!spar || !knappar || !nyare || !aldre) continue
+
+		const uppdatera = () => {
+			const max = spar.scrollWidth - spar.clientWidth
+			knappar.hidden = max <= 1
+			nyare.disabled = spar.scrollLeft <= 1
+			aldre.disabled = spar.scrollLeft >= max - 1
+		}
+		const gaSida = (riktning: number) => {
+			const stilla = matchMedia('(prefers-reduced-motion: reduce)').matches
+			spar.scrollBy({ left: riktning * spar.clientWidth, behavior: stilla ? 'auto' : 'smooth' })
+		}
+		nyare.addEventListener('click', () => gaSida(-1))
+		aldre.addEventListener('click', () => gaSida(1))
+		spar.addEventListener('scroll', uppdatera, { passive: true })
+		new ResizeObserver(uppdatera).observe(spar)
+		uppdatera()
+	}
+</script>
+
+<style>
+	.spar {
+		--mellanrum: 1.5rem;
+		--antal: 4;
+		list-style: none;
+		margin: 1.5rem 0 0;
+		padding: 0;
+		display: grid;
+		grid-auto-flow: column;
+		grid-auto-columns: calc((100% - (var(--antal) - 1) * var(--mellanrum)) / var(--antal));
+		gap: var(--mellanrum);
+		overflow-x: auto;
+		scroll-snap-type: x mandatory;
+		scrollbar-width: thin;
+	}
+	.spar li {
+		display: flex;
+		flex-direction: column;
+		gap: 0.35rem;
+		padding-left: 1rem;
+		border-left: 4px solid var(--brand);
+		scroll-snap-align: start;
+	}
+	.spar strong {
+		font-family: var(--font-heading);
+		font-size: 1.2rem;
+		text-transform: uppercase;
+	}
+	.knappar {
+		display: flex;
+		justify-content: flex-end;
+		gap: 0.75rem;
+		margin-top: 1rem;
+	}
+	.knappar[hidden] {
+		display: none;
+	}
+	.knappar button {
+		font: inherit;
+		padding: 0.4rem 0.9rem;
+		border: 1px solid var(--border);
+		border-radius: 0.25rem;
+		background: transparent;
+		color: inherit;
+		cursor: pointer;
+	}
+	.knappar button:disabled {
+		opacity: 0.4;
+		cursor: default;
+	}
+	/* Smalare skärmar: färre notiser i bredd, så att nästa syns och det märks att raden går att svepa. */
+	@media (max-width: 60rem) {
+		.spar {
+			--antal: 2;
+		}
+	}
+	@media (max-width: 36rem) {
+		.spar {
+			grid-auto-columns: 85%;
+		}
+		.knappar {
+			display: none;
+		}
+	}
+</style>

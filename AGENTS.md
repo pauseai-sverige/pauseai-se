@@ -38,7 +38,7 @@ Existing Swedish identifiers (`sidor`, `evenemang`, `fallbara`) are tied to URLs
   dependencies: `astro` and `@astrojs/markdown-satteri`.
 - **Node 24** locally (`.nvmrc`). Commands: `npm ci`, `npm run dev`, `npm run check`, `npm run build`.
 - **Content** lives in `src/content/<collection>/*.md`, one Markdown file per entry. Collections:
-  `sidor` (pages), `blogg`, `evenemang` (events), `insatser` (what we have done), `berattelser` (member stories).
+  `sidor` (pages), `blogg`, `evenemang` (events), `insatser` (what we have done), `laget` (news row on the start page), `berattelser` (member stories).
   Schemas in `src/content.config.ts` must match the Pages CMS forms in `.pages.yml`. Change both.
 - **Editors use Pages CMS** (app.pagescms.org), which commits straight to `main`. It strips HTML
   from Markdown. Anything beyond plain text becomes a frontmatter field.

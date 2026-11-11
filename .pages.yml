@@ -159,6 +159,42 @@ content:
         options:
           format: markdown
 
+  - name: laget
+    label: Läget just nu
+    type: collection
+    path: src/content/laget
+    filename: "{year}-{month}-{day}.md"
+    view:
+      fields: [date, text]
+      primary: text
+      sort: [date]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: date
+        label: Datum
+        description: När det hände. Sidan visar bara månad och år, och sorterar nyast först. Två notiser samma dag får inte plats, välj då olika dagar.
+        type: date
+        required: true
+        options:
+          format: yyyy-MM-dd
+      - name: text
+        label: Notis
+        description: En eller två meningar om vad som har hänt. Skriv vem som står bakom ("OpenAI uppger", "EU-kommissionen uppger") när källan är en part. Hämta bara sakuppgifter från Belagt, se docs/kallor.md.
+        type: text
+        required: true
+      - name: source
+        label: Källa
+        description: Hela adressen till primärkällan, med https:// i början. Samma adress som posten i Belagt hänvisar till.
+        type: string
+        required: true
+      - name: belagt
+        label: Id i Belagt
+        description: Valfritt men rekommenderat. Postens id i Belagt, till exempel BID-04. En per rad.
+        type: string
+        list: true
+
   - name: berattelser
     label: Berättelser
     type: collection

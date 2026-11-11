@@ -31,7 +31,7 @@ npm run preview  # visar det byggda resultatet
 
 | Sökväg | Innehåll |
 | --- | --- |
-| `src/content/blogg/`, `evenemang/`, `sidor/`, `insatser/`, `berattelser/` | Innehållet, en Markdown-fil per post. Redigeras helst i Pages CMS. `insatser` visas på Det vi har gjort och `berattelser` på Därför engagerar vi oss. |
+| `src/content/blogg/`, `evenemang/`, `sidor/`, `insatser/`, `laget/`, `berattelser/` | Innehållet, en Markdown-fil per post. Redigeras helst i Pages CMS. `insatser` visas på Det vi har gjort, `laget` i raden Läget just nu på startsidan och `berattelser` på Därför engagerar vi oss. |
 | `src/content.config.ts` | Vilka fält varje sorts innehåll har. Måste stämma med `.pages.yml`. |
 | `.pages.yml` | Formulären i Pages CMS: fält, etiketter och hjälptexter. |
 | `src/pages/` | Sidmallar. `[slug].astro` visar sidorna, `index.astro` är startsidan, `*.ics.ts` är kalenderfilerna. |

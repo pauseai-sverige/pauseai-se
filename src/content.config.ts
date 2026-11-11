@@ -78,6 +78,18 @@ const insatser = defineCollection({
 	})
 })
 
+// Läget just nu: korta, belagda händelser med källa. Visas i en rad på startsidan, nyast först.
+const laget = defineCollection({
+	loader: glob({ pattern: '**/*.md', base: './src/content/laget' }),
+	schema: z.object({
+		date: z.coerce.date(),
+		text: z.string(),
+		source: z.string(),
+		// Id:n i Belagt (pauseai-sverige.github.io/belagt) som notisen bygger på.
+		belagt: z.array(z.string()).optional()
+	})
+})
+
 // Medlemmars egna ord om varför de engagerar sig. Kontaktpersoner visas också under
 // Möt oss på startsidan.
 const berattelser = defineCollection({
@@ -92,4 +104,4 @@ const berattelser = defineCollection({
 	})
 })
 
-export const collections = { sidor, blogg, evenemang, insatser, berattelser }
+export const collections = { sidor, blogg, evenemang, insatser, laget, berattelser }
