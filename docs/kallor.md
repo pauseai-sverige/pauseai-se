@@ -22,7 +22,9 @@ Det här gäller för dig som skriver eller ändrar texter om AI-risker, försla
 - förbehåll
 - ett datum då posten bör ses över (*bäst före*)
 
-Arkivet är neutralt och innehåller också motröster. Det drivs i ett eget repo, [pauseai-sverige/belagt](https://github.com/pauseai-sverige/belagt).
+Arkivet letar efter det som den här sajten behöver belägg för. Frågorna står i [relevans.yaml](https://github.com/pauseai-sverige/belagt/blob/main/relevans.yaml), som ska ändras när sajten tar upp något nytt. Motröster tas med på samma villkor. Arkivet drivs i ett eget repo, [pauseai-sverige/belagt](https://github.com/pauseai-sverige/belagt).
+
+Posterna tas fram och granskas av AI. Citatet kontrolleras maskinellt mot källan och en oberoende AI-session läser posten mot källan, men bara ett stickprov läses av en människa. Fältet `granskning` i posten visar vilket som gäller. **Öppna därför alltid källänken och läs citatet i sitt sammanhang innan du använder en post**, enligt regel 6 i [GOVERNANCE.md](GOVERNANCE.md).
 
 Sajten länkar **inte** till Belagt, utan direkt till primärkällorna. Belagt är verktyget vi hämtar och kontrollerar källorna med.
 
@@ -31,13 +33,13 @@ Sajten länkar **inte** till Belagt, utan direkt till primärkällorna. Belagt �
 1. Sök i [Belagt](https://pauseai-sverige.github.io/belagt/) på ett namn, ett ämne eller en siffra.
 2. Läs påståendet och förbehållen. Skriv inte mer i texten än vad posten belägger.
 3. Klicka på källänken i posten. Den öppnar primärkällan med citatet markerat. Kopiera adressen därifrån, alltså posten `citatlänk` i [belagt.json](https://pauseai-sverige.github.io/belagt/belagt.json), och använd den som länk i texten.
-4. I `.astro`-filer, till exempel startsidan, skriver du dessutom en kommentar med postens id, `// Belagt SVR-04`. I Markdown går det inte, eftersom Pages CMS tar bort kommentarer. Där räcker det att länken är postens `citatlänk`.
+4. I `.astro`-filer, till exempel startsidan, skriver du dessutom en kommentar med postens id, `// Belagt SVR-04`. I Markdown går det inte, eftersom Pages CMS tar bort kommentarer. Där räcker det att länken är postens `citatlänk`. Notiserna i *Läget just nu* har fältet `belagt` för id:n.
 
 Länken eller kommentaren gör att arbetsflödet *Kontrollera källor* hittar posten.
 
 ### Saknas påståendet i Belagt?
 
-Föreslå det som ett [ärende i Belagt](https://github.com/pauseai-sverige/belagt/issues/new/choose). Du kan också använda en källa direkt på sajten om den följer reglerna ovan, men den kontrolleras då inte automatiskt.
+Föreslå det som ett [ärende i Belagt](https://github.com/pauseai-sverige/belagt/issues/new/choose). Du kan också använda en källa direkt på sajten om den följer reglerna ovan. Den kontrolleras då inte automatiskt, men Belagts veckovisa bevakning läser vilka källor sajten länkar till och försöker belägga dem som saknas. Arbetsflödet *Kontrollera källor* listar dem i sin sammanfattning.
 
 ### När källkontrollen öppnar ett ärende
 
