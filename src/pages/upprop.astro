@@ -14,7 +14,8 @@ const { Content } = await render(sida)
 const antal = await fetchSwedishSignatures()
 
 // Global's form for the statement, the same one pauseai.info/statement shows.
-const form = 'https://pauseai.info/embed/statement-form'
+// Default to Sweden for the Swedish site; signers can choose another country.
+const form = 'https://pauseai.info/embed/statement-form?country=Sweden'
 ---
 
 <Base title={sida.data.title} description={sida.data.description}>
