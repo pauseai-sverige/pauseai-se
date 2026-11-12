@@ -6,13 +6,18 @@ interface Props {
 	lyft: CollectionEntry<'lyft'>
 }
 const { title, etikett, text, knapp_text, knapp_lank, lank_text, lank } = Astro.props.lyft.data
+// A dash in the title starts a new line, so that the heading never breaks mid-phrase.
+const [first, ...rest] = title.split(' – ')
 ---
 
 <aside class="lyft" aria-label={title}>
 	<div class="container-wide inner">
 		<div>
 			{etikett && <p class="etikett">{etikett}</p>}
-			<h2>{title}</h2>
+			<h2>
+				<span class="rad">{rest.length > 0 ? `${first} –` : first}</span>
+				{rest.length > 0 && <span class="rad">{rest.join(' – ')}</span>}
+			</h2>
 			<p class="text">{text}</p>
 		</div>
 		<p class="actions">
@@ -55,6 +60,10 @@ const { title, etikett, text, knapp_text, knapp_lank, lank_text, lank } = Astro.
 		margin: 0;
 		font-size: clamp(1.8rem, 5vw, 2.75rem);
 		line-height: 1;
+	}
+	h2 .rad {
+		display: block;
+		text-wrap: balance;
 	}
 	.text {
 		max-width: 44rem;

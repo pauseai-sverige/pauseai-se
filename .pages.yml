@@ -210,7 +210,7 @@ content:
     fields:
       - name: title
         label: Rubrik
-        description: Det som ska lyftas fram, till exempel "Demonstration i Stockholm". Visas stort överst på startsidan.
+        description: Det som ska lyftas fram, till exempel "Demonstration i Stockholm". Visas stort överst på startsidan. Ett tankstreck med mellanslag omkring ( – ) ger ny rad efter strecket.
         type: string
         required: true
       - name: etikett
