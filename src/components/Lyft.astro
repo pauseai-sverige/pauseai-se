@@ -1,0 +1,89 @@
+---
+import type { CollectionEntry } from 'astro:content'
+import { linkUrl } from '../lib'
+
+interface Props {
+	lyft: CollectionEntry<'lyft'>
+}
+const { title, etikett, text, knapp_text, knapp_lank, lank_text, lank } = Astro.props.lyft.data
+---
+
+<aside class="lyft" aria-label={title}>
+	<div class="container-wide inner">
+		<div>
+			{etikett && <p class="etikett">{etikett}</p>}
+			<h2>{title}</h2>
+			<p class="text">{text}</p>
+		</div>
+		<p class="actions">
+			<a class="button" href={linkUrl(knapp_lank)}>{knapp_text}</a>
+			{lank_text && lank && <a class="mer" href={linkUrl(lank)}>{lank_text} →</a>}
+		</p>
+	</div>
+</aside>
+
+<style>
+	/* Dark in both colour schemes, like the quotes, so it stands out from the hero below. */
+	.lyft {
+		padding: 1.75rem 0;
+		background: #111;
+		color: #f2f2f2;
+		border-bottom: 6px solid var(--brand);
+	}
+	.lyft + .lyft {
+		border-top: 1px solid #333;
+	}
+	.inner {
+		display: grid;
+		grid-template-columns: 1fr auto;
+		gap: 1.25rem 3rem;
+		align-items: center;
+	}
+	.etikett {
+		display: inline-block;
+		margin: 0 0 0.6rem;
+		padding: 0.1rem 0.6rem;
+		background: var(--brand);
+		color: #000;
+		font-family: var(--font-heading);
+		font-size: 1.05rem;
+		font-weight: 700;
+		letter-spacing: 0.04em;
+		text-transform: uppercase;
+	}
+	h2 {
+		margin: 0;
+		font-size: clamp(1.8rem, 5vw, 2.75rem);
+		line-height: 1;
+	}
+	.text {
+		max-width: 44rem;
+		margin: 0.6rem 0 0;
+		color: #ddd;
+	}
+	.actions {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 0.75rem;
+		margin: 0;
+	}
+	.mer {
+		color: #f2f2f2;
+		font-weight: 700;
+	}
+	.mer:hover {
+		color: var(--brand);
+	}
+	@media (max-width: 50rem) {
+		.inner {
+			grid-template-columns: 1fr;
+		}
+		.actions {
+			flex-direction: row;
+			flex-wrap: wrap;
+			align-items: center;
+			gap: 0.75rem 1.5rem;
+		}
+	}
+</style>

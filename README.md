@@ -26,7 +26,7 @@ Du behöver inte kunna koda, men du behöver ett gratis konto på [github.com](h
 1. Be en ägare att lägga till dig som redaktör, se [docs/GOVERNANCE.md](docs/GOVERNANCE.md#få-åtkomst).
 2. Gå till [app.pagescms.org](https://app.pagescms.org) och logga in med GitHub.
 3. Välj **pauseai-sverige/pauseai-se**.
-4. Välj **Blogg**, **Evenemang**, **Det vi har gjort**, **Läget just nu**, **Berättelser** eller **Sidor** i menyn och klicka på **Add an entry** för att skapa något nytt, eller på en befintlig post för att ändra den.
+4. Välj **Blogg**, **Evenemang**, **Det vi har gjort**, **Läget just nu**, **Lyft fram på startsidan**, **Berättelser** eller **Sidor** i menyn och klicka på **Add an entry** för att skapa något nytt, eller på en befintlig post för att ändra den.
 5. Fyll i fälten. Varje fält har en hjälptext.
 6. Klicka **Save**. Ändringen syns på sajten efter ett par minuter.
 
@@ -41,6 +41,7 @@ Bra att veta:
 - **Blogg** är för texter från volontärer: debatt, analys och rapporter från det vi gör. Fyll i *Författare* med namnet personen vill synas med, eller lämna tomt för "PauseAI Sverige". Lägg gärna till en bild, eftersom bloggen visar den som omslag. Texter om AI-risker följer [docs/kallor.md](docs/kallor.md).
 - **Det vi har gjort** är listan över våra protester, politikermöten, debattartiklar och liknande. Lägg upp något efter varje insats, gärna med en siffra ("ca 30 deltagare"), bilder och länkar till pressbevakning. Skriv bara siffror vi kan stå för.
 - **Läget just nu** är raden med korta notiser på startsidan. Nyast först, och besökaren bläddrar bakåt med *Äldre*. Varje notis har en primärkälla och helst ett id från [Belagt](https://pauseai-sverige.github.io/belagt/). Hämta sakuppgifterna därifrån, följ [docs/kallor.md](docs/kallor.md), och skriv "uppger" när källan är en part. Datumet styr ordningen men sidan visar bara månad och år.
+- **Lyft fram på startsidan** är en ruta överst på startsidan för det som är viktigast just nu, till exempel en demonstration eller ett nytt upprop. Den har rubrik, kort text, en knapp och en valfri extra länk. Fältet *Visas till och med* avgör när rutan försvinner av sig själv. Flera rutor kan visas samtidigt, men en i taget syns bäst.
 - **Berättelser** är medlemmars egna ord om varför de engagerar sig. Publicera aldrig en berättelse innan personen har godkänt både texten och hur namnet visas, och ta bort den direkt om personen ber om det. Kryssa i *Visa under Möt oss* för kontaktpersoner som vill synas på startsidan.
 - **Allt som sparas syns publikt** och finns kvar i historiken. Skriv aldrig in personuppgifter som telefonnummer eller privata e-postadresser.
 

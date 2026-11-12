@@ -195,6 +195,59 @@ content:
         type: string
         list: true
 
+  - name: lyft
+    label: Lyft fram på startsidan
+    type: collection
+    path: src/content/lyft
+    filename: "{primary}.md"
+    view:
+      fields: [title, visas_till]
+      primary: title
+      sort: [visas_till, title]
+      default:
+        sort: visas_till
+        order: desc
+    fields:
+      - name: title
+        label: Rubrik
+        description: Det som ska lyftas fram, till exempel "Demonstration i Stockholm". Visas stort överst på startsidan.
+        type: string
+        required: true
+      - name: etikett
+        label: Etikett
+        description: Valfri. Några ord ovanför rubriken, till exempel "Lördag 5 december" eller "Nytt upprop".
+        type: string
+      - name: text
+        label: Text
+        description: En eller två meningar om vad det gäller och varför besökaren ska bry sig.
+        type: text
+        required: true
+      - name: knapp_text
+        label: Text på knappen
+        description: Till exempel "Anmäl dig på Facebook" eller "Skriv under".
+        type: string
+        required: true
+      - name: knapp_lank
+        label: Knappens länk
+        description: Dit knappen leder. En sida hos oss börjar med / (till exempel /upprop), andra adresser med https://.
+        type: string
+        required: true
+      - name: lank_text
+        label: Text på extra länk
+        description: Valfri. En andra länk bredvid knappen, till exempel "Tid och plats". Fyll då också i fältet nedanför.
+        type: string
+      - name: lank
+        label: Extra länk
+        description: Valfri. Dit den extra länken leder, skriven på samma sätt som knappens länk.
+        type: string
+      - name: visas_till
+        label: Visas till och med
+        description: Sista dagen rutan syns på startsidan, till exempel dagen för demonstrationen. Natten efter försvinner den av sig själv. Posten kan ligga kvar och återanvändas med ett nytt datum.
+        type: date
+        required: true
+        options:
+          format: yyyy-MM-dd
+
   - name: berattelser
     label: Berättelser
     type: collection
