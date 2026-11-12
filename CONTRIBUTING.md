@@ -61,6 +61,7 @@ npm run preview  # visar det byggda resultatet
 - **Sidan Engagera dig har en egen mall** (`src/pages/engagera-dig.astro`) för att visa anmälningsformuläret, och hoppas därför över i `[slug].astro`.
 - **Sidan Skriv under uppropet har också en egen mall** (`src/pages/upprop.astro`). Uppropets text, formuläret och avsnittet om personuppgifter ligger i mallen så att de inte ändras av misstag i Pages CMS; bara inledningen redigeras där. Underskrifterna samlas in och sparas av PauseAI Global. Vi lagrar inga och visar bara antalet, inte namnen.
 - **Startsidan hämtar de tre senaste insatserna och berättelserna själv.** Avsnitten Det vi har gjort, Därför engagerar vi oss och Möt oss syns bara när det finns något att visa. Möt oss visar berättelser där *Visa under Möt oss* är ikryssat.
+- **Rutan Lyft fram på startsidan försvinner vid nästa bygge efter dagen i *Visas till och med*.** Urvalet görs när sajten byggs (`isUpcoming` i `src/pages/index.astro`), så det är det nattliga bygget som tar bort den.
 - **Startsidans händelser och citat skrivs in för hand** i `src/pages/index.astro`. Varje post har en kommentar `// Belagt ID` så att källkontrollen hittar den. Se [docs/kallor.md](docs/kallor.md).
 
 ## Automatik och inställningar

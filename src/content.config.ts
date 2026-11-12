@@ -90,6 +90,22 @@ const laget = defineCollection({
 	})
 })
 
+// Lyft fram: det som ska synas överst på startsidan en begränsad tid, till exempel en demonstration.
+const lyft = defineCollection({
+	loader: glob({ pattern: '**/*.md', base: './src/content/lyft' }),
+	schema: z.object({
+		title: z.string(),
+		etikett: z.string().optional(),
+		text: z.string(),
+		knapp_text: z.string(),
+		knapp_lank: z.string(),
+		lank_text: z.string().optional(),
+		lank: z.string().optional(),
+		// Sista dagen rutan visas, i svensk tid.
+		visas_till: z.coerce.date()
+	})
+})
+
 // Medlemmars egna ord om varför de engagerar sig. Kontaktpersoner visas också under
 // Möt oss på startsidan.
 const berattelser = defineCollection({
@@ -104,4 +120,4 @@ const berattelser = defineCollection({
 	})
 })
 
-export const collections = { sidor, blogg, evenemang, insatser, laget, berattelser }
+export const collections = { sidor, blogg, evenemang, insatser, laget, lyft, berattelser }

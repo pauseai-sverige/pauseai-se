@@ -18,6 +18,9 @@ export const formatDate = (date: Date) => dateFormat.format(date)
 export const formatMonth = (date: Date) => monthFormat.format(date)
 export const formatDateTime = (date: Date) => dateTimeFormat.format(date)
 
+/** Länk från ett fält i Pages CMS: sidor hos oss börjar med / och behöver base, andra adresser lämnas orörda. */
+export const linkUrl = (href: string) => (href.startsWith('/') ? url(href) : href)
+
 /** Adress till en uppladdad bild. Bilder från Pages CMS börjar med /bilder och behöver base. */
 export const imageUrl = (src: string) => (src.startsWith('/') ? url(src) : src)
 
