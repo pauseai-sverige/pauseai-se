@@ -1,0 +1,655 @@
+---
+// Email tool: pick media houses, fill in a few details, and the email is composed in
+// the browser. Nothing is stored or sent from here; the visitor sends it from their
+// own email app.
+import { getCollection } from 'astro:content'
+import Base from '../layouts/Base.astro'
+import { url, formatDate } from '../lib'
+
+// The claims in the email text are checked against their primary sources in Belagt,
+// see docs/kallor.md. Each topic paragraph in the script below ends with its source.
+// Incidenter: Belagt J3ljHm57yU0-18, Belagt MET-04
+// Experter: Belagt TID-08, Belagt SVE-13
+// Institut: Belagt SVE-01, Belagt SVE-02
+
+const SECTIONS = [
+	{ skala: 'nationell', title: 'Nationella mediehus' },
+	{ skala: 'lokal', title: 'Lokala mediehus' }
+]
+
+// One entry per media house from the medieHus collection (medie_hus.yml).
+// Entries without a tip address (TT for now) cannot be mailed from this tool, so they are skipped.
+const houses = (await getCollection('medieHus'))
+	.map((h) => ({ id: h.id, ...h.data }))
+	.filter((h) => h.tipsEmail)
+	.sort((a, b) => a.namn.localeCompare(b.namn, 'sv'))
+
+// Sections without any media house are not rendered. A skala that is not listed
+// in SECTIONS (regional, internationell) is not shown, so add a row when you start using one.
+const sections = SECTIONS.map((s) => ({ ...s, houses: houses.filter((h) => h.skala === s.skala) })).filter(
+	(s) => s.houses.length > 0
+)
+
+// Latest verification date in the data, shown under the list.
+const latest = Math.max(0, ...houses.map((h) => h.senastVerifierad?.getTime() ?? 0))
+const senast = latest ? formatDate(new Date(latest)) : ''
+---
+
+<Base
+	title="Tipsa media"
+	description="Tipsa media om en nyhet kring AI-utvecklingen. Mejlet skapas i din webbläsare och skickas från ditt eget mejlprogram."
+>
+	<article class="container prose">
+		<h1>Tipsa media</h1>
+		<p class="lead">
+			Har du hört om en nyhet eller händelse kring AI-utvecklingen som oroat dig? Har svensk media inte skrivit om det ännu? Här
+			väljer du vilket mediehus du vill skriva till, fyller i ditt namn och skickar. Det tar endast ett par minuter!
+		</p>
+		<p>
+			Redigera gärna mailet för att göra det mer personligt. Det kan bidra till att en journalist väljer att rapportera om nyheten.
+		</p>
+
+		<form id="mejla" class="steps">
+			<section class="step">
+				<h2><span class="n">1</span> Vilket mediehus vill du skriva till?</h2>
+				{
+					houses.length > 0 ? (
+						<>
+							<p>
+								Välj ett eller flera mediehus.
+							</p>
+							{
+	sections.map((s) => (
+		<div class="lista" data-sektion>
+			<h3>{s.title}</h3>
+			{s.houses.length > 5 && (
+				<p class="field">
+					<label for={`sok-${s.skala}`}>Sök</label>
+					<input id={`sok-${s.skala}`} type="search" data-sok placeholder="Sök på namn" />
+				</p>
+			)}
+			<ul class="hus" data-hus>
+				{s.houses.map((h) => (
+					<li data-text={h.namn.toLowerCase()}>
+						<label>
+							<input type="checkbox" name="till" value={h.tipsEmail} data-namn={h.namn} />
+							<span>
+								<strong>{h.namn}</strong>
+								<span class="muted">
+									{h.webbsida ? new URL(h.webbsida).hostname.replace(/^www\./, '') : ''}
+								</span>
+							</span>
+						</label>
+					</li>
+				))}
+			</ul>
+			<p class="muted small" data-tom hidden>Inget mediehus matchar sökningen.</p>
+			<p class="lista-fot">
+				<span class="muted small" data-antal>{s.houses.length} mediehus</span>
+				<button class="button secondary small" type="button" data-fler hidden></button>
+			</p>
+		</div>
+	))
+}
+							<p class="muted small">
+								Tipsadresserna är hämtade från mediehusens egna tipssidor{senast ? `, senast kontrollerade ${senast}` : ''}. Hittar du en adress som inte stämmer,
+								säg gärna till.
+							</p>
+						</>
+					) : (
+						<p>
+							Vi har inga mediehus i listan just nu. Leta upp mediehusets egen tipssida och kopiera mejladressen
+							därifrån.
+						</p>
+					)
+				}
+			</section>
+
+			<section class="step">
+				<h2><span class="n">2</span> Om nyheten</h2>
+				<div class="fields">
+					<p class="field full">
+						<label for="nyhets_lank">Länk till nyhet </label>
+						<textarea id="nyhets_lank" name="nyhets_lank" rows="2"></textarea>
+					</p>
+				</div>
+				<p class="muted small">
+					Se till att länken funkar och att länken är tillgänglig att läsa utan inloggning.
+				</p>
+				<div class="fields">
+					<p class="field full">
+						<label for="sammanfattning">Sammanfattning </label>
+						<textarea id="sammanfattning" name="sammanfattning" rows="3"></textarea>
+					</p>
+				</div>
+			</section>
+
+			<section class="step">
+				<h2><span class="n">3</span> Om dig</h2>
+				<div class="fields">
+					<p class="field">
+						<label for="namn">Ditt namn</label>
+						<input id="namn" name="namn" type="text" autocomplete="name" required />
+					</p>
+					<p class="field">
+						<label for="ort">Ort <span class="muted">(valfritt)</span></label>
+						<input id="ort" name="ort" type="text" autocomplete="address-level2" />
+					</p>
+					<p class="field full">
+						<label for="bakgrund">Kort om dig <span class="muted">(valfritt, t.ex. "lärare och småbarnsförälder")</span></label>
+						<input id="bakgrund" name="bakgrund" type="text" />
+					</p>
+					<p class="field full">
+						<label for="varfor">Varför bryr du dig? <span class="muted">(valfritt, en mening räcker)</span></label>
+						<textarea id="varfor" name="varfor" rows="2"></textarea>
+					</p>
+				</div>
+				<p class="muted small">
+					Inget du skriver sparas eller skickas någonstans. Mejlet skapas här i din webbläsare och skickas från ditt
+					eget mejlprogram.
+				</p>
+			</section>
+
+			<section class="step">
+				<h2><span class="n">4</span> Ditt mejl</h2>
+				<p>Ändra gärna i texten och skriv med egna ord. Mejlet går till de mediehus du har kryssat i.</p>
+				<div class="till">
+					<span class="till-label">Till:</span>
+					<ul id="mottagare" aria-label="Mottagare"></ul>
+					<span class="muted small" id="ingen">Ingen vald ännu. Välj mediehus under steg 1.</span>
+				</div>
+				<!-- Cloned by the script for each chosen media house; a template keeps the scoped styles. -->
+				<template id="chip">
+					<li class="chip">
+						<span></span>
+						<button type="button">×</button>
+					</li>
+				</template>
+				<p class="field">
+					<label for="amne">Ämne</label>
+					<input id="amne" name="amne" type="text" />
+				</p>
+				<p class="field">
+					<span class="label" id="text-label">Mejlet</span>
+					<div id="text" class="mail" contenteditable="true" role="textbox" aria-multiline="true" aria-labelledby="text-label">
+					</div>
+				</p>
+				<p class="actions">
+					<a class="button" id="oppna" href="#">Öppna i mejlprogram</a>
+					<button class="button secondary" type="button" id="kopiera">Kopiera mejlet</button>
+					<button class="button secondary" type="button" id="kopiera-amne">Kopiera ämne</button>
+					<button class="button secondary" type="button" id="kopiera-adresser">Kopiera adresser</button>
+				</p>
+				<div id="enskilda-ruta" hidden>
+					<p class="muted small">
+						Du har valt flera mediehus. Öppna ett mejl i taget, så får varje redaktion ett eget mejl med rätt hälsning:
+					</p>
+					<ul id="enskilda" class="enskilda"></ul>
+				</div>
+				<template id="enskild">
+					<li><a class="button" href="#"></a></li>
+				</template>
+				<p class="muted small" id="status" aria-live="polite"></p>
+				<p class="muted small">
+					Öppnas inget mejlprogram? Kopiera texten och adresserna och klistra in dem i ditt vanliga mejl.
+				</p>
+			</section>
+		</form>
+
+		<p>
+			Mer om riskerna och vad Sverige kan göra finns under <a href={url('/forslaget')}>förslaget</a>. Verktyget är
+			inspirerat av <a href="https://vimasteprataomai.nu/mejla/">Vi måste prata om AI</a>.
+		</p>
+	</article>
+</Base>
+
+<script>
+	const pick = <T,>(items: T[]): T => items[Math.floor(Math.random() * items.length)]!
+	const byId = <T extends HTMLElement>(id: string) => document.getElementById(id) as T
+
+	// Varied per visit so the emails do not look like a mass mailing.
+	const SUBJECT = pick([
+		'Tips: viktiga nyheter kring AI-utvecklingen',
+		'Tips om AI-utvecklingen som förtjänar bevakning',
+		'Har ni bevakat AI-risker? Ett tips från en läsare',
+		'Tips från en läsare: AI och samhällets beredskap'
+	])
+	const INTRO = pick([
+		'Jag skriver för att tipsa er om en utveckling som oroar mig: hur snabbt AI utvecklas och vad det kan innebära för vårt samhälle.',
+		'Jag hör av mig för att tipsa om något jag tycker förtjänar mer uppmärksamhet i svenska media: AI-utvecklingen och riskerna med den.',
+		'Jag vill lyfta en fråga som jag tror att er publik skulle vilja veta mer om: hur snabbt AI utvecklas, och vad det kan betyda för samhället.'
+	])
+	const ASK = pick([
+		'Jag har inte sett detta rapporteras om i svensk media, så jag hoppas att ni vill undersöka och bevaka frågan närmare.',
+		'Jag skulle gärna se att ni tar upp det här i er bevakning, för än så länge har jag inte sett någon i Sverige rapportera om det.',
+		'Jag tror att det finns en viktig nyhetshistoria här, och hoppas att ni vill gräva vidare.'
+	])
+
+	const form = byId<HTMLFormElement>('mejla')
+	const amne = byId<HTMLInputElement>('amne')
+	const text = byId<HTMLDivElement>('text')
+	const oppna = byId<HTMLAnchorElement>('oppna')
+	const status = byId('status')
+	let edited = false
+
+	const clean = (s: string) => s.replace(/\s+/g, ' ').trim()
+	const sentence = (s: string) => {
+		s = clean(s)
+		if (!s) return ''
+		s = s.charAt(0).toUpperCase() + s.slice(1)
+		return /[.!?…]$/.test(s) ? s : s + '.'
+	}
+
+	const chosen = () => [...form.querySelectorAll<HTMLInputElement>('input[name="till"]:checked')]
+
+	function compose(): string {
+		const to = chosen()
+		const namn = clean(byId<HTMLInputElement>('namn').value) || '[Ditt namn]'
+		const ort = clean(byId<HTMLInputElement>('ort').value)
+		const varfor = sentence(byId<HTMLTextAreaElement>('varfor').value)
+		const bakgrund = clean(byId<HTMLInputElement>('bakgrund').value).replace(/\.$/, '')
+		const sammanfattning = clean(byId<HTMLInputElement>('sammanfattning').value) || '[Sammanfattning av nyheten]'
+		const lank = clean(byId<HTMLInputElement>('nyhets_lank').value) || '[Länk]'
+
+		// "Jag heter Kim, är lärare och bor i Umeå."
+		const about = [bakgrund ? `är ${bakgrund}` : '', ort ? `bor i ${ort}` : ''].filter(Boolean)
+		const presentation = about.length ? `Jag heter ${namn}, ${about.join(' och ')}.` : `Jag heter ${namn}.`
+		const intro = [presentation, INTRO, varfor]
+
+		return [
+			to.length === 1 ? `Hej redaktionen på ${to[0]!.dataset.namn}!` : 'Hej!',
+			intro.filter(Boolean).join(' '),
+			`Jag läste nyligen följande nyhet som oroade mig: ${sammanfattning}\n\n Länk: ${lank}`,
+			`${ASK} Hör gärna av er om ni vill veta mer.`,
+			`Med vänliga hälsningar,\n\n${namn}${ort ? '\n' + ort : ''}`
+		].join('\n\n')
+	}
+
+	const enskilda = byId<HTMLUListElement>('enskilda')
+	const enskildaRuta = byId('enskilda-ruta')
+	const enskild = byId<HTMLTemplateElement>('enskild')
+
+	const mailto = (to: string, body: string) =>
+		`mailto:${to}?subject=${encodeURIComponent(amne.value)}&body=${encodeURIComponent(body.replace(/\n/g, '\r\n'))}`
+
+	// One draft per media house. The greeting line is swapped for that house's name.
+	function renderIndividual(to: HTMLInputElement[], plain: string) {
+		enskilda.replaceChildren(
+			...(to.length > 1 ? to : []).map((c) => {
+				const li = (enskild.content.cloneNode(true) as DocumentFragment).firstElementChild as HTMLLIElement
+				const a = li.querySelector('a')!
+				a.textContent = `Öppna mejl till ${c.dataset.namn}`
+				a.href = mailto(c.value, plain.replace(/^Hej\b[^\n]*/, `Hej redaktionen på ${c.dataset.namn}!`))
+				return li
+			})
+		)
+		enskildaRuta.hidden = to.length < 2
+	}
+
+	function render() {
+		if (!edited) {
+			amne.value = SUBJECT
+			text.innerHTML = toHtml(compose())
+		}
+		const to = chosen()
+		const plain = toPlain(text)
+		oppna.href = mailto(to.map((c) => c.value).join(','), plain)
+		// With several recipients, the per-house buttons replace the combined one.
+		oppna.style.display = to.length > 1 ? 'none' : ''
+		renderIndividual(to, plain)
+		renderRecipients()
+	}
+
+	// Chips in step 4 showing who the email goes to.
+	const mottagare = byId<HTMLUListElement>('mottagare')
+	const ingen = byId('ingen')
+	const chip = byId<HTMLTemplateElement>('chip')
+	function renderRecipients() {
+		const to = chosen()
+		mottagare.replaceChildren(
+			...to.map((c) => {
+				const li = (chip.content.cloneNode(true) as DocumentFragment).firstElementChild as HTMLLIElement
+				li.querySelector('span')!.textContent = c.dataset.namn ?? c.value
+				const remove = li.querySelector('button')!
+				remove.setAttribute('aria-label', `Ta bort ${c.dataset.namn}`)
+				remove.addEventListener('click', () => {
+					c.checked = false
+					render()
+					filter()
+				})
+				return li
+			})
+		)
+		ingen.hidden = to.length > 0
+	}
+
+	// Each section filters and expands on its own.
+	const sections = [...form.querySelectorAll<HTMLElement>('[data-sektion]')]
+	const LIMIT = 12
+
+	function filterSection(sec: HTMLElement) {
+		const hus = sec.querySelector<HTMLElement>('[data-hus]')!
+		const fler = sec.querySelector<HTMLButtonElement>('[data-fler]')!
+		const q = clean(sec.querySelector<HTMLInputElement>('[data-sok]')?.value ?? '').toLowerCase()
+		const expanded = sec.dataset.expanded === 'true'
+		let matching = 0
+		hus.querySelectorAll<HTMLLIElement>('li').forEach((li) => {
+			const match = !q || (li.dataset.text ?? '').includes(q)
+			if (match) matching++
+			li.hidden = !match || (!expanded && matching > LIMIT)
+		})
+		sec.querySelector<HTMLElement>('[data-tom]')!.hidden = matching > 0
+		const valda = hus.querySelectorAll('input[name="till"]:checked').length
+		sec.querySelector('[data-antal]')!.textContent = `${matching} mediehus` + (valda ? ` · ${valda} valda` : '')
+		hus.toggleAttribute('data-avklippt', !expanded && matching > LIMIT)
+		fler.hidden = matching <= LIMIT
+		fler.textContent = expanded ? 'Visa färre' : `Visa alla (${matching})`
+		fler.setAttribute('aria-expanded', String(expanded))
+	}
+
+	const filter = () => sections.forEach(filterSection)
+
+	sections.forEach((sec) => {
+		sec.querySelector('[data-sok]')?.addEventListener('input', () => {
+			sec.dataset.expanded = 'false'
+			filterSection(sec)
+		})
+		sec.querySelector('[data-fler]')!.addEventListener('click', () => {
+			sec.dataset.expanded = String(sec.dataset.expanded !== 'true')
+			filterSection(sec)
+		})
+	})
+	filter()
+	form.addEventListener('change', (event) => {
+		if ((event.target as HTMLInputElement).name === 'till') filter()
+	})
+
+	form.addEventListener('input', (event) => {
+		const target = event.target as HTMLElement
+		// Once the visitor edits the email itself, stop regenerating it.
+		if (target === amne || target === text) edited = true
+		render()
+	})
+	form.addEventListener('submit', (event) => event.preventDefault())
+
+	const escape = (s: string) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]!)
+
+	// The composed text uses [text](url) for links. Rendered as paragraphs with real links
+	// in the editable preview, and the same HTML goes to the clipboard.
+	function toHtml(source: string): string {
+		return source
+			.split(/\n\n/)
+			.map((p) => {
+				const html = escape(p)
+					.replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g, '<a href="$2">$1</a>')
+					.replace(/\n/g, '<br>')
+				return `<p>${html}</p>`
+			})
+			.join('')
+	}
+
+	// Plain text for the mailto link: links become "text (url)", blocks become paragraphs.
+	// Browsers insert <p>, <div> or <br> when the visitor presses Enter, so all are handled.
+	function toPlain(root: HTMLElement): string {
+		const blocks: string[] = []
+		const inline = (node: Node): string => {
+			if (node.nodeType === Node.TEXT_NODE) return node.textContent ?? ''
+			if (!(node instanceof HTMLElement)) return ''
+			if (node.tagName === 'BR') return '\n'
+			if (node.tagName === 'A') return `${node.textContent} (${node.getAttribute('href')})`
+			return [...node.childNodes].map(inline).join('')
+		}
+		for (const node of root.childNodes) {
+			if (node instanceof HTMLElement && /^(P|DIV)$/.test(node.tagName)) blocks.push(inline(node))
+			else if (blocks.length) blocks[blocks.length - 1] += inline(node)
+			else blocks.push(inline(node))
+		}
+		return blocks
+			.map((b) => b.replace(/\u00a0/g, ' ').trim())
+			.filter(Boolean)
+			.join('\n\n')
+	}
+
+	async function copy(value: string, message: string, html?: string) {
+		try {
+			if (html && typeof ClipboardItem !== 'undefined') {
+				await navigator.clipboard.write([
+					new ClipboardItem({
+						'text/plain': new Blob([value], { type: 'text/plain' }),
+						'text/html': new Blob([html], { type: 'text/html' })
+					})
+				])
+			} else await navigator.clipboard.writeText(value)
+			status.textContent = message
+		} catch {
+			const range = document.createRange()
+			range.selectNodeContents(text)
+			getSelection()?.removeAllRanges()
+			getSelection()?.addRange(range)
+			status.textContent = 'Kunde inte kopiera. Texten är markerad, kopiera den med Ctrl+C eller Cmd+C.'
+		}
+	}
+	byId('kopiera').addEventListener('click', () =>
+		copy(toPlain(text), 'Mejlet är kopierat. Klistra in det i ditt mejlprogram, så följer länkarna med.', text.innerHTML)
+	)
+	byId('kopiera-amne').addEventListener('click', () => copy(amne.value, 'Ämnesraden är kopierad.'))
+	byId('kopiera-adresser').addEventListener('click', () => {
+		const addresses = chosen().map((c) => c.value)
+		if (addresses.length) copy(addresses.join(', '), 'Adresserna är kopierade.')
+		else status.textContent = 'Välj minst ett mediehus under steg 1.'
+	})
+
+	render()
+</script>
+
+<style>
+	.lead {
+		font-size: 1.15rem;
+	}
+	.steps {
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+		margin-top: 2rem;
+	}
+	.step {
+		padding: 1.5rem;
+		border-top: 6px solid var(--brand);
+		background: var(--bg-alt);
+	}
+	.step h2 {
+		display: flex;
+		align-items: center;
+		gap: 0.75rem;
+		margin-top: 0;
+	}
+	.n {
+		display: grid;
+		place-items: center;
+		width: 2.2rem;
+		height: 2.2rem;
+		padding-top: 0.15em;
+		border-radius: 50%;
+		background: var(--brand);
+		color: #000;
+		font-size: 1.4rem;
+		line-height: 1;
+	}
+	.fields {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+		gap: 0 1.5rem;
+	}
+	.full {
+		grid-column: 1 / -1;
+	}
+	.field {
+		display: flex;
+		flex-direction: column;
+		gap: 0.3rem;
+	}
+	.field label {
+		font-family: var(--font-heading);
+		font-size: 1.15rem;
+		text-transform: uppercase;
+	}
+	input,
+	select,
+	textarea {
+		width: 100%;
+		padding: 0.5rem 0.7rem;
+		border: 1px solid var(--border);
+		border-radius: 4px;
+		background: var(--bg);
+		color: var(--text);
+		font: inherit;
+		font-size: 1rem;
+	}
+	textarea {
+		resize: vertical;
+	}
+	.label {
+		font-family: var(--font-heading);
+		font-size: 1.15rem;
+		text-transform: uppercase;
+	}
+	.mail {
+		min-height: 20rem;
+		padding: 0.75rem 1rem;
+		border: 1px solid var(--border);
+		border-radius: 4px;
+		background: var(--bg);
+		font-size: 1rem;
+		line-height: 1.5;
+	}
+	.mail:focus {
+		outline: 2px solid var(--brand);
+		outline-offset: 1px;
+	}
+	.mail p {
+		margin: 0 0 1em;
+	}
+	.mail p:last-child {
+		margin-bottom: 0;
+	}
+	.lista h3 {
+		margin: 1.5rem 0 0.5rem;
+	}
+	.lista-fot {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 1rem;
+		margin: 0.75rem 0 0;
+	}
+	.button.small {
+		padding: 0.3rem 0.8rem;
+		font-size: 1rem;
+		border: 0;
+		cursor: pointer;
+	}
+	.hus {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+		gap: 0.5rem;
+		position: relative;
+	}
+	.hus[data-avklippt]::after {
+		content: '';
+		position: absolute;
+		inset: auto 0 0;
+		height: 5rem;
+		background: linear-gradient(to bottom, transparent, var(--bg-alt));
+		pointer-events: none;
+	}
+	.hus label {
+		display: flex;
+		align-items: center;
+		gap: 0.6rem;
+		padding: 0.5rem;
+		border: 1px solid var(--border);
+		border-radius: 4px;
+		background: var(--bg);
+		line-height: 1.2;
+		cursor: pointer;
+	}
+	.hus label:has(:checked) {
+		border-color: var(--brand);
+		box-shadow: inset 0 0 0 1px var(--brand);
+	}
+	.hus input {
+		width: auto;
+		margin: 0;
+	}
+	.hus strong {
+		display: block;
+	}
+	.till {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 0.5rem;
+		margin: 0 0 1rem;
+	}
+	.till-label {
+		font-family: var(--font-heading);
+		font-size: 1.15rem;
+		text-transform: uppercase;
+	}
+	#mottagare {
+		display: contents;
+		margin: 0;
+		padding: 0;
+	}
+	.chip {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.4rem;
+		padding: 0.2rem 0.4rem 0.2rem 0.7rem;
+		border: 1px solid var(--brand);
+		border-radius: 999px;
+		background: var(--bg);
+		font-size: 0.95rem;
+		line-height: 1.2;
+		list-style: none;
+	}
+	.chip button {
+		padding: 0 0.3rem;
+		border: 0;
+		background: none;
+		color: var(--text-muted);
+		font-size: 1.2rem;
+		line-height: 1;
+		cursor: pointer;
+	}
+	.chip button:hover {
+		color: var(--brand-dark);
+	}
+	.actions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.75rem;
+	}
+	.actions .button {
+		border: 0;
+		cursor: pointer;
+	}
+	.small {
+		font-size: 0.9rem;
+	}
+	.enskilda {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.75rem;
+		margin: 0.5rem 0 0;
+		padding: 0;
+		list-style: none;
+	}
+	.enskilda .button {
+		border: 0;
+		cursor: pointer;
+	}
+</style>
