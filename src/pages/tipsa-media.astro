@@ -37,16 +37,16 @@ const senast = latest ? formatDate(new Date(latest)) : ''
 
 <Base
 	title="Tipsa media"
-	description="Tipsa media om en nyhet eller händelse kring AI-utvecklingen. Mejlet skapas i din webbläsare och skickas från ditt eget mejlprogram."
+	description="Tipsa media om en nyhet kring AI-utvecklingen. Mejlet skapas i din webbläsare och skickas från ditt eget mejlprogram."
 >
 	<article class="container prose">
 		<h1>Tipsa media</h1>
 		<p class="lead">
-			Har du hört om en nyhet eller händelse kring AI-utvecklingen som oroat dig? Har svenska media inte skrivit om det ännu? Här
-			väljer du vilka mediehus du vill skriva till, fyller i ditt namn och skickar. Det tar endast ett par minuter!
+			Har du hört om en nyhet eller händelse kring AI-utvecklingen som oroat dig? Har svensk media inte skrivit om det ännu? Här
+			väljer du vilket mediehus du vill skriva till, fyller i ditt namn och skickar. Det tar endast ett par minuter!
 		</p>
 		<p>
-			Redigera gärna mailet för att ge det din egna personliga touch, så får du ännu bättre påverkan.
+			Redigera gärna mailet för att göra det mer personligt. Det kan bidra till att en journalist väljer att rapportera om nyheten.
 		</p>
 
 		<form id="mejla" class="steps">
@@ -180,6 +180,15 @@ const senast = latest ? formatDate(new Date(latest)) : ''
 					<button class="button secondary" type="button" id="kopiera-amne">Kopiera ämne</button>
 					<button class="button secondary" type="button" id="kopiera-adresser">Kopiera adresser</button>
 				</p>
+				<div id="enskilda-ruta" hidden>
+					<p class="muted small">
+						Du har valt flera mediehus. Öppna ett mejl i taget, så får varje redaktion ett eget mejl med rätt hälsning:
+					</p>
+					<ul id="enskilda" class="enskilda"></ul>
+				</div>
+				<template id="enskild">
+					<li><a class="button" href="#"></a></li>
+				</template>
 				<p class="muted small" id="status" aria-live="polite"></p>
 				<p class="muted small">
 					Öppnas inget mejlprogram? Kopiera texten och adresserna och klistra in dem i ditt vanliga mejl.
@@ -256,13 +265,38 @@ const senast = latest ? formatDate(new Date(latest)) : ''
 		].join('\n\n')
 	}
 
+	const enskilda = byId<HTMLUListElement>('enskilda')
+	const enskildaRuta = byId('enskilda-ruta')
+	const enskild = byId<HTMLTemplateElement>('enskild')
+
+	const mailto = (to: string, body: string) =>
+		`mailto:${to}?subject=${encodeURIComponent(amne.value)}&body=${encodeURIComponent(body.replace(/\n/g, '\r\n'))}`
+
+	// One draft per media house. The greeting line is swapped for that house's name.
+	function renderIndividual(to: HTMLInputElement[], plain: string) {
+		enskilda.replaceChildren(
+			...(to.length > 1 ? to : []).map((c) => {
+				const li = (enskild.content.cloneNode(true) as DocumentFragment).firstElementChild as HTMLLIElement
+				const a = li.querySelector('a')!
+				a.textContent = `Öppna mejl till ${c.dataset.namn}`
+				a.href = mailto(c.value, plain.replace(/^Hej\b[^\n]*/, `Hej redaktionen på ${c.dataset.namn}!`))
+				return li
+			})
+		)
+		enskildaRuta.hidden = to.length < 2
+	}
+
 	function render() {
 		if (!edited) {
 			amne.value = SUBJECT
 			text.innerHTML = toHtml(compose())
 		}
-		const addresses = chosen().map((c) => c.value)
-		oppna.href = `mailto:${addresses.join(',')}?subject=${encodeURIComponent(amne.value)}&body=${encodeURIComponent(toPlain(text).replace(/\n/g, '\r\n'))}`
+		const to = chosen()
+		const plain = toPlain(text)
+		oppna.href = mailto(to.map((c) => c.value).join(','), plain)
+		// With several recipients, the per-house buttons replace the combined one.
+		oppna.style.display = to.length > 1 ? 'none' : ''
+		renderIndividual(to, plain)
 		renderRecipients()
 	}
 
@@ -605,5 +639,17 @@ const senast = latest ? formatDate(new Date(latest)) : ''
 	}
 	.small {
 		font-size: 0.9rem;
+	}
+	.enskilda {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.75rem;
+		margin: 0.5rem 0 0;
+		padding: 0;
+		list-style: none;
+	}
+	.enskilda .button {
+		border: 0;
+		cursor: pointer;
 	}
 </style>
