@@ -127,7 +127,7 @@ const medieHus = defineCollection({
 	namn: z.string(),
 	land: z.string().length(2),
 	sprak: z.string().default('en'),
-	skala: z.enum(['nationell', 'regional', 'internationell']),
+	skala: z.enum(['nationell', 'lokal', 'internationell']),
 	webbsida: z.url().nullish(),
 	tipsEmail: z.email().nullish(),
 	senastVerifierad: z.coerce.date().optional(),

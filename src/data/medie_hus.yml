@@ -61,62 +61,285 @@
   land: SE
   sprak: sv
   skala: nationell
-  webbsida: 
-  tipsEmail: 
-  senastVerifierad: 2026-11-11
+  webbsida: https://tt.se
+  tipsEmail: redaktionen@tt.se
+  senastVerifierad: 2026-11-14
 
-# Nationella nischade mediehus
+- id: di
+  namn: Dagens Industri
+  land: SE
+  sprak: sv
+  skala: nationell
+  webbsida: https://www.di.se
+  tipsEmail: red@di.se
+  senastVerifierad: 2026-11-14
 
-# - id: di
-#   namn: Dagens Industri
-#   land: SE
-#   sprak: sv
-#   skala: nationell
-#   webbsida: 
-#   tipsEmail: 
-#   senastVerifierad: 2026-11-11
+- id: ny_teknik
+  namn: Ny Teknik
+  land: SE
+  sprak: sv
+  skala: nationell
+  webbsida: https://www.nyteknik.se
+  tipsEmail: redaktionen@nyteknik.se
+  senastVerifierad: 2026-11-14
 
-# - id: ny_teknik
-#   namn: Ny Teknik
-#   land: SE
-#   sprak: sv
-#   skala: nationell
-#   webbsida: 
-#   tipsEmail: 
-#   senastVerifierad: 2026-11-11
+- id: computer_sweden
+  namn: Computer Sweden
+  land: SE
+  sprak: sv
+  skala: nationell
+  webbsida: https://computersweden.se/
+  tipsEmail: computersweden@foundryco.com 
+  senastVerifierad: 2026-11-14
 
-# - id: computer_sweden
-#   namn: Computer Sweden
-#   land: SE
-#   sprak: sv
-#   skala: nationell
-#   webbsida: 
-#   tipsEmail: 
-#   senastVerifierad: 2026-11-11
+- id: breakit
+  namn: Breakit
+  land: SE
+  sprak: sv
+  skala: nationell
+  webbsida: https://www.breakit.se
+  tipsEmail: tips@breakit.se
+  senastVerifierad: 2026-11-14
 
-# - id: breakit
-#   namn: Breakit
-#   land: SE
-#   sprak: sv
-#   skala: nationell
-#   webbsida: 
-#   tipsEmail: 
-#   senastVerifierad: 2026-11-11
+- id: realtid
+  namn: Realtid
+  land: SE
+  sprak: sv
+  skala: nationell
+  webbsida: https://www.realtid.se
+  tipsEmail: redaktionen@realtid.se
+  senastVerifierad: 2026-11-14
 
-# - id: techworld
-#   namn: Techworld
-#   land: SE
-#   sprak: sv
-#   skala: nationell
-#   webbsida: 
-#   tipsEmail: 
-#   senastVerifierad: 2026-11-11
+- id: omni
+  namn: Omni
+  land: SE
+  sprak: sv
+  skala: nationell
+  webbsida: https://omni.se
+  tipsEmail: redaktion@omni.se
+  senastVerifierad: 2026-11-14
 
-# - id: realtid
-#   namn: Realtid
-#   land: SE
-#   sprak: sv
-#   skala: nationell
-#   webbsida: 
-#   tipsEmail: 
-#   senastVerifierad: 2026-11-11
+- id: gp
+  namn: Göteborgs-Posten
+  land: SE
+  sprak: sv
+  skala: lokal
+  webbsida: https://www.gp.se
+  tipsEmail: tipsa@gp.se
+  senastVerifierad: 2026-11-14
+
+- id: sydsvenskan
+  namn: Sydsvenskan 
+  land: SE
+  sprak: sv
+  skala: lokal
+  webbsida: https://www.sydsvenskan.se
+  tipsEmail: 71234@sydsvenskan.se
+  senastVerifierad: 2026-11-14
+
+- id: hd
+  namn: Helsingsborgs Dagblad
+  land: SE
+  sprak: sv
+  skala: lokal
+  webbsida: https://www.hd.se
+  tipsEmail: tipsa@hd.se
+  senastVerifierad: 2026-11-14
+
+- id: st
+  namn: Sundsvalls Tidning
+  land: SE
+  sprak: sv
+  skala: lokal
+  webbsida: https://www.st.nu
+  tipsEmail: tips@st.nu
+  senastVerifierad: 2026-11-14
+
+- id: nwt
+  namn: NWT
+  land: SE
+  sprak: sv
+  skala: lokal
+  webbsida: https://www.nwt.se
+  tipsEmail: redaktion@nwt.se
+  senastVerifierad: 2026-11-14
+
+- id: barometern
+  namn: Barometern
+  land: SE
+  sprak: sv
+  skala: lokal
+  webbsida: https://www.barometern.se
+  tipsEmail: tips@barometern.se
+  senastVerifierad: 2026-11-14
+
+- id: bt
+  namn: Borås Tidning
+  land: SE
+  sprak: sv
+  skala: lokal
+  webbsida: https://www.bt.se
+  tipsEmail: tipsa@bt.se
+  senastVerifierad: 2026-11-14
+
+- id: op
+  namn: Östersunds-Posten
+  land: SE
+  sprak: sv
+  skala: lokal
+  webbsida: https://www.op.se
+  tipsEmail: tips@op.se
+  senastVerifierad: 2026-11-14
+
+- id: na
+  namn: Nerikes Allehands
+  land: SE
+  sprak: sv
+  skala: lokal
+  webbsida: https://www.na.se
+  tipsEmail: nyhet@na.se
+  senastVerifierad: 2026-11-14
+
+- id: nsd
+  namn: NSD
+  land: SE
+  sprak: sv
+  skala: lokal
+  webbsida: https://www.nsd.se
+  tipsEmail: tips@nsd.se
+  senastVerifierad: 2026-11-14
+
+- id: vk
+  namn: Västerbottens-Kuriren
+  land: SE
+  sprak: sv
+  skala: lokal
+  webbsida: https://www.vk.se
+  tipsEmail: redaktion@vk.se
+  senastVerifierad: 2026-11-14
+
+- id: unt
+  namn: UNT
+  land: SE
+  sprak: sv
+  skala: lokal
+  webbsida: https://www.unt.se
+  tipsEmail: 71611@unt.se
+  senastVerifierad: 2026-11-14
+
+- id: vlt
+  namn: VLT
+  land: SE
+  sprak: sv
+  skala: lokal
+  webbsida: https://www.vlt.se
+  tipsEmail: tips@vlt.se
+  senastVerifierad: 2026-11-14
+
+- id: skd
+  namn: Skånska Dagbladet
+  land: SE
+  sprak: sv
+  skala: lokal
+  webbsida: https://www.skd.se
+  tipsEmail: redaktion@skd.se
+  senastVerifierad: 2026-11-14
+
+- id: smp
+  namn: Smålandsposten
+  land: SE
+  sprak: sv
+  skala: lokal
+  webbsida: https://www.smp.se
+  tipsEmail: nyheter@smp.se
+  senastVerifierad: 2026-11-14
+
+- id: jp
+  namn: Jönköpings-Posten
+  land: SE
+  sprak: sv
+  skala: lokal
+  webbsida: https://www.jp.se
+  tipsEmail: tips@jp.se
+  senastVerifierad: 2026-11-14
+
+- id: nt
+  namn: NT
+  land: SE
+  sprak: sv
+  skala: lokal
+  webbsida: https://www.nt.se
+  tipsEmail: tipsa@nt.se
+  senastVerifierad: 2026-11-14
+
+- id: gd
+  namn: Gefle Dagblad
+  land: SE
+  sprak: sv
+  skala: lokal
+  webbsida: https://www.gd.se
+  tipsEmail: tips@gd.se
+  senastVerifierad: 2026-11-14
+
+- id: corren
+  namn: Corren
+  land: SE
+  sprak: sv
+  skala: lokal
+  webbsida: https://www.corren.se
+  tipsEmail: tipsa@corren.se
+  senastVerifierad: 2026-11-14
+
+- id: vf
+  namn: Värmlands Folkblad
+  land: SE
+  sprak: sv
+  skala: lokal
+  webbsida: https://www.vf.se
+  tipsEmail: redaktion@vf.se
+  senastVerifierad: 2026-11-14
+
+- id: norran
+  namn: Norran
+  land: SE
+  sprak: sv
+  skala: lokal
+  webbsida: https://www.norran.se
+  tipsEmail: tipsa@norran.se
+  senastVerifierad: 2026-11-14
+
+- id: dagen
+  namn: Dagen
+  land: SE
+  sprak: sv
+  skala: lokal
+  webbsida: https://www.dagen.se
+  tipsEmail: tips@dagen.se
+  senastVerifierad: 2026-11-14
+
+- id: kuriren
+  namn: Kuriren
+  land: SE
+  sprak: sv
+  skala: lokal
+  webbsida: https://www.kuriren.nu
+  tipsEmail: tips@kuriren.com
+  senastVerifierad: 2026-11-14
+
+- id: borlange
+  namn: Borlänge Tidning
+  land: SE
+  sprak: sv
+  skala: lokal
+  webbsida: https://www.borlangetidning.se
+  tipsEmail: tips@borlangetidning.se
+  senastVerifierad: 2026-11-14
+
+- id: hp
+  namn: Hallandsposten
+  land: SE
+  sprak: sv
+  skala: lokal
+  webbsida: https://www.hallandsposten.se
+  tipsEmail: tipsahp@hallandsposten.se
+  senastVerifierad: 2026-11-14
