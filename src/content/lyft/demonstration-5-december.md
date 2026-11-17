@@ -6,5 +6,7 @@ knapp_text: Anmäl dig på Facebook
 knapp_lank: https://www.facebook.com/events/1871209734033520/
 lank_text: Tid, plats och mer info
 lank: /evenemang/2026-12-05-demonstration-kontrollera-ai
+bild: /bilder/demonstration-riksdagen.webp
+bild_alt: Demonstranter håller en stor orange PauseAI-banderoll på Mynttorget
 visas_till: 2026-12-05
 ---

@@ -240,6 +240,14 @@ content:
         label: Extra länk
         description: Valfri. Dit den extra länken leder, skriven på samma sätt som knappens länk.
         type: string
+      - name: bild
+        label: Bild
+        description: Valfri. Ett foto som visas bredvid texten, till exempel från en tidigare demonstration. Använd bara bilder vi har rätt att använda, och fråga alltid personer som syns om lov. Helst under 200 kB, bredd omkring 1400 px.
+        type: image
+      - name: bild_alt
+        label: Bildbeskrivning
+        description: Valfri men bra att fylla i om du har en bild. En mening om vad bilden visar, för den som inte ser den. Till exempel "Demonstranter håller en PauseAI-banderoll vid Riksdagen".
+        type: string
       - name: visas_till
         label: Visas till och med
         description: Sista dagen rutan syns på startsidan, till exempel dagen för demonstrationen. Natten efter försvinner den av sig själv. Posten kan ligga kvar och återanvändas med ett nytt datum.

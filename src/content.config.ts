@@ -101,6 +101,9 @@ const lyft = defineCollection({
 		knapp_lank: z.string(),
 		lank_text: z.string().optional(),
 		lank: z.string().optional(),
+		// Photo shown beside the text; bild_alt describes it for screen readers.
+		bild: z.string().optional(),
+		bild_alt: z.string().optional(),
 		// Sista dagen rutan visas, i svensk tid.
 		visas_till: z.coerce.date()
 	})
