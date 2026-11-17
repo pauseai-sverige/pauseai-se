@@ -28,7 +28,9 @@ Alla som är aktiva i PauseAI följer [uppförandekoden](https://pauseai.info/co
 
 ## Kontakt
 
-Mejla oss på [sweden@pauseai.info](mailto:sweden@pauseai.info). Det gäller även journalister som vill ha en kommentar eller en intervju.
+**Press:** journalister som vill ha en kommentar eller en intervju når oss på [info@pauseai.se](mailto:info@pauseai.se) eller [+46 70 408 38 46](tel:+46704083846).
+
+**Övriga frågor:** mejla [sweden@pauseai.info](mailto:sweden@pauseai.info).
 
 Följ oss på Instagram: [@pauseai_sverige](https://www.instagram.com/pauseai_sverige).
 
