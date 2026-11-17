@@ -1,14 +1,15 @@
 ---
 import type { CollectionEntry } from 'astro:content'
-import { linkUrl } from '../lib'
+import { imageUrl, linkUrl } from '../lib'
 
 interface Props {
 	lyft: CollectionEntry<'lyft'>
 }
-const { title, etikett, text, knapp_text, knapp_lank, lank_text, lank } = Astro.props.lyft.data
+const { title, etikett, text, knapp_text, knapp_lank, lank_text, lank, bild, bild_alt } = Astro.props.lyft.data
 ---
 
-<aside class="lyft" aria-label={title}>
+<aside class={bild ? 'lyft med-bild' : 'lyft'} aria-label={title}>
+	{bild && <img class="bild" src={imageUrl(bild)} alt={bild_alt ?? ''} width="1400" height="932" loading="eager" decoding="async" />}
 	<div class="container-wide inner">
 		<div>
 			{etikett && <p class="etikett">{etikett}</p>}
@@ -74,6 +75,51 @@ const { title, etikett, text, knapp_text, knapp_lank, lank_text, lank } = Astro.
 	}
 	.mer:hover {
 		color: var(--brand);
+	}
+	/* The photo is never covered by an overlay. On wide screens it sits at the right edge and
+	   fades into the dark box on its left side; on narrower screens it stacks above the text. */
+	.med-bild {
+		position: relative;
+		padding: 0;
+	}
+	.bild {
+		display: block;
+		width: 100%;
+		height: auto;
+		aspect-ratio: 3 / 2;
+		max-height: 22rem;
+		object-fit: cover;
+		object-position: center 45%;
+	}
+	.med-bild .inner {
+		grid-template-columns: 1fr;
+		padding-block: 1.25rem 1.75rem;
+	}
+	.med-bild .actions {
+		flex-direction: row;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 0.75rem 1.5rem;
+	}
+	@media (min-width: 60.01rem) {
+		.med-bild {
+			padding: 1.75rem 0;
+		}
+		.med-bild .bild {
+			position: absolute;
+			inset: 0 0 0 auto;
+			width: 58%;
+			height: 100%;
+			max-height: none;
+			aspect-ratio: auto;
+			object-position: center 62%;
+			mask-image: linear-gradient(to right, transparent 0, #000 22%);
+		}
+		.med-bild .inner {
+			position: relative;
+			grid-template-columns: minmax(0, 36rem);
+			padding-block: 0;
+		}
 	}
 	@media (max-width: 50rem) {
 		.inner {
