@@ -20,7 +20,14 @@ const { Content } = await render(post)
 		</p>
 		<h1>{post.data.title}</h1>
 		<p class="byline">{post.data.author ?? 'PauseAI Sverige'}</p>
-		{post.data.image && <img src={imageUrl(post.data.image)} alt="" />}
+		{
+			post.data.image && (
+				<figure>
+					<img src={imageUrl(post.data.image)} alt={post.data.image_caption ?? ''} />
+					{post.data.image_caption && <figcaption>{post.data.image_caption}</figcaption>}
+				</figure>
+			)
+		}
 		<Content />
 		<SkrivForOss />
 	</article>
@@ -30,5 +37,13 @@ const { Content } = await render(post)
 	.byline {
 		margin-top: -0.25rem;
 		font-weight: 700;
+	}
+	figure {
+		margin: 0 0 1.5rem;
+	}
+	figcaption {
+		margin-top: 0.4rem;
+		font-size: 0.9rem;
+		color: var(--text-muted);
 	}
 </style>
