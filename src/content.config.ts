@@ -49,7 +49,9 @@ const blogg = defineCollection({
 		date: z.coerce.date(),
 		author: z.string().optional(),
 		description: z.string().optional(),
-		image: z.string().optional()
+		image: z.string().optional(),
+		// Shown under the cover image and used as its alt text.
+		image_caption: z.string().optional()
 	})
 })
 

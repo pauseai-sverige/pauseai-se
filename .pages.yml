@@ -45,6 +45,10 @@ content:
         label: Bild
         description: Valfri men rekommenderad, eftersom bloggen visar bilden som omslag. Använd bara bilder vi har rätt att använda, och fråga alltid personer som syns om lov. Helst under 1 MB.
         type: image
+      - name: image_caption
+        label: Bildtext
+        description: Valfri men bra att fylla i om du har en bild. Visas under bilden och läses upp för den som inte ser den. Till exempel "Olle Häggström, professor i matematisk statistik vid Chalmers".
+        type: string
       - name: body
         label: Text
         description: Själva inlägget. Använd knapparna eller skriv / för rubriker, listor, länkar och bilder.
