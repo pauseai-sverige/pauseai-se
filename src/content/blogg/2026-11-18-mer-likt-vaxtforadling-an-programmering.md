@@ -3,6 +3,7 @@ title: "”Mer likt växtförädling än programmering”: Om AI-säkerhet med O
 date: 2026-11-18
 author: Isak Kleist
 image: /bilder/olle-haggstrom.jpg
+image_caption: Olle Häggström, professor i matematisk statistik vid Chalmers.
 description: "Isak Kleist intervjuar Olle Häggström, professor i matematisk statistik vid
   Chalmers, om hur AI tränas, varför det är så svårt att göra den säker och varför
   politiken behöver vakna."
