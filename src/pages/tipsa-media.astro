@@ -6,12 +6,6 @@ import { getCollection } from 'astro:content'
 import Base from '../layouts/Base.astro'
 import { url, formatDate } from '../lib'
 
-// The claims in the email text are checked against their primary sources in Belagt,
-// see docs/kallor.md. Each topic paragraph in the script below ends with its source.
-// Incidenter: Belagt J3ljHm57yU0-18, Belagt MET-04
-// Experter: Belagt TID-08, Belagt SVE-13
-// Institut: Belagt SVE-01, Belagt SVE-02
-
 const SECTIONS = [
 	{ skala: 'nationell', title: 'Nationella mediehus' },
 	{ skala: 'lokal', title: 'Lokala mediehus' }
@@ -43,7 +37,7 @@ const senast = latest ? formatDate(new Date(latest)) : ''
 		<h1>Tipsa media</h1>
 		<p class="lead">
 			Har du hört om en nyhet eller händelse kring AI-utvecklingen som oroat dig? Har svensk media inte skrivit om det ännu? Här
-			väljer du vilket mediehus du vill skriva till, fyller i ditt namn och skickar. Det tar endast ett par minuter!
+			väljer du vilka mediehus du vill skriva till, fyller i ditt namn och skickar. Det tar endast ett par minuter!
 		</p>
 		<p>
 			Redigera gärna mailet för att göra det mer personligt. Det kan bidra till att en journalist väljer att rapportera om nyheten.
@@ -55,42 +49,38 @@ const senast = latest ? formatDate(new Date(latest)) : ''
 				{
 					houses.length > 0 ? (
 						<>
-							<p>
-								Välj ett eller flera mediehus.
-							</p>
-							{
-	sections.map((s) => (
-		<div class="lista" data-sektion>
-			<h3>{s.title}</h3>
-			{s.houses.length > 5 && (
-				<p class="field">
-					<label for={`sok-${s.skala}`}>Sök</label>
-					<input id={`sok-${s.skala}`} type="search" data-sok placeholder="Sök på namn" />
-				</p>
-			)}
-			<ul class="hus" data-hus>
-				{s.houses.map((h) => (
-					<li data-text={h.namn.toLowerCase()}>
-						<label>
-							<input type="checkbox" name="till" value={h.tipsEmail} data-namn={h.namn} />
-							<span>
-								<strong>{h.namn}</strong>
-								<span class="muted">
-									{h.webbsida ? new URL(h.webbsida).hostname.replace(/^www\./, '') : ''}
-								</span>
-							</span>
-						</label>
-					</li>
-				))}
-			</ul>
-			<p class="muted small" data-tom hidden>Inget mediehus matchar sökningen.</p>
-			<p class="lista-fot">
-				<span class="muted small" data-antal>{s.houses.length} mediehus</span>
-				<button class="button secondary small" type="button" data-fler hidden></button>
-			</p>
-		</div>
-	))
-}
+							<p>Välj ett eller flera mediehus.</p>
+							{sections.map((s) => (
+								<div class="lista" data-sektion>
+									<h3>{s.title}</h3>
+									{s.houses.length > 5 && (
+										<p class="field">
+											<label for={`sok-${s.skala}`}>Sök</label>
+											<input id={`sok-${s.skala}`} type="search" data-sok placeholder="Sök på namn" />
+										</p>
+									)}
+									<ul class="hus" data-hus>
+										{s.houses.map((h) => (
+											<li data-text={h.namn.toLowerCase()}>
+												<label>
+													<input type="checkbox" name="till" value={h.tipsEmail} data-namn={h.namn} />
+													<span>
+														<strong>{h.namn}</strong>
+														<span class="muted">
+															{h.webbsida ? new URL(h.webbsida).hostname.replace(/^www\./, '') : ''}
+														</span>
+													</span>
+												</label>
+											</li>
+										))}
+									</ul>
+									<p class="muted small" data-tom hidden>Inget mediehus matchar sökningen.</p>
+									<p class="lista-fot">
+										<span class="muted small" data-antal>{s.houses.length} mediehus</span>
+										<button class="button secondary small" type="button" data-fler hidden></button>
+									</p>
+								</div>
+							))}
 							<p class="muted small">
 								Tipsadresserna är hämtade från mediehusens egna tipssidor{senast ? `, senast kontrollerade ${senast}` : ''}. Hittar du en adress som inte stämmer,
 								säg gärna till.
@@ -180,6 +170,7 @@ const senast = latest ? formatDate(new Date(latest)) : ''
 					<button class="button secondary" type="button" id="kopiera-amne">Kopiera ämne</button>
 					<button class="button secondary" type="button" id="kopiera-adresser">Kopiera adresser</button>
 				</p>
+				<p class="muted small" id="saknas" aria-live="polite"></p>
 				<div id="enskilda-ruta" hidden>
 					<p class="muted small">
 						Du har valt flera mediehus. Öppna ett mejl i taget, så får varje redaktion ett eget mejl med rätt hälsning:
@@ -197,8 +188,7 @@ const senast = latest ? formatDate(new Date(latest)) : ''
 		</form>
 
 		<p>
-			Mer om riskerna och vad Sverige kan göra finns under <a href={url('/forslaget')}>förslaget</a>. Verktyget är
-			inspirerat av <a href="https://vimasteprataomai.nu/mejla/">Vi måste prata om AI</a>.
+			Mer om riskerna och vad Sverige kan göra finns under <a href={url('/forslaget')}>förslaget</a>.
 		</p>
 	</article>
 </Base>
@@ -230,7 +220,10 @@ const senast = latest ? formatDate(new Date(latest)) : ''
 	const text = byId<HTMLDivElement>('text')
 	const oppna = byId<HTMLAnchorElement>('oppna')
 	const status = byId('status')
-	let edited = false
+	// Editing the subject only locks the subject, and editing the text only locks the text.
+	let subjectEdited = false
+	let textEdited = false
+	const PH = { namn: '[Ditt namn]', lank: '[Länk]', sammanfattning: '[Sammanfattning av nyheten]' }
 
 	const clean = (s: string) => s.replace(/\s+/g, ' ').trim()
 	const sentence = (s: string) => {
@@ -244,12 +237,12 @@ const senast = latest ? formatDate(new Date(latest)) : ''
 
 	function compose(): string {
 		const to = chosen()
-		const namn = clean(byId<HTMLInputElement>('namn').value) || '[Ditt namn]'
+		const namn = clean(byId<HTMLInputElement>('namn').value) || PH.namn
 		const ort = clean(byId<HTMLInputElement>('ort').value)
 		const varfor = sentence(byId<HTMLTextAreaElement>('varfor').value)
 		const bakgrund = clean(byId<HTMLInputElement>('bakgrund').value).replace(/\.$/, '')
-		const sammanfattning = clean(byId<HTMLInputElement>('sammanfattning').value) || '[Sammanfattning av nyheten]'
-		const lank = clean(byId<HTMLInputElement>('nyhets_lank').value) || '[Länk]'
+		const sammanfattning = sentence(byId<HTMLTextAreaElement>('sammanfattning').value) || PH.sammanfattning
+		const lank = clean(byId<HTMLTextAreaElement>('nyhets_lank').value) || PH.lank
 
 		// "Jag heter Kim, är lärare och bor i Umeå."
 		const about = [bakgrund ? `är ${bakgrund}` : '', ort ? `bor i ${ort}` : ''].filter(Boolean)
@@ -259,7 +252,7 @@ const senast = latest ? formatDate(new Date(latest)) : ''
 		return [
 			to.length === 1 ? `Hej redaktionen på ${to[0]!.dataset.namn}!` : 'Hej!',
 			intro.filter(Boolean).join(' '),
-			`Jag läste nyligen följande nyhet som oroade mig: ${sammanfattning}\n\n Länk: ${lank}`,
+			`Jag läste nyligen följande nyhet som oroade mig: ${sammanfattning}\n\nLänk: ${lank}`,
 			`${ASK} Hör gärna av er om ni vill veta mer.`,
 			`Med vänliga hälsningar,\n\n${namn}${ort ? '\n' + ort : ''}`
 		].join('\n\n')
@@ -268,18 +261,52 @@ const senast = latest ? formatDate(new Date(latest)) : ''
 	const enskilda = byId<HTMLUListElement>('enskilda')
 	const enskildaRuta = byId('enskilda-ruta')
 	const enskild = byId<HTMLTemplateElement>('enskild')
+	const saknas = byId('saknas')
 
 	const mailto = (to: string, body: string) =>
 		`mailto:${to}?subject=${encodeURIComponent(amne.value)}&body=${encodeURIComponent(body.replace(/\n/g, '\r\n'))}`
 
-	// One draft per media house. The greeting line is swapped for that house's name.
-	function renderIndividual(to: HTMLInputElement[], plain: string) {
+	// Only the tool's own greeting is swapped per media house. A greeting the visitor
+	// wrote themselves, such as "Hej, här är mitt tips", is left as it is.
+	const allNames = [...form.querySelectorAll<HTMLInputElement>('input[name="till"]')].map((c) => c.dataset.namn ?? '')
+	const isToolGreeting = (line: string) => line === 'Hej!' || allNames.some((n) => line === `Hej redaktionen på ${n}!`)
+	function withGreeting(plain: string, namn: string) {
+		const [first = '', ...rest] = plain.split('\n')
+		return isToolGreeting(first.trim()) ? [`Hej redaktionen på ${namn}!`, ...rest].join('\n') : plain
+	}
+
+	// What is still needed before a draft can be opened.
+	function missing(to: HTMLInputElement[], plain: string): string[] {
+		const m: string[] = []
+		if (!to.length) m.push('välj minst ett mediehus')
+		if (!clean(byId<HTMLInputElement>('namn').value)) m.push('fyll i ditt namn')
+		if (!clean(byId<HTMLTextAreaElement>('nyhets_lank').value)) m.push('fyll i länken till nyheten')
+		if (!clean(byId<HTMLTextAreaElement>('sammanfattning').value)) m.push('fyll i en sammanfattning')
+		// Placeholders can also stick in a text the visitor has edited by hand.
+		if (textEdited && Object.values(PH).some((p) => plain.includes(p))) m.push('ersätt platshållarna i [hakparentes] i mejltexten')
+		return m
+	}
+
+	function setLink(a: HTMLAnchorElement, href: string | null) {
+		if (href) {
+			a.href = href
+			a.removeAttribute('aria-disabled')
+			a.removeAttribute('role')
+		} else {
+			a.removeAttribute('href')
+			a.setAttribute('role', 'link')
+			a.setAttribute('aria-disabled', 'true')
+		}
+	}
+
+	// One draft per media house.
+	function renderIndividual(to: HTMLInputElement[], plain: string, ready: boolean) {
 		enskilda.replaceChildren(
 			...(to.length > 1 ? to : []).map((c) => {
 				const li = (enskild.content.cloneNode(true) as DocumentFragment).firstElementChild as HTMLLIElement
 				const a = li.querySelector('a')!
 				a.textContent = `Öppna mejl till ${c.dataset.namn}`
-				a.href = mailto(c.value, plain.replace(/^Hej\b[^\n]*/, `Hej redaktionen på ${c.dataset.namn}!`))
+				setLink(a, ready ? mailto(c.value, withGreeting(plain, c.dataset.namn ?? '')) : null)
 				return li
 			})
 		)
@@ -287,16 +314,17 @@ const senast = latest ? formatDate(new Date(latest)) : ''
 	}
 
 	function render() {
-		if (!edited) {
-			amne.value = SUBJECT
-			text.innerHTML = toHtml(compose())
-		}
+		if (!subjectEdited) amne.value = SUBJECT
+		if (!textEdited) text.innerHTML = toHtml(compose())
 		const to = chosen()
 		const plain = toPlain(text)
-		oppna.href = mailto(to.map((c) => c.value).join(','), plain)
+		const todo = missing(to, plain)
+		const ready = todo.length === 0
+		setLink(oppna, ready ? mailto(to.map((c) => c.value).join(','), plain) : null)
 		// With several recipients, the per-house buttons replace the combined one.
 		oppna.style.display = to.length > 1 ? 'none' : ''
-		renderIndividual(to, plain)
+		saknas.textContent = ready ? '' : `Innan du kan öppna mejlet: ${todo.join('; ')}.`
+		renderIndividual(to, plain, ready)
 		renderRecipients()
 	}
 
@@ -366,8 +394,8 @@ const senast = latest ? formatDate(new Date(latest)) : ''
 
 	form.addEventListener('input', (event) => {
 		const target = event.target as HTMLElement
-		// Once the visitor edits the email itself, stop regenerating it.
-		if (target === amne || target === text) edited = true
+		if (target === amne) subjectEdited = true
+		if (target === text) textEdited = true
 		render()
 	})
 	form.addEventListener('submit', (event) => event.preventDefault())
@@ -422,11 +450,23 @@ const senast = latest ? formatDate(new Date(latest)) : ''
 			} else await navigator.clipboard.writeText(value)
 			status.textContent = message
 		} catch {
-			const range = document.createRange()
-			range.selectNodeContents(text)
-			getSelection()?.removeAllRanges()
-			getSelection()?.addRange(range)
-			status.textContent = 'Kunde inte kopiera. Texten är markerad, kopiera den med Ctrl+C eller Cmd+C.'
+			const select = (el: Node) => {
+				const range = document.createRange()
+				range.selectNodeContents(el)
+				getSelection()?.removeAllRanges()
+				getSelection()?.addRange(range)
+			}
+			if (html !== undefined) {
+				// The mail text itself failed to copy: select it in the editor.
+				select(text)
+				status.textContent = 'Kunde inte kopiera. Texten är markerad, kopiera den med Ctrl+C eller Cmd+C.'
+			} else {
+				// Subject or addresses: show the value so it can be copied by hand.
+				const manual = document.createElement('strong')
+				manual.textContent = value
+				status.replaceChildren('Kunde inte kopiera automatiskt. Kopiera manuellt: ', manual)
+				select(manual)
+			}
 		}
 	}
 	byId('kopiera').addEventListener('click', () =>
@@ -651,5 +691,10 @@ const senast = latest ? formatDate(new Date(latest)) : ''
 	.enskilda .button {
 		border: 0;
 		cursor: pointer;
+	}
+	.button[aria-disabled='true'] {
+		opacity: 0.5;
+		cursor: not-allowed;
+		pointer-events: none;
 	}
 </style>

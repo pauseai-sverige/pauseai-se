@@ -122,16 +122,16 @@ const berattelser = defineCollection({
 
 // Mediehus som stöds av mejlbyggaren för att tipsa media
 const medieHus = defineCollection({
-  loader: file('src/data/medie_hus.yml'),
-  schema: z.object({
-	namn: z.string(),
-	land: z.string().length(2),
-	sprak: z.string().default('en'),
-	skala: z.enum(['nationell', 'lokal', 'internationell']),
-	webbsida: z.url().nullish(),
-	tipsEmail: z.email().nullish(),
-	senastVerifierad: z.coerce.date().optional(),
-  }),
-});
+  	loader: file('src/data/medie_hus.yml'),
+  	schema: z.object({
+		namn: z.string(),
+		land: z.string().length(2),
+		sprak: z.string().default('en'),
+		skala: z.enum(['nationell', 'lokal', 'internationell']),
+		webbsida: z.url().nullish(),
+		tipsEmail: z.email().nullish(),
+		senastVerifierad: z.coerce.date().optional(),
+  	})
+})
 
 export const collections = { sidor, blogg, evenemang, insatser, laget, lyft, berattelser, medieHus }
